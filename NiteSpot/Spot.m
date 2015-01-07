@@ -10,7 +10,7 @@
 
 @implementation Spot
 
--(Spot *) initWithName:(NSString *)name type:(NSString *)type idNo:(NSString *)idNo region:(NSString *)region city:(NSString *)city street:(NSString *)street state:(NSString *)state zip:(NSString *)zipCode about:(NSString *)about tel:(NSString *)tel foodType:(NSString *)foodType drinkType:(NSString *)drinkType price:(NSString *)price dailySpecial:(NSString *)daily foodMon:(NSString *)foodMon foodTue:(NSString *)foodTue foodWed:(NSString *)foodWed foodThu:(NSString *)foodThu foodFri:(NSString *)foodFri foodSat:(NSString *)foodSat foodSun:(NSString *)foodSun drinkMon:(NSString *)drinMon drinkTue:(NSString *)drinkTue drinkWed:(NSString *)drinkWed drinkThu:(NSString *)drinkThu drinkFri:(NSString *)drinkFri drinkSat:(NSString *)drinkSat drinkSun:(NSString *)drinkSun thumbURl:(NSURL *)thumUrl{
+-(Spot *) initWithName:(NSString *)name type:(NSString *)type idNo:(NSString *)idNo region:(NSString *)region city:(NSString *)city street:(NSString *)street state:(NSString *)state zip:(NSString *)zipCode about:(NSString *)about tel:(NSString *)tel foodType:(NSString *)foodType drinkType:(NSString *)drinkType price:(NSString *)price dailySpecial:(NSString *)daily foodMon:(NSString *)foodMon foodTue:(NSString *)foodTue foodWed:(NSString *)foodWed foodThu:(NSString *)foodThu foodFri:(NSString *)foodFri foodSat:(NSString *)foodSat foodSun:(NSString *)foodSun drinkMon:(NSString *)drinMon drinkTue:(NSString *)drinkTue drinkWed:(NSString *)drinkWed drinkThu:(NSString *)drinkThu drinkFri:(NSString *)drinkFri drinkSat:(NSString *)drinkSat drinkSun:(NSString *)drinkSun thumbURl:(NSURL *)thumUrl active:(NSString *)active{
 
     self.spotTitle = name;
     self.spotType = type;
@@ -41,6 +41,7 @@
     self.drinkSat = drinkSat;
     self.drinkSun = drinkSun;
     self.thumbURL = thumUrl;
+    self.active = active;
 
     return self;
 }

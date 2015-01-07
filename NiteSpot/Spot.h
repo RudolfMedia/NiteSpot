@@ -38,6 +38,7 @@
 @property NSString *drinkFri;
 @property NSString *drinkSat;
 @property NSString *drinkSun;
+@property NSString *active;
 @property NSURL *thumbURL;
 
 - (Spot *) initWithName:(NSString *)name
@@ -68,7 +69,8 @@
                drinkFri:(NSString *)drinkFri
                drinkSat:(NSString *)drinkSat
                drinkSun:(NSString *)drinkSun
-               thumbURl:(NSURL *)thumUrl;
+               thumbURl:(NSURL *)thumUrl
+                active:(NSString *)active;
 
 
 @end

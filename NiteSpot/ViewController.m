@@ -73,10 +73,14 @@
                                            drinkFri:[dictionary objectForKey:@"drink_Fri"]
                                            drinkSat:[dictionary objectForKey:@"drink_Sat"]
                                            drinkSun:[dictionary objectForKey:@"drink_Sun"]
-                                           thumbURl:[dictionary objectForKey:@"thumbURL"]];
+                                           thumbURl:[dictionary objectForKey:@"thumbURL"]
+                                             active:[dictionary objectForKey:@"active"]];
+
+            if ([spot.active isEqualToString:@"0"]) {
 
             [self.spotsArray addObject:spot];
 
+            }
 
 
 
