@@ -6,14 +6,17 @@
 //  Copyright (c) 2015 com.rudolfmedia. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RMEatViewController.h"
 #import "Spot.h"
+#import "SpotCell.h"
 
-@interface ViewController ()
+@interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
 
 @end
 
-@implementation ViewController
+@implementation RMEatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,15 +26,44 @@
 
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Spot *spot = [self.spotsArray objectAtIndex:indexPath.row];
+    cell.cellTitle.text = spot.spotTitle;
+    cell.spotImage.image = nil;
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            UIImage *cellImage = [UIImage imageWithData:data];
+            cell.spotImage.image = cellImage;
+        });
+    }];
+
+    return cell;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    return self.spotsArray.count;
+}
+
+
+#pragma Mark - Networking and Parsing methods
+
 - (void)downloadSpots{
 
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8888/JSON_API.php"]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thenitespot.com/active_index.php"]];
 
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
-        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError];
+        self.spotJSONArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError];
 
-        self.spotJSONArray = [jsonDictionary objectForKey:@"spots"];
+
+        NSLog(@"%@",self.spotJSONArray);
 
         [self parseSpotObjects];
 
@@ -73,16 +105,16 @@
                                            drinkFri:[dictionary objectForKey:@"drink_Fri"]
                                            drinkSat:[dictionary objectForKey:@"drink_Sat"]
                                            drinkSun:[dictionary objectForKey:@"drink_Sun"]
-                                           thumbURl:[dictionary objectForKey:@"thumbURL"]
-                                             active:[dictionary objectForKey:@"active"]];
+                                               slug:[dictionary objectForKey:@"slug"]
+                                              thumb:[dictionary objectForKey:@"thumb"]];
+            NSString *slug = spot.slug;
+            slug = [slug stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
-            if ([spot.active isEqualToString:@"0"]) {
+
+            NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
+            [spot addThumbURL:[NSURL URLWithString:urlString]];
 
             [self.spotsArray addObject:spot];
-
-            }
-
-
 
         }
 
@@ -90,7 +122,8 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
-            NSLog(@"%@",self.spotsArray);
+            [self.eatCollectionView reloadData];
+            
 
         });
     });

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RMEatViewController : UIViewController
 
 @property NSArray *spotJSONArray;
 @property NSMutableArray *spotsArray;

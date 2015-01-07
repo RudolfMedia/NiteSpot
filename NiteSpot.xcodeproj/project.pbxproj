@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */; };
+		2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */; };
+		2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */; };
+		2628B3111A5DDD5C0008A533 /* SpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* SpotCell.m */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
-		26D416491A5B1FB40079AD89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* ViewController.m */; };
+		26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* RMEatViewController.m */; };
 		26D4164C1A5B1FB40079AD89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164A1A5B1FB40079AD89 /* Main.storyboard */; };
 		26D4164E1A5B1FB40079AD89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164D1A5B1FB40079AD89 /* Images.xcassets */; };
 		26D416511A5B1FB40079AD89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */; };
@@ -28,13 +32,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2628B3061A5DD7C40008A533 /* RMDrinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDrinkViewController.h; sourceTree = "<group>"; };
+		2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDrinkViewController.m; sourceTree = "<group>"; };
+		2628B3091A5DD7E70008A533 /* RMAttendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAttendViewController.h; sourceTree = "<group>"; };
+		2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAttendViewController.m; sourceTree = "<group>"; };
+		2628B30C1A5DD81C0008A533 /* RMMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapSearchViewController.h; sourceTree = "<group>"; };
+		2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapSearchViewController.m; sourceTree = "<group>"; };
+		2628B30F1A5DDD5C0008A533 /* SpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotCell.h; sourceTree = "<group>"; };
+		2628B3101A5DDD5C0008A533 /* SpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotCell.m; sourceTree = "<group>"; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D416421A5B1FB40079AD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26D416441A5B1FB40079AD89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26D416451A5B1FB40079AD89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26D416471A5B1FB40079AD89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		26D416481A5B1FB40079AD89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		26D416471A5B1FB40079AD89 /* RMEatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMEatViewController.h; sourceTree = "<group>"; };
+		26D416481A5B1FB40079AD89 /* RMEatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMEatViewController.m; sourceTree = "<group>"; };
 		26D4164B1A5B1FB40079AD89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D4164D1A5B1FB40079AD89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26D416501A5B1FB40079AD89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,11 +96,19 @@
 		26D4163F1A5B1FB40079AD89 /* NiteSpot */ = {
 			isa = PBXGroup;
 			children = (
+				26D4164A1A5B1FB40079AD89 /* Main.storyboard */,
 				26D416441A5B1FB40079AD89 /* AppDelegate.h */,
 				26D416451A5B1FB40079AD89 /* AppDelegate.m */,
-				26D416471A5B1FB40079AD89 /* ViewController.h */,
-				26D416481A5B1FB40079AD89 /* ViewController.m */,
-				26D4164A1A5B1FB40079AD89 /* Main.storyboard */,
+				26D416471A5B1FB40079AD89 /* RMEatViewController.h */,
+				26D416481A5B1FB40079AD89 /* RMEatViewController.m */,
+				2628B3061A5DD7C40008A533 /* RMDrinkViewController.h */,
+				2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */,
+				2628B3091A5DD7E70008A533 /* RMAttendViewController.h */,
+				2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */,
+				2628B30C1A5DD81C0008A533 /* RMMapSearchViewController.h */,
+				2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */,
+				2628B30F1A5DDD5C0008A533 /* SpotCell.h */,
+				2628B3101A5DDD5C0008A533 /* SpotCell.m */,
 				26D416661A5B1FE80079AD89 /* Spot.h */,
 				26D416671A5B1FE80079AD89 /* Spot.m */,
 				26D4164D1A5B1FB40079AD89 /* Images.xcassets */,
@@ -224,8 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D416491A5B1FB40079AD89 /* ViewController.m in Sources */,
+				2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */,
+				2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */,
+				26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */,
+				2628B3111A5DDD5C0008A533 /* SpotCell.m in Sources */,
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
+				2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
 				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
 			);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>51A19F49-BA71-42F3-B881-08F7B06FC6CC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NiteSpot</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FCC27A08F76D2EC105F699CB063AC76F5E6647CF</key>
+		<string>https://github.com/RudolfMedia/NiteSpot.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NiteSpot.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FCC27A08F76D2EC105F699CB063AC76F5E6647CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RudolfMedia/NiteSpot.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FCC27A08F76D2EC105F699CB063AC76F5E6647CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FCC27A08F76D2EC105F699CB063AC76F5E6647CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NiteSpot</string>
+		</dict>
+	</array>
+</dict>
+</plist>

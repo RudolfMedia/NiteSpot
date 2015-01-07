@@ -39,6 +39,8 @@
 @property NSString *drinkSat;
 @property NSString *drinkSun;
 @property NSString *active;
+@property NSString *slug;
+@property NSString *thumb;
 @property NSURL *thumbURL;
 
 - (Spot *) initWithName:(NSString *)name
@@ -69,8 +71,10 @@
                drinkFri:(NSString *)drinkFri
                drinkSat:(NSString *)drinkSat
                drinkSun:(NSString *)drinkSun
-               thumbURl:(NSURL *)thumUrl
-                active:(NSString *)active;
+                   slug:(NSString *)slug
+                  thumb:(NSString *)thumb;
+
+- (Spot *) addThumbURL:(NSURL *)url;
 
 
 @end
