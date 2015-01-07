@@ -14,6 +14,7 @@
 		26D4164E1A5B1FB40079AD89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164D1A5B1FB40079AD89 /* Images.xcassets */; };
 		26D416511A5B1FB40079AD89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */; };
 		26D4165D1A5B1FB40079AD89 /* NiteSpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4165C1A5B1FB40079AD89 /* NiteSpotTests.m */; };
+		26D416681A5B1FE80079AD89 /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416671A5B1FE80079AD89 /* Spot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		26D416561A5B1FB40079AD89 /* NiteSpotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiteSpotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D4165B1A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D4165C1A5B1FB40079AD89 /* NiteSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiteSpotTests.m; sourceTree = "<group>"; };
+		26D416661A5B1FE80079AD89 /* Spot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spot.h; sourceTree = "<group>"; };
+		26D416671A5B1FE80079AD89 /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				26D416471A5B1FB40079AD89 /* ViewController.h */,
 				26D416481A5B1FB40079AD89 /* ViewController.m */,
 				26D4164A1A5B1FB40079AD89 /* Main.storyboard */,
+				26D416661A5B1FE80079AD89 /* Spot.h */,
+				26D416671A5B1FE80079AD89 /* Spot.m */,
 				26D4164D1A5B1FB40079AD89 /* Images.xcassets */,
 				26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */,
 				26D416401A5B1FB40079AD89 /* Supporting Files */,
@@ -222,6 +227,7 @@
 				26D416491A5B1FB40079AD89 /* ViewController.m in Sources */,
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
+				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NiteSpot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NiteSpot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +420,7 @@
 				26D416621A5B1FB40079AD89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26D416631A5B1FB40079AD89 /* Build configuration list for PBXNativeTarget "NiteSpotTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +429,7 @@
 				26D416651A5B1FB40079AD89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

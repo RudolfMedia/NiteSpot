@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property NSArray *spotJSONArray;
+@property NSMutableArray *spotsArray;
 
 @end
 
