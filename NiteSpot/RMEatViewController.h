@@ -11,7 +11,9 @@
 @interface RMEatViewController : UIViewController
 
 @property NSArray *spotJSONArray;
-@property NSMutableArray *spotsArray;
+@property NSMutableArray *eatSpotsArray;
+@property NSMutableArray *drinkSpotsArray;
+@property NSMutableArray *attendSpotsArray;
 
 @end
 

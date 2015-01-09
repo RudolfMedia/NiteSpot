@@ -23,6 +23,7 @@
 @property NSString *foodType;
 @property NSString *drinkType;
 @property NSString *price;
+@property NSString *type;
 @property NSString *dailySpecial;
 @property NSString *foodMon;
 @property NSString *foodTue;

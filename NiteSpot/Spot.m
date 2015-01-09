@@ -42,6 +42,7 @@
     self.drinkSun = drinkSun;
     self.thumb = thumb;
     self.slug = slug;
+    self.type = type;
 
 
     return self;

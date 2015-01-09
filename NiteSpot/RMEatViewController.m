@@ -20,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.spotsArray = [NSMutableArray new];
+    self.eatSpotsArray = [NSMutableArray new];
+    self.drinkSpotsArray = [NSMutableArray new];
+    self.attendSpotsArray = [NSMutableArray new];
     [self downloadSpots];
 
 
@@ -29,7 +31,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    Spot *spot = [self.spotsArray objectAtIndex:indexPath.row];
+    Spot *spot = [self.eatSpotsArray objectAtIndex:indexPath.row];
     cell.cellTitle.text = spot.spotTitle;
     cell.spotImage.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
@@ -48,7 +50,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return self.spotsArray.count;
+    return self.eatSpotsArray.count;
 }
 
 
@@ -61,9 +63,6 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
         self.spotJSONArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError];
-
-
-        NSLog(@"%@",self.spotJSONArray);
 
         [self parseSpotObjects];
 
@@ -114,16 +113,28 @@
             NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
             [spot addThumbURL:[NSURL URLWithString:urlString]];
 
-            [self.spotsArray addObject:spot];
+            if ([spot.type isEqualToString:@"a"] || [spot.type isEqualToString:@"c"]) {
+
+                [self.eatSpotsArray addObject:spot];
+            }
+
+            else if ([spot.type isEqualToString:@"b"]){
+                [self.drinkSpotsArray addObject:spot];
+            }
+
+            else if ([spot.type isEqualToString:@"d"]){
+                [self.attendSpotsArray addObject:spot];
+            }
+
 
         }
-
 
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
             [self.eatCollectionView reloadData];
             
+            NSLog(@"%@ %@ %@",self.eatSpotsArray, self.drinkSpotsArray, self.attendSpotsArray);
 
         });
     });
