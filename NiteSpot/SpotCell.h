@@ -12,5 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *cellTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *spotImage;
+@property (weak, nonatomic) IBOutlet UIImageView *drinkCellImage;
+@property (weak, nonatomic) IBOutlet UILabel *drinkCellTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *attendImageView;
+@property (weak, nonatomic) IBOutlet UILabel *attendCellTitle;
 
 @end

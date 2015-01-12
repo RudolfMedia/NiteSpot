@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navBar6"] forBarMetrics:UIBarMetricsDefault];
+
     return YES;
 }
 

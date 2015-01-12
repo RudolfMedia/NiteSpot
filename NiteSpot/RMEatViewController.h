@@ -15,5 +15,6 @@
 @property NSMutableArray *drinkSpotsArray;
 @property NSMutableArray *attendSpotsArray;
 
+
 @end
 

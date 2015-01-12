@@ -10,4 +10,6 @@
 
 @interface RMDrinkViewController : UIViewController
 
+@property NSArray *drinkSpotsArray;
+
 @end

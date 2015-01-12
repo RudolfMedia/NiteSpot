@@ -11,6 +11,7 @@
 		2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */; };
 		2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */; };
 		2628B3111A5DDD5C0008A533 /* SpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* SpotCell.m */; };
+		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
 		26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* RMEatViewController.m */; };
@@ -40,6 +41,7 @@
 		2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapSearchViewController.m; sourceTree = "<group>"; };
 		2628B30F1A5DDD5C0008A533 /* SpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotCell.h; sourceTree = "<group>"; };
 		2628B3101A5DDD5C0008A533 /* SpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotCell.m; sourceTree = "<group>"; };
+		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D416421A5B1FB40079AD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,7 @@
 		26D416341A5B1FB40079AD89 = {
 			isa = PBXGroup;
 			children = (
+				26968B801A638A1C00757E32 /* MapKit.framework */,
 				26D4163F1A5B1FB40079AD89 /* NiteSpot */,
 				26D416591A5B1FB40079AD89 /* NiteSpotTests */,
 				26D4163E1A5B1FB40079AD89 /* Products */,

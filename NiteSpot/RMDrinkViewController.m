@@ -7,8 +7,12 @@
 //
 
 #import "RMDrinkViewController.h"
+#import "SpotCell.h"
+#import "RMEatViewController.h"
+#import "Spot.h"
 
-@interface RMDrinkViewController ()
+@interface RMDrinkViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
 
 @end
 
@@ -16,22 +20,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSLog(@"%@", self.drinkSpotsArray);
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - CollectionView Datsource / Delegate
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+
+    return self.drinkSpotsArray.count;
 }
 
-/*
-#pragma mark - Navigation
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Spot *spot = [self.drinkSpotsArray objectAtIndex:indexPath.row];
+    cell.drinkCellTitle.text = spot.spotTitle;
+    cell.drinkCellImage.image = nil;
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            UIImage *cellImage = [UIImage imageWithData:data];
+            cell.drinkCellImage.image = cellImage;
+        });
+    }];
+
+    return cell;
 }
-*/
+
+
+
+
+
 
 @end

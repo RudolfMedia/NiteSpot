@@ -10,4 +10,6 @@
 
 @interface RMAttendViewController : UIViewController
 
+@property NSArray *attendSpotsArray;
+
 @end

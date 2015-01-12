@@ -7,10 +7,12 @@
 //
 
 #import "RMEatViewController.h"
+#import "RMDrinkViewController.h"
+#import "RMAttendViewController.h"
 #import "Spot.h"
 #import "SpotCell.h"
 
-@interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
 
@@ -23,10 +25,38 @@
     self.eatSpotsArray = [NSMutableArray new];
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
+
+    [self setUpTabBar];
+
+    self.tabBarController.delegate = self;
+
     [self downloadSpots];
 
 
 }
+
+#pragma mark - TabBar Delegate
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+
+    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMDrinkViewController class]]) {
+        RMDrinkViewController *destination = (RMDrinkViewController *)viewController.childViewControllers.firstObject;
+        destination.drinkSpotsArray = self.drinkSpotsArray;
+
+    }
+    
+    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
+
+        RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
+        destination.attendSpotsArray = self.attendSpotsArray;
+    }
+
+    return TRUE;
+}
+
+
+
+#pragma mark - CollectionvView Datasource / Delegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -133,14 +163,71 @@
         dispatch_async(dispatch_get_main_queue(), ^{
 
             [self.eatCollectionView reloadData];
-            
-            NSLog(@"%@ %@ %@",self.eatSpotsArray, self.drinkSpotsArray, self.attendSpotsArray);
+
+            NSUInteger countEat = [self.eatSpotsArray count];
+            for (NSUInteger i = 0; i < countEat; ++i) {
+                NSUInteger nElements = countEat - i;
+                NSUInteger n = (arc4random() % nElements) + i;
+             [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+            }
+
+            NSUInteger countDrink = [self.drinkSpotsArray count];
+            for (NSUInteger i = 0; i < countDrink; ++i) {
+                NSUInteger nElements = countDrink - i;
+                NSUInteger n = (arc4random() % nElements) + i;
+                [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+            }
+
+            NSUInteger countAttend = [self.eatSpotsArray count];
+            for (NSUInteger i = 0; i < countAttend; ++i) {
+                NSUInteger nElements = countAttend - i;
+                NSUInteger n = (arc4random() % nElements) + i;
+                [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+            }
 
         });
     });
 
 
 }
+
+
+- (void)setUpTabBar{
+
+    UITabBar *customTabBar = self.tabBarController.tabBar;
+    customTabBar.tintColor = [UIColor clearColor];
+    customTabBar.backgroundColor = [UIColor clearColor];
+
+    UITabBarItem *eatTab = [customTabBar.items objectAtIndex:0];
+    eatTab.image = [[UIImage imageNamed:@"eat6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    eatTab.selectedImage = [[UIImage imageNamed:@"eatPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    eatTab.title = nil;
+
+    UITabBarItem *drinkTab = [customTabBar.items objectAtIndex:1];
+    drinkTab.image = [[UIImage imageNamed:@"drink6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    drinkTab.selectedImage = [[UIImage imageNamed:@"drinkPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    drinkTab.title = nil;
+
+    UITabBarItem *attendTab = [customTabBar.items objectAtIndex:2];
+    attendTab.image = [[UIImage imageNamed:@"attend6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    attendTab.selectedImage = [[UIImage imageNamed:@"attendPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    attendTab.title = nil;
+
+    UITabBarItem *mapTab = [customTabBar.items objectAtIndex:3];
+    mapTab.image = [[UIImage imageNamed:@"map6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mapTab.selectedImage = [[UIImage imageNamed:@"mapPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mapTab.title = nil;
+
+
+}
+
+
+
+
+
+
+
+
 
 
 @end

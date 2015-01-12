@@ -8,7 +8,11 @@
 
 #import "RMMapSearchViewController.h"
 
-@interface RMMapSearchViewController ()
+@interface RMMapSearchViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
+
+@property CLLocationCoordinate2D currentLocation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet MKMapView *spotMapView;
 
 @end
 
@@ -16,22 +20,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Location Delegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+
+
+    for (CLLocation *current in locations) {
+        if (current.horizontalAccuracy < 100 && current.verticalAccuracy < 100) {
+            [self.locationManager stopUpdatingLocation];
+            [self setMapRegion];
+            break;
+        }
+    }
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"%@",error);
 }
-*/
+
+- (void)setMapRegion{
+
+    CLLocationCoordinate2D zoomCenter;
+    zoomCenter = self.locationManager.location.coordinate;
+
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(zoomCenter, 800, 1000);
+
+    [self.spotMapView setRegion:zoomRegion animated:YES];
+    [self.spotMapView showsUserLocation];
+    
+    
+}
 
 @end
