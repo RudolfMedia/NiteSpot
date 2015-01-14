@@ -57,6 +57,10 @@
 		26D4165C1A5B1FB40079AD89 /* NiteSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiteSpotTests.m; sourceTree = "<group>"; };
 		26D416661A5B1FE80079AD89 /* Spot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spot.h; sourceTree = "<group>"; };
 		26D416671A5B1FE80079AD89 /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spot.m; sourceTree = "<group>"; };
+		26ECF48F1A65E5DE00697BBF /* texgyreadventor-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bold.otf"; sourceTree = "<group>"; };
+		26ECF4901A65E5DE00697BBF /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
+		26ECF4911A65E5DE00697BBF /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
+		26ECF4921A65E5DE00697BBF /* texgyreadventor-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				26D416411A5B1FB40079AD89 /* Info.plist */,
+				26ECF48F1A65E5DE00697BBF /* texgyreadventor-bold.otf */,
+				26ECF4901A65E5DE00697BBF /* texgyreadventor-bolditalic.otf */,
+				26ECF4911A65E5DE00697BBF /* texgyreadventor-italic.otf */,
+				26ECF4921A65E5DE00697BBF /* texgyreadventor-regular.otf */,
 				26D416421A5B1FB40079AD89 /* main.m */,
 			);
 			name = "Supporting Files";

@@ -3,6 +3,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="texgyreadventor-regular.otf">
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Drink View Controller-->
         <scene sceneID="EFO-15-bl5">
@@ -13,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IGn-GK-w9D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="htb-6W-oH8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
@@ -41,14 +48,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH8-lJ-yud">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="206" width="273" height="25"/>
+                                                        <rect key="frame" x="8" y="206" width="273" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -112,7 +119,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8VY-fh-kXX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dtX-6D-Jl6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
@@ -140,14 +147,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="206" width="273" height="25"/>
+                                                        <rect key="frame" x="8" y="202" width="273" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -194,6 +201,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="4BJ-hb-OCj"/>
+                    <connections>
+                        <outlet property="attendCollectionView" destination="mJc-iZ-HH6" id="CTg-qW-rIp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTs-J6-olS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +218,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wOr-Yq-klW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Iy6-wD-59Z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fl-Ud-ZWF">
@@ -249,7 +259,7 @@
                         <viewControllerLayoutGuide type="bottom" id="s2Z-Iv-1N5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2dF-IX-Uun">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
@@ -277,14 +287,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="206" width="273" height="25"/>
+                                                        <rect key="frame" x="8" y="206" width="273" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -349,7 +359,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="tGa-Pv-kHo">
             <objects>
-                <tabBarController id="8I7-AL-W97" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="crossDissolve" id="8I7-AL-W97" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="aea-0s-OPJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

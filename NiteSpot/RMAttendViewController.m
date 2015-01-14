@@ -12,16 +12,37 @@
 
 @interface RMAttendViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
+@property (weak, nonatomic) IBOutlet UICollectionView *attendCollectionView;
+
 @end
 
 @implementation RMAttendViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
 
 
     NSLog(@"%@",self.attendSpotsArray);
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.attendCollectionView.alpha = 0;
+
+    [UIView transitionWithView:self.attendCollectionView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        self.attendCollectionView.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
+    
+}
+
 
 
 #pragma mark - CollectionView DataSource / Delegate
@@ -41,6 +62,19 @@
             cell.attendImageView.image = cellImage;
         });
     }];
+    cell.alpha = 0.0f;
+
+    [UIView transitionWithView:cell.contentView
+                      duration:0.35f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        cell.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
+
 
     return cell;
 

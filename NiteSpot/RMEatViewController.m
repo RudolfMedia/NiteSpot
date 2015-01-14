@@ -25,6 +25,7 @@
     self.eatSpotsArray = [NSMutableArray new];
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
+    self.view.backgroundColor = [UIColor blackColor];
 
     [self setUpTabBar];
 
@@ -33,6 +34,23 @@
     [self downloadSpots];
 
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.eatCollectionView.alpha = 0;
+
+    [UIView transitionWithView:self.eatCollectionView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        self.eatCollectionView.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
+    
 }
 
 #pragma mark - TabBar Delegate
@@ -54,7 +72,9 @@
     return TRUE;
 }
 
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
 
+}
 
 #pragma mark - CollectionvView Datasource / Delegate
 
@@ -74,6 +94,19 @@
         });
     }];
 
+    cell.alpha = 0.0f;
+
+    [UIView transitionWithView:cell.contentView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        cell.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
     return cell;
 }
 

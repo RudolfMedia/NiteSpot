@@ -21,7 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@", self.drinkSpotsArray);
+    self.view.backgroundColor = [UIColor blackColor];
 
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.drinkCollectionView.alpha = 0;
+
+    [UIView transitionWithView:self.drinkCollectionView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        self.drinkCollectionView.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
 
 }
 
@@ -47,6 +65,20 @@
             cell.drinkCellImage.image = cellImage;
         });
     }];
+    cell.alpha = 0.0f;
+
+    [UIView transitionWithView:cell.contentView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        cell.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
+
 
     return cell;
 }

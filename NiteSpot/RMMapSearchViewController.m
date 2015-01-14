@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -27,6 +28,24 @@
     [self.locationManager startUpdatingLocation];
 
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.spotMapView.alpha = 0;
+
+    [UIView transitionWithView:self.spotMapView
+                      duration:0.40f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        self.spotMapView.alpha = 1.0f;
+
+                    } completion:^(BOOL finished) {
+                    }];
+    
+    
+}
+
 
 #pragma mark - Location Delegate
 
