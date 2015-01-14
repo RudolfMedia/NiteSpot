@@ -26,17 +26,17 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iis-sC-1iT">
-                                    <size key="itemSize" width="400" height="266"/>
+                                    <size key="itemSize" width="400" height="236"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9D3-yd-kWf" customClass="SpotCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9D3-yd-kWf" customClass="DrinkCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-PN-ChN">
@@ -45,7 +45,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH8-lJ-yud">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH8-lJ-yud">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
@@ -55,7 +55,7 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="206" width="273" height="29"/>
+                                                        <rect key="frame" x="8" y="171" width="273" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -75,8 +75,8 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="drinkCellImage" destination="dvY-PN-ChN" id="alL-1D-qfj"/>
-                                            <outlet property="drinkCellTitle" destination="cH8-lJ-yud" id="sbt-zS-n0X"/>
+                                            <outlet property="drinkCellImageView" destination="dvY-PN-ChN" id="36P-hh-cmY"/>
+                                            <outlet property="drinkCellTitle" destination="cH8-lJ-yud" id="2tn-cG-aM5"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -125,17 +125,17 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SgE-dT-tGc">
-                                    <size key="itemSize" width="400" height="266"/>
+                                    <size key="itemSize" width="400" height="236"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="X82-zL-qO8" customClass="SpotCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="X82-zL-qO8" customClass="AttendCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgu-rG-eAI">
@@ -144,7 +144,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
@@ -154,7 +154,7 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="202" width="273" height="29"/>
+                                                        <rect key="frame" x="8" y="171" width="273" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -174,8 +174,8 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="attendCellTitle" destination="Gxc-H6-ABK" id="EAy-Ur-623"/>
-                                            <outlet property="attendImageView" destination="Qgu-rG-eAI" id="hW9-wn-3kW"/>
+                                            <outlet property="attendCellImageView" destination="Qgu-rG-eAI" id="jaj-eq-S1V"/>
+                                            <outlet property="attendCellTitle" destination="Gxc-H6-ABK" id="l2W-59-p4A"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -265,17 +265,17 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
-                                    <size key="itemSize" width="400" height="266"/>
+                                    <size key="itemSize" width="400" height="236"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xnh-gz-3fy" customClass="SpotCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xnh-gz-3fy" customClass="EatCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
@@ -284,7 +284,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999999999999991" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
@@ -294,7 +294,7 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="206" width="273" height="29"/>
+                                                        <rect key="frame" x="8" y="171" width="329" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -318,8 +318,8 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="cellTitle" destination="Cgd-cm-SmU" id="rLd-vq-eEs"/>
-                                            <outlet property="spotImage" destination="Tx3-WO-tsH" id="aze-17-tO9"/>
+                                            <outlet property="eatCellImage" destination="Tx3-WO-tsH" id="n5M-71-tfa"/>
+                                            <outlet property="eatCellTitle" destination="Cgd-cm-SmU" id="ath-62-mam"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

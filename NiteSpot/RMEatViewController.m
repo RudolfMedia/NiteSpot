@@ -10,9 +10,9 @@
 #import "RMDrinkViewController.h"
 #import "RMAttendViewController.h"
 #import "Spot.h"
-#import "SpotCell.h"
+#import "EatCell.h"
 
-@interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
+@interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
 
@@ -80,24 +80,26 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    EatCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.eatSpotsArray objectAtIndex:indexPath.row];
-    cell.cellTitle.text = spot.spotTitle;
-    cell.spotImage.image = nil;
+    cell.eatCellTitle.layer.masksToBounds = YES;
+    cell.eatCellTitle.layer.cornerRadius = 3;
+    cell.eatCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.eatCellImage.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
             UIImage *cellImage = [UIImage imageWithData:data];
-            cell.spotImage.image = cellImage;
+            cell.eatCellImage.image = cellImage;
         });
     }];
 
     cell.alpha = 0.0f;
 
     [UIView transitionWithView:cell.contentView
-                      duration:0.40f
+                      duration:0.30f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
 
@@ -106,6 +108,9 @@
 
                     } completion:^(BOOL finished) {
                     }];
+    CGFloat yOffset = ((self.eatCollectionView.contentOffset.y - cell.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+    cell.imageOffset = CGPointMake(0.0f, yOffset);
+
     
     return cell;
 }
@@ -116,6 +121,14 @@
     return self.eatSpotsArray.count;
 }
 
+
+#pragma mark - ScrollView Delegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for(EatCell *view in self.eatCollectionView.visibleCells) {
+        CGFloat yOffset = ((self.eatCollectionView.contentOffset.y - view.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+        view.imageOffset = CGPointMake(0.0f, yOffset);
+    }
+}
 
 #pragma Mark - Networking and Parsing methods
 

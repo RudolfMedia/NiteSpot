@@ -7,7 +7,7 @@
 //
 
 #import "RMAttendViewController.h"
-#import "SpotCell.h"
+#import "AttendCell.h"
 #import "Spot.h"
 
 @interface RMAttendViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -49,23 +49,29 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    AttendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.attendSpotsArray objectAtIndex:indexPath.row];
-    cell.attendCellTitle.text = spot.spotTitle;
-    cell.attendImageView.image = nil;
+    cell.attendCellTitle.layer.masksToBounds = YES;
+    cell.attendCellTitle.layer.cornerRadius = 3;
+    cell.attendCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.attendCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
             UIImage *cellImage = [UIImage imageWithData:data];
-            cell.attendImageView.image = cellImage;
+            cell.attendCellImageView.image = cellImage;
         });
     }];
     cell.alpha = 0.0f;
+    
+    CGFloat yOffset = ((self.attendCollectionView.contentOffset.y - cell.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+    cell.imageOffset = CGPointMake(0.0f, yOffset);
+
 
     [UIView transitionWithView:cell.contentView
-                      duration:0.35f
+                      duration:0.3f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
 
@@ -73,12 +79,8 @@
 
                     } completion:^(BOOL finished) {
                     }];
-    
-
 
     return cell;
-
-
 
 }
 
@@ -86,4 +88,13 @@
 
     return self.attendSpotsArray.count;
 }
+
+#pragma mark - ScrollView Delegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for(AttendCell *view in self.attendCollectionView.visibleCells) {
+        CGFloat yOffset = ((self.attendCollectionView.contentOffset.y - view.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+        view.imageOffset = CGPointMake(0.0f, yOffset);
+    }
+}
+
 @end

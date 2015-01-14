@@ -7,7 +7,7 @@
 //
 
 #import "RMDrinkViewController.h"
-#import "SpotCell.h"
+#import "DrinkCell.h"
 #import "RMEatViewController.h"
 #import "Spot.h"
 
@@ -52,23 +52,29 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    SpotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    DrinkCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.drinkSpotsArray objectAtIndex:indexPath.row];
-    cell.drinkCellTitle.text = spot.spotTitle;
-    cell.drinkCellImage.image = nil;
+    cell.drinkCellTitle.layer.masksToBounds = YES;
+    cell.drinkCellTitle.layer.cornerRadius = 3;
+    cell.drinkCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.drinkCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
             UIImage *cellImage = [UIImage imageWithData:data];
-            cell.drinkCellImage.image = cellImage;
+            cell.drinkCellImageView.image = cellImage;
         });
     }];
+
+    CGFloat yOffset = ((self.drinkCollectionView.contentOffset.y - cell.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+    cell.imageOffset = CGPointMake(0.0f, yOffset);
+
     cell.alpha = 0.0f;
 
     [UIView transitionWithView:cell.contentView
-                      duration:0.40f
+                      duration:0.30f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^{
 
@@ -77,11 +83,18 @@
 
                     } completion:^(BOOL finished) {
                     }];
-    
-
 
     return cell;
 }
+
+#pragma mark - ScrollView Delegate methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    for(DrinkCell *view in self.drinkCollectionView.visibleCells) {
+        CGFloat yOffset = ((self.drinkCollectionView.contentOffset.y - view.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
+        view.imageOffset = CGPointMake(0.0f, yOffset);
+    }
+}
+
 
 
 

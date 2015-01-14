@@ -10,7 +10,7 @@
 		2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */; };
 		2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */; };
 		2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */; };
-		2628B3111A5DDD5C0008A533 /* SpotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* SpotCell.m */; };
+		2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* EatCell.m */; };
 		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
@@ -20,6 +20,8 @@
 		26D416511A5B1FB40079AD89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */; };
 		26D4165D1A5B1FB40079AD89 /* NiteSpotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4165C1A5B1FB40079AD89 /* NiteSpotTests.m */; };
 		26D416681A5B1FE80079AD89 /* Spot.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416671A5B1FE80079AD89 /* Spot.m */; };
+		26ECF4951A65F4B100697BBF /* DrinkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF4941A65F4B100697BBF /* DrinkCell.m */; };
+		26ECF4981A65F4D100697BBF /* AttendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF4971A65F4D100697BBF /* AttendCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,8 @@
 		2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAttendViewController.m; sourceTree = "<group>"; };
 		2628B30C1A5DD81C0008A533 /* RMMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapSearchViewController.h; sourceTree = "<group>"; };
 		2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapSearchViewController.m; sourceTree = "<group>"; };
-		2628B30F1A5DDD5C0008A533 /* SpotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotCell.h; sourceTree = "<group>"; };
-		2628B3101A5DDD5C0008A533 /* SpotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotCell.m; sourceTree = "<group>"; };
+		2628B30F1A5DDD5C0008A533 /* EatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatCell.h; sourceTree = "<group>"; };
+		2628B3101A5DDD5C0008A533 /* EatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatCell.m; sourceTree = "<group>"; };
 		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,10 @@
 		26ECF4901A65E5DE00697BBF /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
 		26ECF4911A65E5DE00697BBF /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
 		26ECF4921A65E5DE00697BBF /* texgyreadventor-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-regular.otf"; sourceTree = "<group>"; };
+		26ECF4931A65F4B100697BBF /* DrinkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkCell.h; sourceTree = "<group>"; };
+		26ECF4941A65F4B100697BBF /* DrinkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkCell.m; sourceTree = "<group>"; };
+		26ECF4961A65F4D100697BBF /* AttendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendCell.h; sourceTree = "<group>"; };
+		26ECF4971A65F4D100697BBF /* AttendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +121,12 @@
 				2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */,
 				2628B30C1A5DD81C0008A533 /* RMMapSearchViewController.h */,
 				2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */,
-				2628B30F1A5DDD5C0008A533 /* SpotCell.h */,
-				2628B3101A5DDD5C0008A533 /* SpotCell.m */,
+				2628B30F1A5DDD5C0008A533 /* EatCell.h */,
+				2628B3101A5DDD5C0008A533 /* EatCell.m */,
+				26ECF4931A65F4B100697BBF /* DrinkCell.h */,
+				26ECF4941A65F4B100697BBF /* DrinkCell.m */,
+				26ECF4961A65F4D100697BBF /* AttendCell.h */,
+				26ECF4971A65F4D100697BBF /* AttendCell.m */,
 				26D416661A5B1FE80079AD89 /* Spot.h */,
 				26D416671A5B1FE80079AD89 /* Spot.m */,
 				26D4164D1A5B1FB40079AD89 /* Images.xcassets */,
@@ -257,9 +267,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */,
+				26ECF4981A65F4D100697BBF /* AttendCell.m in Sources */,
 				2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */,
+				26ECF4951A65F4B100697BBF /* DrinkCell.m in Sources */,
 				26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */,
-				2628B3111A5DDD5C0008A533 /* SpotCell.m in Sources */,
+				2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */,
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
 				2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
