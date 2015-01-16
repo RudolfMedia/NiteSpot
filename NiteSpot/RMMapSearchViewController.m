@@ -52,6 +52,8 @@
         CLLocationCoordinate2D attendLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
         attendAnnotation.coordinate = attendLocation;
         attendAnnotation.title = spot.spotTitle;
+
+        [self.spotMapView addAnnotation:attendAnnotation];
     }
 
 }
