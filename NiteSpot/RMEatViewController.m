@@ -9,8 +9,12 @@
 #import "RMEatViewController.h"
 #import "RMDrinkViewController.h"
 #import "RMAttendViewController.h"
+#import "RMMapSearchViewController.h"
 #import "Spot.h"
 #import "EatCell.h"
+
+#define API_KEY 5
+
 
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
@@ -26,6 +30,7 @@
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
     self.view.backgroundColor = [UIColor blackColor];
+    self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
 
     [self setUpTabBar];
 
@@ -66,6 +71,14 @@
     else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
 
         RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
+        destination.attendSpotsArray = self.attendSpotsArray;
+    }
+
+    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
+
+        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
+        destination.eatSpotsArray = self.eatSpotsArray;
+        destination.drinkSpotsArray = self.drinkSpotsArray;
         destination.attendSpotsArray = self.attendSpotsArray;
     }
 
@@ -189,6 +202,24 @@
             NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
             [spot addThumbURL:[NSURL URLWithString:urlString]];
 
+            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+
+            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
+            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
+
+            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+
+                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
+                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
+
+
+
+            }];
+
+
+
             if ([spot.type isEqualToString:@"a"] || [spot.type isEqualToString:@"c"]) {
 
                 [self.eatSpotsArray addObject:spot];
@@ -266,6 +297,8 @@
 
 
 }
+
+
 
 
 

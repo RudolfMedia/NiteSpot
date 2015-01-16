@@ -12,6 +12,12 @@
 		2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */; };
 		2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* EatCell.m */; };
 		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
+		26A1F6721A68795300845917 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6711A68795300845917 /* AddressBook.framework */; };
+		26A1F6741A68795A00845917 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6731A68795A00845917 /* CoreLocation.framework */; };
+		26A1F6761A68796600845917 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6751A68796600845917 /* SystemConfiguration.framework */; };
+		26A1F6781A68797400845917 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6771A68797400845917 /* QuartzCore.framework */; };
+		26A1F67A1A68799200845917 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6791A68799200845917 /* libxml2.dylib */; };
+		26A1F67C1A6879AB00845917 /* MQMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F67B1A6879AB00845917 /* MQMapKit.framework */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
 		26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* RMEatViewController.m */; };
@@ -44,6 +50,12 @@
 		2628B30F1A5DDD5C0008A533 /* EatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatCell.h; sourceTree = "<group>"; };
 		2628B3101A5DDD5C0008A533 /* EatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatCell.m; sourceTree = "<group>"; };
 		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		26A1F6711A68795300845917 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		26A1F6731A68795A00845917 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		26A1F6751A68796600845917 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		26A1F6771A68797400845917 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		26A1F6791A68799200845917 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		26A1F67B1A6879AB00845917 /* MQMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MQMapKit.framework; path = ../../../Downloads/MQMapKit_1.1/MQMapKit.framework; sourceTree = "<group>"; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D416421A5B1FB40079AD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,6 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A1F67C1A6879AB00845917 /* MQMapKit.framework in Frameworks */,
+				26A1F67A1A68799200845917 /* libxml2.dylib in Frameworks */,
+				26A1F6781A68797400845917 /* QuartzCore.framework in Frameworks */,
+				26A1F6761A68796600845917 /* SystemConfiguration.framework in Frameworks */,
+				26A1F6741A68795A00845917 /* CoreLocation.framework in Frameworks */,
+				26A1F6721A68795300845917 /* AddressBook.framework in Frameworks */,
 				26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +109,12 @@
 		26D416341A5B1FB40079AD89 = {
 			isa = PBXGroup;
 			children = (
+				26A1F67B1A6879AB00845917 /* MQMapKit.framework */,
+				26A1F6791A68799200845917 /* libxml2.dylib */,
+				26A1F6771A68797400845917 /* QuartzCore.framework */,
+				26A1F6751A68796600845917 /* SystemConfiguration.framework */,
+				26A1F6731A68795A00845917 /* CoreLocation.framework */,
+				26A1F6711A68795300845917 /* AddressBook.framework */,
 				26968B801A638A1C00757E32 /* MapKit.framework */,
 				26D4163F1A5B1FB40079AD89 /* NiteSpot */,
 				26D416591A5B1FB40079AD89 /* NiteSpotTests */,
@@ -397,6 +421,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/danRudolf,
+					1/Downloads/MQMapKit_1.1,
+				);
 				INFOPLIST_FILE = NiteSpot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -408,6 +438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/danRudolf,
+					1/Downloads/MQMapKit_1.1,
+				);
 				INFOPLIST_FILE = NiteSpot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

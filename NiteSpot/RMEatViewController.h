@@ -14,6 +14,7 @@
 @property NSMutableArray *eatSpotsArray;
 @property NSMutableArray *drinkSpotsArray;
 @property NSMutableArray *attendSpotsArray;
+@property NSString *apiKey;
 
 
 @end

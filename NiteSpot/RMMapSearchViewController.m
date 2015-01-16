@@ -7,6 +7,7 @@
 //
 
 #import "RMMapSearchViewController.h"
+#import "Spot.h"
 
 @interface RMMapSearchViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -24,8 +25,34 @@
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
+    self.spotMapView.delegate = self;
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
+
+    for (Spot *spot in self.eatSpotsArray) {
+        MKPointAnnotation *eatAnnotation = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D eatLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
+        eatAnnotation.coordinate = eatLocation;
+        eatAnnotation.title = spot.spotTitle;
+
+        [self.spotMapView addAnnotation:eatAnnotation];
+    }
+
+    for (Spot *spot in self.drinkSpotsArray) {
+        MKPointAnnotation *drinkAnnotation = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D drinkLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
+        drinkAnnotation.coordinate = drinkLocation;
+        drinkAnnotation.title = spot.spotTitle;
+
+        [self.spotMapView addAnnotation:drinkAnnotation];
+    }
+
+    for (Spot *spot in self.attendSpotsArray) {
+        MKPointAnnotation *attendAnnotation = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D attendLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
+        attendAnnotation.coordinate = attendLocation;
+        attendAnnotation.title = spot.spotTitle;
+    }
 
 }
 

@@ -54,4 +54,13 @@
     return self;
 }
 
+-(Spot *) addlat:(NSString *)lat andLon:(NSString *)lon{
+
+    self.lat = lat;
+    self.lon = lon;
+    return self;
+
+}
+
+
 @end

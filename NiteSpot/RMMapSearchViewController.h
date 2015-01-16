@@ -11,4 +11,8 @@
 
 @interface RMMapSearchViewController : UIViewController
 
+@property NSArray *eatSpotsArray;
+@property NSArray *drinkSpotsArray;
+@property NSArray *attendSpotsArray;
+
 @end

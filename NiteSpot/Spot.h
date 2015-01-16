@@ -43,6 +43,8 @@
 @property NSString *slug;
 @property NSString *thumb;
 @property NSURL *thumbURL;
+@property NSArray *lat;
+@property NSArray *lon;
 
 - (Spot *) initWithName:(NSString *)name
                    type:(NSString *)type
@@ -76,6 +78,8 @@
                   thumb:(NSString *)thumb;
 
 - (Spot *) addThumbURL:(NSURL *)url;
+
+-(Spot *) addlat:(NSString *)lat andLon:(NSString *)lon;
 
 
 @end
