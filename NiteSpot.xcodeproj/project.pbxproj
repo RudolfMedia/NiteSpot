@@ -18,6 +18,9 @@
 		26A1F6781A68797400845917 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6771A68797400845917 /* QuartzCore.framework */; };
 		26A1F67A1A68799200845917 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6791A68799200845917 /* libxml2.dylib */; };
 		26A1F67C1A6879AB00845917 /* MQMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F67B1A6879AB00845917 /* MQMapKit.framework */; };
+		26A1F67F1A68BE7700845917 /* RMEatAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1F67E1A68BE7700845917 /* RMEatAnnotation.m */; };
+		26A1F6821A68C25100845917 /* RMDrinkAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1F6811A68C25100845917 /* RMDrinkAnnotation.m */; };
+		26A1F6851A68C27B00845917 /* RMAttendAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1F6841A68C27B00845917 /* RMAttendAnnotation.m */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
 		26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* RMEatViewController.m */; };
@@ -56,6 +59,12 @@
 		26A1F6771A68797400845917 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		26A1F6791A68799200845917 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		26A1F67B1A6879AB00845917 /* MQMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MQMapKit.framework; path = ../../../Downloads/MQMapKit_1.1/MQMapKit.framework; sourceTree = "<group>"; };
+		26A1F67D1A68BE7700845917 /* RMEatAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMEatAnnotation.h; sourceTree = "<group>"; };
+		26A1F67E1A68BE7700845917 /* RMEatAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMEatAnnotation.m; sourceTree = "<group>"; };
+		26A1F6801A68C25100845917 /* RMDrinkAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDrinkAnnotation.h; sourceTree = "<group>"; };
+		26A1F6811A68C25100845917 /* RMDrinkAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDrinkAnnotation.m; sourceTree = "<group>"; };
+		26A1F6831A68C27B00845917 /* RMAttendAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAttendAnnotation.h; sourceTree = "<group>"; };
+		26A1F6841A68C27B00845917 /* RMAttendAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAttendAnnotation.m; sourceTree = "<group>"; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D416421A5B1FB40079AD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +162,12 @@
 				26ECF4971A65F4D100697BBF /* AttendCell.m */,
 				26D416661A5B1FE80079AD89 /* Spot.h */,
 				26D416671A5B1FE80079AD89 /* Spot.m */,
+				26A1F6831A68C27B00845917 /* RMAttendAnnotation.h */,
+				26A1F6841A68C27B00845917 /* RMAttendAnnotation.m */,
+				26A1F6801A68C25100845917 /* RMDrinkAnnotation.h */,
+				26A1F6811A68C25100845917 /* RMDrinkAnnotation.m */,
+				26A1F67D1A68BE7700845917 /* RMEatAnnotation.h */,
+				26A1F67E1A68BE7700845917 /* RMEatAnnotation.m */,
 				26D4164D1A5B1FB40079AD89 /* Images.xcassets */,
 				26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */,
 				26D416401A5B1FB40079AD89 /* Supporting Files */,
@@ -294,12 +309,15 @@
 				26ECF4981A65F4D100697BBF /* AttendCell.m in Sources */,
 				2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */,
 				26ECF4951A65F4B100697BBF /* DrinkCell.m in Sources */,
+				26A1F6821A68C25100845917 /* RMDrinkAnnotation.m in Sources */,
 				26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */,
 				2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */,
+				26A1F67F1A68BE7700845917 /* RMEatAnnotation.m in Sources */,
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
 				2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
 				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
+				26A1F6851A68C27B00845917 /* RMAttendAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
