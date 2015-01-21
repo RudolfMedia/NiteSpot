@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *drinkCellImageView;
 @property (weak, nonatomic) IBOutlet UILabel *drinkCellTitle;
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end

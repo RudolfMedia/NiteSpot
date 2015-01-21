@@ -50,10 +50,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     AttendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+
     Spot *spot = [self.attendSpotsArray objectAtIndex:indexPath.row];
+
     cell.attendCellTitle.layer.masksToBounds = YES;
     cell.attendCellTitle.layer.cornerRadius = 3;
     cell.attendCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+
+    cell.addressLabel.layer.masksToBounds = YES;
+    cell.addressLabel.layer.cornerRadius = 3;
+    cell.addressLabel.text = [NSString stringWithFormat:@" %@", spot.spotStreet];
+
     cell.attendCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {

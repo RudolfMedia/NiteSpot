@@ -12,6 +12,7 @@
 #import "RMMapSearchViewController.h"
 #import "Spot.h"
 #import "EatCell.h"
+#import "SAMGradientView.h"
 
 #define API_KEY 5
 
@@ -85,19 +86,22 @@
     return TRUE;
 }
 
--(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-
-}
-
-#pragma mark - CollectionvView Datasource / Delegate
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     EatCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.eatSpotsArray objectAtIndex:indexPath.row];
+
     cell.eatCellTitle.layer.masksToBounds = YES;
     cell.eatCellTitle.layer.cornerRadius = 3;
     cell.eatCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+
+    cell.eatCellAddress.layer.masksToBounds = YES;
+    cell.eatCellAddress.layer.cornerRadius = 3;
+    cell.eatCellAddress.text = [NSString stringWithFormat:@" %@", spot.spotStreet];
+
+    cell.pricelabel.layer.masksToBounds = YES;
+    cell.pricelabel.layer.cornerRadius = 20;
+    cell.pricelabel.text = spot.price;
     cell.eatCellImage.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -197,6 +201,10 @@
                                               thumb:[dictionary objectForKey:@"thumb"]];
             NSString *slug = spot.slug;
             slug = [slug stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+
+            if ([spot.price.class isSubclassOfClass:[NSNull class]]) {
+                spot.price = @"$$";
+            }
 
 
             NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];

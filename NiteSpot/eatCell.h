@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#define IMAGE_HEIGHT 266
-#define IMAGE_OFFSET_SPEED 12
+#define IMAGE_HEIGHT 192
+#define IMAGE_OFFSET_SPEED 25
 
 @interface EatCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *eatCellTitle;
 @property (strong, nonatomic) IBOutlet UIImageView *eatCellImage;
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
+@property (weak, nonatomic) IBOutlet UILabel *eatCellAddress;
+@property (weak, nonatomic) IBOutlet UILabel *pricelabel;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+
 
 
 

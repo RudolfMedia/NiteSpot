@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *attendCellTitle;
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
 
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end

@@ -54,9 +54,15 @@
 
     DrinkCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.drinkSpotsArray objectAtIndex:indexPath.row];
+
     cell.drinkCellTitle.layer.masksToBounds = YES;
     cell.drinkCellTitle.layer.cornerRadius = 3;
     cell.drinkCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+
+    cell.addressLabel.layer.masksToBounds = YES;
+    cell.addressLabel.layer.cornerRadius = 3;
+    cell.addressLabel.text = [NSString stringWithFormat:@" %@",spot.spotStreet];
+
     cell.drinkCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {

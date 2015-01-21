@@ -17,10 +17,11 @@
 
     // Add image subview
     self.eatCellImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, IMAGE_HEIGHT)];
-    self.eatCellImage.backgroundColor = [UIColor redColor];
+    self.eatCellImage.backgroundColor = [UIColor blackColor];
     self.eatCellImage.contentMode = UIViewContentModeScaleAspectFill;
     self.eatCellImage.clipsToBounds = NO;
     [self addSubview:self.eatCellImage];
+    
 }
 
 - (void)setImage:(UIImage *)image
@@ -30,6 +31,7 @@
 
     // Update padding
     [self setImageOffset:self.imageOffset];
+    
 }
 
 - (void)setImageOffset:(CGPoint)imageOffset

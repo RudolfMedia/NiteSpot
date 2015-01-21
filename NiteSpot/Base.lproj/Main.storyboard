@@ -8,6 +8,7 @@
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -55,7 +56,26 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="171" width="273" height="29"/>
+                                                        <rect key="frame" x="8" y="166" width="285" height="29"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drinkicon" translatesAutoresizingMaskIntoConstraints="NO" id="OBy-zF-IV8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9Y-gM-OWM">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26" y="199" width="267" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -66,17 +86,23 @@
                                             <mask key="subviews">
                                                 <exclude reference="dvY-PN-ChN"/>
                                                 <exclude reference="cH8-lJ-yud"/>
+                                                <exclude reference="OBy-zF-IV8"/>
+                                                <exclude reference="p9Y-gM-OWM"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="dvY-PN-ChN"/>
                                                 <include reference="cH8-lJ-yud"/>
+                                                <include reference="OBy-zF-IV8"/>
+                                                <include reference="p9Y-gM-OWM"/>
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="addressLabel" destination="p9Y-gM-OWM" id="dDO-81-4VM"/>
                                             <outlet property="drinkCellImageView" destination="dvY-PN-ChN" id="36P-hh-cmY"/>
                                             <outlet property="drinkCellTitle" destination="cH8-lJ-yud" id="2tn-cG-aM5"/>
+                                            <segue destination="HS6-ip-UTY" kind="show" id="5e6-7V-xEG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -154,7 +180,26 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="171" width="273" height="29"/>
+                                                        <rect key="frame" x="8" y="166" width="285" height="29"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attendicon" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-Lf-tn1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lq-Q6-Rwt">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26" y="199" width="267" height="29"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -165,15 +210,20 @@
                                             <mask key="subviews">
                                                 <exclude reference="Qgu-rG-eAI"/>
                                                 <exclude reference="Gxc-H6-ABK"/>
+                                                <exclude reference="uDM-Lf-tn1"/>
+                                                <exclude reference="8Lq-Q6-Rwt"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="Qgu-rG-eAI"/>
                                                 <include reference="Gxc-H6-ABK"/>
+                                                <include reference="uDM-Lf-tn1"/>
+                                                <include reference="8Lq-Q6-Rwt"/>
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="addressLabel" destination="8Lq-Q6-Rwt" id="Ch7-8H-Yew"/>
                                             <outlet property="attendCellImageView" destination="Qgu-rG-eAI" id="jaj-eq-S1V"/>
                                             <outlet property="attendCellTitle" destination="Gxc-H6-ABK" id="l2W-59-p4A"/>
                                         </connections>
@@ -208,6 +258,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTs-J6-olS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1920" y="1141.5"/>
+        </scene>
+        <!--Spot Detail View-->
+        <scene sceneID="qil-Gt-INx">
+            <objects>
+                <viewController id="HS6-ip-UTY" customClass="RMSpotDetailView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CRa-VT-uJ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vcz-Yt-0sH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zej-gD-2q1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-v7-faj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hJG-v7-faj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hJG-v7-faj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBb-Fp-JlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2928" y="88.5"/>
         </scene>
         <!--Map Search View Controller-->
         <scene sceneID="pfA-1R-nf3">
@@ -265,7 +350,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
-                                    <size key="itemSize" width="400" height="236"/>
+                                    <size key="itemSize" width="400" height="238"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
@@ -275,7 +360,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="236"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="238"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
@@ -284,6 +369,19 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
                                                     </variation>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02p-eV-R4M">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="26" y="199" width="267" height="29"/>
+                                                    </variation>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -294,7 +392,23 @@
                                                         <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="171" width="329" height="29"/>
+                                                        <rect key="frame" x="8" y="166" width="285" height="29"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eaticon" translatesAutoresizingMaskIntoConstraints="NO" id="XYt-c3-shQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uC-Eu-2GI">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.13326555870000001" green="0.13260254599999999" blue="0.1339285714" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="55" y="8" width="40" height="40"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -304,7 +418,10 @@
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="Tx3-WO-tsH"/>
+                                                <exclude reference="02p-eV-R4M"/>
                                                 <exclude reference="Cgd-cm-SmU"/>
+                                                <exclude reference="XYt-c3-shQ"/>
+                                                <exclude reference="7uC-Eu-2GI"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular">
@@ -315,11 +432,17 @@
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="Tx3-WO-tsH"/>
+                                                <include reference="02p-eV-R4M"/>
+                                                <include reference="XYt-c3-shQ"/>
+                                                <include reference="7uC-Eu-2GI"/>
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="eatCellAddress" destination="02p-eV-R4M" id="HnU-Ai-Hdh"/>
                                             <outlet property="eatCellImage" destination="Tx3-WO-tsH" id="n5M-71-tfa"/>
                                             <outlet property="eatCellTitle" destination="Cgd-cm-SmU" id="ath-62-mam"/>
+                                            <outlet property="pricelabel" destination="7uC-Eu-2GI" id="T9U-pL-e81"/>
+                                            <segue destination="HS6-ip-UTY" kind="show" id="bMQ-bT-9ok"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -462,4 +585,12 @@
             <point key="canvasLocation" x="1002" y="1815"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="attendicon" width="30" height="30"/>
+        <image name="drinkicon" width="30" height="30"/>
+        <image name="eaticon" width="30" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bMQ-bT-9ok"/>
+    </inferredMetricsTieBreakers>
 </document>
