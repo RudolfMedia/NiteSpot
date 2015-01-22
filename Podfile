@@ -1,1 +1,1 @@
-pod 'SAMGradientView'
+pod 'AMScrollingNavbar'

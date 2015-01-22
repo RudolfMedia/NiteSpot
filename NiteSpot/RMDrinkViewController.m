@@ -10,6 +10,7 @@
 #import "DrinkCell.h"
 #import "RMEatViewController.h"
 #import "Spot.h"
+#import "UIViewController+ScrollingNavbar.h"
 
 @interface RMDrinkViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
@@ -20,9 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.drinkSpotsArray);
     self.view.backgroundColor = [UIColor blackColor];
-
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self followScrollView:self.drinkCollectionView];
 
 }
 
@@ -57,11 +58,15 @@
 
     cell.drinkCellTitle.layer.masksToBounds = YES;
     cell.drinkCellTitle.layer.cornerRadius = 3;
-    cell.drinkCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.drinkCellTitle.text = spot.spotTitle;
 
     cell.addressLabel.layer.masksToBounds = YES;
     cell.addressLabel.layer.cornerRadius = 3;
-    cell.addressLabel.text = [NSString stringWithFormat:@" %@",spot.spotStreet];
+    cell.addressLabel.text = spot.spotStreet;
+
+    cell.priceLabel.layer.masksToBounds = YES;
+    cell.priceLabel.layer.cornerRadius = 20;
+    cell.priceLabel.text = spot.price;
 
     cell.drinkCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];

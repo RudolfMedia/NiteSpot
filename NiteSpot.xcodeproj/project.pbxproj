@@ -57,6 +57,10 @@
 		26354A101A6F0C3D0075FBCA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		26354A171A6F23070075FBCA /* RMSpotDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSpotDetailView.h; sourceTree = "<group>"; };
 		26354A181A6F23070075FBCA /* RMSpotDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSpotDetailView.m; sourceTree = "<group>"; };
+		26354A1A1A6F37CA0075FBCA /* texgyreadventor-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-regular.otf"; sourceTree = "<group>"; };
+		26354A1B1A6F37CA0075FBCA /* texgyreadventor-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bold.otf"; sourceTree = "<group>"; };
+		26354A1C1A6F37CA0075FBCA /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
+		26354A1D1A6F37CA0075FBCA /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
 		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26A1F6711A68795300845917 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		26A1F6731A68795A00845917 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -84,10 +88,6 @@
 		26D4165C1A5B1FB40079AD89 /* NiteSpotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NiteSpotTests.m; sourceTree = "<group>"; };
 		26D416661A5B1FE80079AD89 /* Spot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spot.h; sourceTree = "<group>"; };
 		26D416671A5B1FE80079AD89 /* Spot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spot.m; sourceTree = "<group>"; };
-		26ECF48F1A65E5DE00697BBF /* texgyreadventor-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bold.otf"; sourceTree = "<group>"; };
-		26ECF4901A65E5DE00697BBF /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
-		26ECF4911A65E5DE00697BBF /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
-		26ECF4921A65E5DE00697BBF /* texgyreadventor-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-regular.otf"; sourceTree = "<group>"; };
 		26ECF4931A65F4B100697BBF /* DrinkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkCell.h; sourceTree = "<group>"; };
 		26ECF4941A65F4B100697BBF /* DrinkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkCell.m; sourceTree = "<group>"; };
 		26ECF4961A65F4D100697BBF /* AttendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendCell.h; sourceTree = "<group>"; };
@@ -190,10 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				26D416411A5B1FB40079AD89 /* Info.plist */,
-				26ECF48F1A65E5DE00697BBF /* texgyreadventor-bold.otf */,
-				26ECF4901A65E5DE00697BBF /* texgyreadventor-bolditalic.otf */,
-				26ECF4911A65E5DE00697BBF /* texgyreadventor-italic.otf */,
-				26ECF4921A65E5DE00697BBF /* texgyreadventor-regular.otf */,
+				26354A1A1A6F37CA0075FBCA /* texgyreadventor-regular.otf */,
+				26354A1B1A6F37CA0075FBCA /* texgyreadventor-bold.otf */,
+				26354A1C1A6F37CA0075FBCA /* texgyreadventor-bolditalic.otf */,
+				26354A1D1A6F37CA0075FBCA /* texgyreadventor-italic.otf */,
 				26D416421A5B1FB40079AD89 /* main.m */,
 			);
 			name = "Supporting Files";

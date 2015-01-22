@@ -15,6 +15,8 @@
 @property NSMutableArray *drinkSpotsArray;
 @property NSMutableArray *attendSpotsArray;
 @property NSString *apiKey;
+@property UIFont *texReg;
+@property UIFont *texBold;
 
 
 @end

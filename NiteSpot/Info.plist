@@ -36,6 +36,11 @@
 	</array>
 	<key> MapQuest.Map.Key</key>
 	<string>Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy </string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>texgyreadventor-regular.otf</string>
+		<string>texgyreadventor-bold.otf</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>

@@ -12,10 +12,7 @@
 #import "RMMapSearchViewController.h"
 #import "Spot.h"
 #import "EatCell.h"
-#import "SAMGradientView.h"
-
-#define API_KEY 5
-
+#import "UIViewController+ScrollingNavbar.h"
 
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
@@ -30,15 +27,15 @@
     self.eatSpotsArray = [NSMutableArray new];
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
-    self.view.backgroundColor = [UIColor blackColor];
-    self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
+       self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
 
     [self setUpTabBar];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self followScrollView:self.eatCollectionView];
 
     self.tabBarController.delegate = self;
 
     [self downloadSpots];
-
 
 }
 
@@ -93,11 +90,11 @@
 
     cell.eatCellTitle.layer.masksToBounds = YES;
     cell.eatCellTitle.layer.cornerRadius = 3;
-    cell.eatCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.eatCellTitle.text = spot.spotTitle;
 
     cell.eatCellAddress.layer.masksToBounds = YES;
     cell.eatCellAddress.layer.cornerRadius = 3;
-    cell.eatCellAddress.text = [NSString stringWithFormat:@" %@", spot.spotStreet];
+    cell.eatCellAddress.text = spot.spotStreet;
 
     cell.pricelabel.layer.masksToBounds = YES;
     cell.pricelabel.layer.cornerRadius = 20;
@@ -206,34 +203,44 @@
                 spot.price = @"$$";
             }
 
+            NSString *parsedTitle = spot.spotTitle;
+            parsedTitle = [parsedTitle stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+            spot.spotTitle = parsedTitle;
+
 
             NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
             [spot addThumbURL:[NSURL URLWithString:urlString]];
 
-            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+//            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+//
+//            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
+//            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
+//
+//            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//
+//                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//
+//                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
+//                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
+//
+//
+//
+//            }];
 
-            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
-            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
-
-            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-
-                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-
-                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
-                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
 
 
-
-            }];
-
-
-
-            if ([spot.type isEqualToString:@"a"] || [spot.type isEqualToString:@"c"]) {
+            if ([spot.type isEqualToString:@"a"]) {
 
                 [self.eatSpotsArray addObject:spot];
             }
 
             else if ([spot.type isEqualToString:@"b"]){
+                [self.drinkSpotsArray addObject:spot];
+            }
+            
+            else if([spot.type isEqualToString:@"c"]){
+
+                [self.eatSpotsArray addObject:spot];
                 [self.drinkSpotsArray addObject:spot];
             }
 
@@ -260,14 +267,14 @@
             for (NSUInteger i = 0; i < countDrink; ++i) {
                 NSUInteger nElements = countDrink - i;
                 NSUInteger n = (arc4random() % nElements) + i;
-                [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+                [self.drinkSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
             }
 
-            NSUInteger countAttend = [self.eatSpotsArray count];
+            NSUInteger countAttend = [self.attendSpotsArray count];
             for (NSUInteger i = 0; i < countAttend; ++i) {
                 NSUInteger nElements = countAttend - i;
                 NSUInteger n = (arc4random() % nElements) + i;
-                [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+                [self.attendSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
             }
 
         });
@@ -305,14 +312,6 @@
 
 
 }
-
-
-
-
-
-
-
-
 
 
 

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#define IMAGE_HEIGHT 266
-#define IMAGE_OFFSET_SPEED 12
+#define IMAGE_HEIGHT 192
+#define IMAGE_OFFSET_SPEED 15
 
 @interface AttendCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *attendCellImageView;

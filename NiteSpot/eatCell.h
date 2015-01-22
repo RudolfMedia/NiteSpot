@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define IMAGE_HEIGHT 192
-#define IMAGE_OFFSET_SPEED 25
+#define IMAGE_OFFSET_SPEED 15
 
 @interface EatCell : UICollectionViewCell
 
