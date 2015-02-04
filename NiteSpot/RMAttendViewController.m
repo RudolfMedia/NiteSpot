@@ -9,6 +9,8 @@
 #import "RMAttendViewController.h"
 #import "AttendCell.h"
 #import "Spot.h"
+#import "UIViewController+ScrollingNavbar.h"
+
 
 @interface RMAttendViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -21,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self followScrollView:self.attendCollectionView];
 
 
     NSLog(@"%@",self.attendSpotsArray);
@@ -55,11 +60,15 @@
 
     cell.attendCellTitle.layer.masksToBounds = YES;
     cell.attendCellTitle.layer.cornerRadius = 3;
-    cell.attendCellTitle.text = [NSString stringWithFormat:@" %@",spot.spotTitle];
+    cell.attendCellTitle.text = spot.spotTitle;
 
     cell.addressLabel.layer.masksToBounds = YES;
     cell.addressLabel.layer.cornerRadius = 3;
-    cell.addressLabel.text = [NSString stringWithFormat:@" %@", spot.spotStreet];
+    cell.addressLabel.text = spot.spotStreet;
+
+    cell.priceLabel.layer.masksToBounds = YES;
+    cell.priceLabel.layer.cornerRadius = 20;
+    cell.priceLabel.text = spot.price;
 
     cell.attendCellImageView.image = nil;
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];

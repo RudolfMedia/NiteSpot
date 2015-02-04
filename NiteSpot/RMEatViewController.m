@@ -13,6 +13,7 @@
 #import "Spot.h"
 #import "EatCell.h"
 #import "UIViewController+ScrollingNavbar.h"
+#import "RMSpotDetailView.h"
 
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
@@ -27,7 +28,9 @@
     self.eatSpotsArray = [NSMutableArray new];
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
-       self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
+    self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
+
+    //[self.eatCollectionView setHidden:YES];
 
     [self setUpTabBar];
     [self.navigationController.navigationBar setTranslucent:NO];
@@ -83,6 +86,8 @@
     return TRUE;
 }
 
+#pragma mark - CollectionView Delegate / Datasource
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     EatCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
@@ -133,6 +138,19 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
     return self.eatSpotsArray.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    self.selectedSpot = [self.eatSpotsArray objectAtIndex:indexPath.row];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    RMSpotDetailView *destination = [segue destinationViewController];
+    destination.selectedSpot = self.selectedSpot;
+    NSLog(@"%@", self.selectedSpot.spotTitle);
+
 }
 
 
@@ -211,21 +229,21 @@
             NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
             [spot addThumbURL:[NSURL URLWithString:urlString]];
 
-//            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-//
-//            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
-//            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
-//
-//            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//
-//                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//
-//                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
-//                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
-//
-//
-//
-//            }];
+            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+
+            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
+            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
+
+            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+
+                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
+                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
+
+
+
+            }];
 
 
 
@@ -254,32 +272,37 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
+            //[self shuffleSpotsArrays];
             [self.eatCollectionView reloadData];
-
-            NSUInteger countEat = [self.eatSpotsArray count];
-            for (NSUInteger i = 0; i < countEat; ++i) {
-                NSUInteger nElements = countEat - i;
-                NSUInteger n = (arc4random() % nElements) + i;
-             [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-            }
-
-            NSUInteger countDrink = [self.drinkSpotsArray count];
-            for (NSUInteger i = 0; i < countDrink; ++i) {
-                NSUInteger nElements = countDrink - i;
-                NSUInteger n = (arc4random() % nElements) + i;
-                [self.drinkSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-            }
-
-            NSUInteger countAttend = [self.attendSpotsArray count];
-            for (NSUInteger i = 0; i < countAttend; ++i) {
-                NSUInteger nElements = countAttend - i;
-                NSUInteger n = (arc4random() % nElements) + i;
-                [self.attendSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-            }
 
         });
     });
 
+
+}
+
+-(void)shuffleSpotsArrays {
+
+    NSUInteger countEat = [self.eatSpotsArray count];
+    for (NSUInteger i = 0; i < countEat; ++i) {
+        NSUInteger nElements = countEat - i;
+        NSUInteger n = (arc4random() % nElements) + i;
+        [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+
+    NSUInteger countDrink = [self.drinkSpotsArray count];
+    for (NSUInteger i = 0; i < countDrink; ++i) {
+        NSUInteger nElements = countDrink - i;
+        NSUInteger n = (arc4random() % nElements) + i;
+        [self.drinkSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+
+    NSUInteger countAttend = [self.attendSpotsArray count];
+    for (NSUInteger i = 0; i < countAttend; ++i) {
+        NSUInteger nElements = countAttend - i;
+        NSUInteger n = (arc4random() % nElements) + i;
+        [self.attendSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
 
 }
 
@@ -312,8 +335,6 @@
 
 
 }
-
-
 
 
 @end

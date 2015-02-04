@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Spot.h"
 
 @interface RMSpotDetailView : UIViewController
+
+@property Spot *selectedSpot;
 
 @end

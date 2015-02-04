@@ -16,5 +16,6 @@
 @property (nonatomic, assign, readwrite) CGPoint imageOffset;
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end

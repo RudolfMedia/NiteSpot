@@ -4,8 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="texgyreadventor-bold.otf">
+            <string>TeXGyreAdventor-Bold</string>
+            <string>TeXGyreAdventor-Bold</string>
+            <string>TeXGyreAdventor-Bold</string>
+        </mutableArray>
         <mutableArray key="texgyreadventor-regular.otf">
-            <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
@@ -28,7 +32,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="Iis-sC-1iT">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="Iis-sC-1iT">
                                     <size key="itemSize" width="400" height="280"/>
                                     <size key="headerReferenceSize" width="0.0" height="64"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -68,7 +72,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH8-lJ-yud">
                                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -131,7 +135,7 @@
                                             <outlet property="drinkCellImageView" destination="dvY-PN-ChN" id="36P-hh-cmY"/>
                                             <outlet property="drinkCellTitle" destination="cH8-lJ-yud" id="2tn-cG-aM5"/>
                                             <outlet property="priceLabel" destination="Rbe-sp-TOQ" id="Qre-qr-a4c"/>
-                                            <segue destination="HS6-ip-UTY" kind="show" id="5e6-7V-xEG"/>
+                                            <segue destination="HS6-ip-UTY" kind="show" identifier="DrinkDetail" id="5e6-7V-xEG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -140,7 +144,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </collectionReusableView>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-64" width="400" height="864"/>
+                                    <rect key="frame" x="0.0" y="-64" width="400" height="750"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="d06-40-8Pl" id="QL9-rZ-eym"/>
@@ -183,18 +187,18 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SgE-dT-tGc">
-                                    <size key="itemSize" width="400" height="236"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="SgE-dT-tGc">
+                                    <size key="itemSize" width="400" height="280"/>
+                                    <size key="headerReferenceSize" width="0.0" height="64"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="X82-zL-qO8" customClass="AttendCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="236"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgu-rG-eAI">
@@ -203,38 +207,68 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzF-0x-Gat">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attendicon" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-Lf-tn1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="261" y="-17" width="40" height="40"/>
+                                                            </variation>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
+                                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                                <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="14" y="8" width="285" height="29"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lq-Q6-Rwt">
+                                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular" fixedFrame="YES">
+                                                                <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                            </variation>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="23" y="29" width="267" height="29"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-gM-eEt">
+                                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                            <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="316" y="-17" width="40" height="40"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="148" width="545" height="25"/>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="uDM-Lf-tn1"/>
+                                                            <exclude reference="Gxc-H6-ABK"/>
+                                                            <exclude reference="8Lq-Q6-Rwt"/>
+                                                            <exclude reference="Gxf-gM-eEt"/>
+                                                        </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="166" width="285" height="29"/>
+                                                        <rect key="frame" x="0.0" y="214" width="400" height="66"/>
+                                                        <mask key="subviews">
+                                                            <include reference="uDM-Lf-tn1"/>
+                                                            <include reference="Gxc-H6-ABK"/>
+                                                            <include reference="8Lq-Q6-Rwt"/>
+                                                            <include reference="Gxf-gM-eEt"/>
+                                                        </mask>
                                                     </variation>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attendicon" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-Lf-tn1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lq-Q6-Rwt">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="148" width="545" height="25"/>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="26" y="199" width="267" height="29"/>
-                                                    </variation>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -242,28 +276,28 @@
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="Qgu-rG-eAI"/>
-                                                <exclude reference="Gxc-H6-ABK"/>
-                                                <exclude reference="uDM-Lf-tn1"/>
-                                                <exclude reference="8Lq-Q6-Rwt"/>
+                                                <exclude reference="kzF-0x-Gat"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
                                                 <include reference="Qgu-rG-eAI"/>
-                                                <include reference="Gxc-H6-ABK"/>
-                                                <include reference="uDM-Lf-tn1"/>
-                                                <include reference="8Lq-Q6-Rwt"/>
+                                                <include reference="kzF-0x-Gat"/>
                                             </mask>
                                         </variation>
                                         <connections>
                                             <outlet property="addressLabel" destination="8Lq-Q6-Rwt" id="Ch7-8H-Yew"/>
                                             <outlet property="attendCellImageView" destination="Qgu-rG-eAI" id="jaj-eq-S1V"/>
                                             <outlet property="attendCellTitle" destination="Gxc-H6-ABK" id="l2W-59-p4A"/>
+                                            <outlet property="priceLabel" destination="Gxf-gM-eEt" id="XHl-6b-iRj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1f7-lu-06n">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                    <rect key="frame" x="0.0" y="-63" width="400" height="750"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="2Cb-iB-w9y" id="u0z-pV-Pfr"/>
@@ -384,7 +418,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
                                     <size key="itemSize" width="400" height="280"/>
                                     <size key="headerReferenceSize" width="0.0" height="64"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -398,6 +432,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
+                                                    </variation>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5L-ke-V31">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <subviews>
@@ -410,7 +450,7 @@
                                                                 <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                             </variation>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="23" y="29" width="267" height="29"/>
+                                                                <rect key="frame" x="23" y="32" width="267" height="29"/>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uC-Eu-2GI">
@@ -428,24 +468,16 @@
                                                                 <rect key="frame" x="261" y="-18" width="40" height="40"/>
                                                             </variation>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgd-cm-SmU">
                                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="Title">
-                                                                    <attributes>
-                                                                        <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <font key="NSFont" size="20" name="TeXGyreAdventor-Bold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="heightClass=regular" fixedFrame="YES">
                                                                 <rect key="frame" x="8" y="148" width="545" height="25"/>
                                                             </variation>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <rect key="frame" x="14" y="8" width="285" height="29"/>
+                                                                <rect key="frame" x="14" y="6" width="285" height="29"/>
                                                             </variation>
                                                         </label>
                                                     </subviews>
@@ -468,26 +500,20 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="266"/>
-                                                    </variation>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.062745098040000002" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
                                         <variation key="default">
                                             <mask key="subviews">
-                                                <exclude reference="b5L-ke-V31"/>
                                                 <exclude reference="Tx3-WO-tsH"/>
+                                                <exclude reference="b5L-ke-V31"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="subviews">
-                                                <include reference="b5L-ke-V31"/>
                                                 <include reference="Tx3-WO-tsH"/>
+                                                <include reference="b5L-ke-V31"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -495,7 +521,7 @@
                                             <outlet property="eatCellImage" destination="Tx3-WO-tsH" id="n5M-71-tfa"/>
                                             <outlet property="eatCellTitle" destination="Cgd-cm-SmU" id="ath-62-mam"/>
                                             <outlet property="pricelabel" destination="7uC-Eu-2GI" id="T9U-pL-e81"/>
-                                            <segue destination="HS6-ip-UTY" kind="show" id="bMQ-bT-9ok"/>
+                                            <segue destination="HS6-ip-UTY" kind="show" identifier="EatDetail" id="bMQ-bT-9ok"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -506,7 +532,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="751"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-62" width="400" height="862"/>
+                                    <rect key="frame" x="0.0" y="-62" width="400" height="750"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="TPZ-hf-e9P" id="e9n-20-6MH"/>
@@ -567,7 +593,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iKf-1f-efH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -589,6 +616,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aLK-8n-9Mt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -611,6 +639,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="iIQ-hm-rgm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

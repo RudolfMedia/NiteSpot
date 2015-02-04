@@ -17,9 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-
-    
+   // NSLog(@"%@",self.selectedSpot.spotTitle);
 }
 
 

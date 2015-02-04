@@ -13,6 +13,10 @@
 		2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3101A5DDD5C0008A533 /* EatCell.m */; };
 		26354A111A6F0C3D0075FBCA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 26354A101A6F0C3D0075FBCA /* Podfile */; };
 		26354A191A6F23070075FBCA /* RMSpotDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26354A181A6F23070075FBCA /* RMSpotDetailView.m */; };
+		26497ADD1A70A3C900EF8200 /* texgyreadventor-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1A1A6F37CA0075FBCA /* texgyreadventor-regular.otf */; };
+		26497ADE1A70A3CC00EF8200 /* texgyreadventor-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1B1A6F37CA0075FBCA /* texgyreadventor-bold.otf */; };
+		26497ADF1A70A3CE00EF8200 /* texgyreadventor-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1C1A6F37CA0075FBCA /* texgyreadventor-bolditalic.otf */; };
+		26497AE01A70A3D100EF8200 /* texgyreadventor-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1D1A6F37CA0075FBCA /* texgyreadventor-italic.otf */; };
 		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
 		26A1F6721A68795300845917 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6711A68795300845917 /* AddressBook.framework */; };
 		26A1F6741A68795A00845917 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6731A68795A00845917 /* CoreLocation.framework */; };
@@ -317,8 +321,12 @@
 			files = (
 				26D4164C1A5B1FB40079AD89 /* Main.storyboard in Resources */,
 				26D416511A5B1FB40079AD89 /* LaunchScreen.xib in Resources */,
+				26497ADE1A70A3CC00EF8200 /* texgyreadventor-bold.otf in Resources */,
 				26354A111A6F0C3D0075FBCA /* Podfile in Resources */,
+				26497ADD1A70A3C900EF8200 /* texgyreadventor-regular.otf in Resources */,
+				26497ADF1A70A3CE00EF8200 /* texgyreadventor-bolditalic.otf in Resources */,
 				26D4164E1A5B1FB40079AD89 /* Images.xcassets in Resources */,
+				26497AE01A70A3D100EF8200 /* texgyreadventor-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

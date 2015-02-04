@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Spot.h"
 
 @interface RMEatViewController : UIViewController
 
@@ -17,7 +18,7 @@
 @property NSString *apiKey;
 @property UIFont *texReg;
 @property UIFont *texBold;
-
+@property Spot *selectedSpot;
 
 @end
 
