@@ -12,13 +12,10 @@
 @interface RMEatViewController : UIViewController
 
 @property NSArray *spotJSONArray;
-@property NSMutableArray *eatSpotsArray;
 @property NSMutableArray *drinkSpotsArray;
 @property NSMutableArray *attendSpotsArray;
 @property NSString *apiKey;
-@property UIFont *texReg;
-@property UIFont *texBold;
-@property Spot *selectedSpot;
+
 
 @end
 

@@ -15,6 +15,7 @@
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -415,7 +416,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
@@ -425,7 +426,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xnh-gz-3fy" customClass="EatCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="Cell" id="xnh-gz-3fy" customClass="EatCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -521,11 +522,11 @@
                                             <outlet property="eatCellImage" destination="Tx3-WO-tsH" id="n5M-71-tfa"/>
                                             <outlet property="eatCellTitle" destination="Cgd-cm-SmU" id="ath-62-mam"/>
                                             <outlet property="pricelabel" destination="7uC-Eu-2GI" id="T9U-pL-e81"/>
-                                            <segue destination="HS6-ip-UTY" kind="show" identifier="EatDetail" id="bMQ-bT-9ok"/>
+                                            <segue destination="HS6-ip-UTY" kind="show" identifier="EatDetail" id="OQe-5r-dbl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9xF-i1-tHa">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" contentMode="center" id="9xF-i1-tHa">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <variation key="heightClass=regular" fixedFrame="YES">
@@ -679,6 +680,6 @@
         <image name="eaticon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5e6-7V-xEG"/>
+        <segue reference="OQe-5r-dbl"/>
     </inferredMetricsTieBreakers>
 </document>

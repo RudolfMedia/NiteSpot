@@ -14,10 +14,12 @@
 #import "EatCell.h"
 #import "UIViewController+ScrollingNavbar.h"
 #import "RMSpotDetailView.h"
+#import "DataLoader.h"
 
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
+@property DataLoader *dataLoader;
 
 @end
 
@@ -25,22 +27,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.eatSpotsArray = [NSMutableArray new];
-    self.drinkSpotsArray = [NSMutableArray new];
-    self.attendSpotsArray = [NSMutableArray new];
-    self.apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
-
-    //[self.eatCollectionView setHidden:YES];
 
     [self setUpTabBar];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.eatCollectionView];
 
+    self.eatCollectionView.delegate = self;
+
     self.tabBarController.delegate = self;
 
-    [self downloadSpots];
+    self.dataLoader = [[DataLoader alloc] init];
+    [self.dataLoader downloadSpots];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showEatCollectionView:)
+                                                 name:@"DownloadDone"
+                                               object:nil];
 
 }
+
 
 -(void)viewWillAppear:(BOOL)animated{
     self.eatCollectionView.alpha = 0;
@@ -55,43 +60,81 @@
 
                     } completion:^(BOOL finished) {
                     }];
-    
-    
+
+}
+
+- (void)showEatCollectionView:(NSNotification *)notification {
+
+    [self.eatCollectionView reloadData];
+
 }
 
 #pragma mark - TabBar Delegate
+//
+//-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+//
+//    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMDrinkViewController class]]) {
+//        RMDrinkViewController *destination = (RMDrinkViewController *)viewController.childViewControllers.firstObject;
+//        destination.drinkSpotsArray = self.drinkSpotsArray;
+//
+//    }
+//    
+//    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
+//
+//        RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
+//        destination.attendSpotsArray = self.attendSpotsArray;
+//    }
+//
+//    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
+//
+//        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
+//        destination.eatSpotsArray = self.eatSpotsArray;
+//        destination.drinkSpotsArray = self.drinkSpotsArray;
+//        destination.attendSpotsArray = self.attendSpotsArray;
+//    }
+//
+//    return TRUE;
+//
+//}
 
--(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
 
-    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMDrinkViewController class]]) {
-        RMDrinkViewController *destination = (RMDrinkViewController *)viewController.childViewControllers.firstObject;
-        destination.drinkSpotsArray = self.drinkSpotsArray;
 
-    }
+- (void)setUpTabBar{
+
+    UITabBar *customTabBar = self.tabBarController.tabBar;
+    customTabBar.tintColor = [UIColor clearColor];
+    customTabBar.backgroundColor = [UIColor clearColor];
+
+    UITabBarItem *eatTab = [customTabBar.items objectAtIndex:0];
+    eatTab.image = [[UIImage imageNamed:@"eat6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    eatTab.selectedImage = [[UIImage imageNamed:@"eatPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    eatTab.title = nil;
+
+    UITabBarItem *drinkTab = [customTabBar.items objectAtIndex:1];
+    drinkTab.image = [[UIImage imageNamed:@"drink6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    drinkTab.selectedImage = [[UIImage imageNamed:@"drinkPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    drinkTab.title = nil;
+
+    UITabBarItem *attendTab = [customTabBar.items objectAtIndex:2];
+    attendTab.image = [[UIImage imageNamed:@"attend6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    attendTab.selectedImage = [[UIImage imageNamed:@"attendPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    attendTab.title = nil;
+
+    UITabBarItem *mapTab = [customTabBar.items objectAtIndex:3];
+    mapTab.image = [[UIImage imageNamed:@"map6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mapTab.selectedImage = [[UIImage imageNamed:@"mapPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mapTab.title = nil;
     
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
-
-        RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
-        destination.attendSpotsArray = self.attendSpotsArray;
-    }
-
-    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
-
-        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
-        destination.eatSpotsArray = self.eatSpotsArray;
-        destination.drinkSpotsArray = self.drinkSpotsArray;
-        destination.attendSpotsArray = self.attendSpotsArray;
-    }
-
-    return TRUE;
+    
 }
+
 
 #pragma mark - CollectionView Delegate / Datasource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     EatCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    Spot *spot = [self.eatSpotsArray objectAtIndex:indexPath.row];
+    Spot *spot = [self.dataLoader.eatSpotsArray objectAtIndex:indexPath.row];
 
     cell.eatCellTitle.layer.masksToBounds = YES;
     cell.eatCellTitle.layer.cornerRadius = 3;
@@ -105,6 +148,7 @@
     cell.pricelabel.layer.cornerRadius = 20;
     cell.pricelabel.text = spot.price;
     cell.eatCellImage.image = nil;
+
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
@@ -137,19 +181,25 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return self.eatSpotsArray.count;
+    return self.dataLoader.eatSpotsArray.count;
+
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-    self.selectedSpot = [self.eatSpotsArray objectAtIndex:indexPath.row];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
+    NSIndexPath *selectedIndex = self.eatCollectionView.indexPathsForSelectedItems.firstObject;
+    Spot *selectedSpot = [self.dataLoader.eatSpotsArray objectAtIndex:selectedIndex.item];
     RMSpotDetailView *destination = [segue destinationViewController];
-    destination.selectedSpot = self.selectedSpot;
-    NSLog(@"%@", self.selectedSpot.spotTitle);
+    destination.selectedSpot = selectedSpot;
+
+    NSLog(@"%@", selectedSpot.spotTitle);
 
 }
 
@@ -160,180 +210,6 @@
         CGFloat yOffset = ((self.eatCollectionView.contentOffset.y - view.frame.origin.y) / IMAGE_HEIGHT) * IMAGE_OFFSET_SPEED;
         view.imageOffset = CGPointMake(0.0f, yOffset);
     }
-}
-
-#pragma Mark - Networking and Parsing methods
-
-- (void)downloadSpots{
-
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thenitespot.com/active_index.php"]];
-
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-
-        self.spotJSONArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&connectionError];
-
-        [self parseSpotObjects];
-
-    }];
-
-}
-
-- (void)parseSpotObjects{
-
-    dispatch_queue_t spotQueue = dispatch_queue_create("SpotQueue", NULL);
-    dispatch_async(spotQueue, ^{
-
-        for (NSDictionary *dictionary  in self.spotJSONArray) {
-            Spot *spot = [[Spot alloc] initWithName:[dictionary objectForKey:@"title"]
-                                               type:[dictionary objectForKey:@"type"]
-                                               idNo:[dictionary objectForKey:@"id"]
-                                             region:[dictionary objectForKey:@"region"]
-                                               city:[dictionary objectForKey:@"city"]
-                                             street:[dictionary objectForKey:@"street"]
-                                              state:[dictionary objectForKey:@"state"]
-                                                zip:[dictionary objectForKey:@"zip"]
-                                              about:[dictionary objectForKey:@"about"]
-                                                tel:[dictionary objectForKey:@"tel"]
-                                           foodType:[dictionary objectForKey:@"eat"]
-                                          drinkType:[dictionary objectForKey:@"drink"]
-                                              price:[dictionary objectForKey:@"price"]
-                                       dailySpecial:[dictionary objectForKey:@"general"]
-                                            foodMon:[dictionary objectForKey:@"eat_Mon"]
-                                            foodTue:[dictionary objectForKey:@"eat_Tue"]
-                                            foodWed:[dictionary objectForKey:@"eat_Wed"]
-                                            foodThu:[dictionary objectForKey:@"eat_Thu"]
-                                            foodFri:[dictionary objectForKey:@"eat_Fri"]
-                                            foodSat:[dictionary objectForKey:@"eat_sat"]
-                                            foodSun:[dictionary objectForKey:@"eat_Sun"]
-                                           drinkMon:[dictionary objectForKey:@"drink_Mon"]
-                                           drinkTue:[dictionary objectForKey:@"drink_Tue"]
-                                           drinkWed:[dictionary objectForKey:@"drink_Wed"]
-                                           drinkThu:[dictionary objectForKey:@"drink_Thu"]
-                                           drinkFri:[dictionary objectForKey:@"drink_Fri"]
-                                           drinkSat:[dictionary objectForKey:@"drink_Sat"]
-                                           drinkSun:[dictionary objectForKey:@"drink_Sun"]
-                                               slug:[dictionary objectForKey:@"slug"]
-                                              thumb:[dictionary objectForKey:@"thumb"]];
-            NSString *slug = spot.slug;
-            slug = [slug stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-
-            if ([spot.price.class isSubclassOfClass:[NSNull class]]) {
-                spot.price = @"$$";
-            }
-
-            NSString *parsedTitle = spot.spotTitle;
-            parsedTitle = [parsedTitle stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-            spot.spotTitle = parsedTitle;
-
-
-            NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
-            [spot addThumbURL:[NSURL URLWithString:urlString]];
-
-            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-
-            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",self.apiKey, streetNoSpace, spot.spotZip]];
-            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
-
-            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-
-                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-
-                spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
-                spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
-
-
-
-            }];
-
-
-
-            if ([spot.type isEqualToString:@"a"]) {
-
-                [self.eatSpotsArray addObject:spot];
-            }
-
-            else if ([spot.type isEqualToString:@"b"]){
-                [self.drinkSpotsArray addObject:spot];
-            }
-            
-            else if([spot.type isEqualToString:@"c"]){
-
-                [self.eatSpotsArray addObject:spot];
-                [self.drinkSpotsArray addObject:spot];
-            }
-
-            else if ([spot.type isEqualToString:@"d"]){
-                [self.attendSpotsArray addObject:spot];
-            }
-
-
-        }
-
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-
-            //[self shuffleSpotsArrays];
-            [self.eatCollectionView reloadData];
-
-        });
-    });
-
-
-}
-
--(void)shuffleSpotsArrays {
-
-    NSUInteger countEat = [self.eatSpotsArray count];
-    for (NSUInteger i = 0; i < countEat; ++i) {
-        NSUInteger nElements = countEat - i;
-        NSUInteger n = (arc4random() % nElements) + i;
-        [self.eatSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
-
-    NSUInteger countDrink = [self.drinkSpotsArray count];
-    for (NSUInteger i = 0; i < countDrink; ++i) {
-        NSUInteger nElements = countDrink - i;
-        NSUInteger n = (arc4random() % nElements) + i;
-        [self.drinkSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
-
-    NSUInteger countAttend = [self.attendSpotsArray count];
-    for (NSUInteger i = 0; i < countAttend; ++i) {
-        NSUInteger nElements = countAttend - i;
-        NSUInteger n = (arc4random() % nElements) + i;
-        [self.attendSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
-
-}
-
-
-- (void)setUpTabBar{
-
-    UITabBar *customTabBar = self.tabBarController.tabBar;
-    customTabBar.tintColor = [UIColor clearColor];
-    customTabBar.backgroundColor = [UIColor clearColor];
-
-    UITabBarItem *eatTab = [customTabBar.items objectAtIndex:0];
-    eatTab.image = [[UIImage imageNamed:@"eat6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    eatTab.selectedImage = [[UIImage imageNamed:@"eatPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    eatTab.title = nil;
-
-    UITabBarItem *drinkTab = [customTabBar.items objectAtIndex:1];
-    drinkTab.image = [[UIImage imageNamed:@"drink6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    drinkTab.selectedImage = [[UIImage imageNamed:@"drinkPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    drinkTab.title = nil;
-
-    UITabBarItem *attendTab = [customTabBar.items objectAtIndex:2];
-    attendTab.image = [[UIImage imageNamed:@"attend6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    attendTab.selectedImage = [[UIImage imageNamed:@"attendPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    attendTab.title = nil;
-
-    UITabBarItem *mapTab = [customTabBar.items objectAtIndex:3];
-    mapTab.image = [[UIImage imageNamed:@"map6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    mapTab.selectedImage = [[UIImage imageNamed:@"mapPressed6"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    mapTab.title = nil;
-
-
 }
 
 

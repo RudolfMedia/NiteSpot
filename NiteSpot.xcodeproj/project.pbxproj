@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26055BDD1A84067D0078C615 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26055BDC1A84067D0078C615 /* DataLoader.m */; };
 		2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */; };
 		2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30A1A5DD7E70008A533 /* RMAttendViewController.m */; };
 		2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628B30D1A5DD81C0008A533 /* RMMapSearchViewController.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26055BDB1A84067D0078C615 /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
+		26055BDC1A84067D0078C615 /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		2628B3061A5DD7C40008A533 /* RMDrinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDrinkViewController.h; sourceTree = "<group>"; };
 		2628B3071A5DD7C40008A533 /* RMDrinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDrinkViewController.m; sourceTree = "<group>"; };
 		2628B3091A5DD7E70008A533 /* RMAttendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAttendViewController.h; sourceTree = "<group>"; };
@@ -157,10 +160,12 @@
 			isa = PBXGroup;
 			children = (
 				26D4164A1A5B1FB40079AD89 /* Main.storyboard */,
-				26354A171A6F23070075FBCA /* RMSpotDetailView.h */,
-				26354A181A6F23070075FBCA /* RMSpotDetailView.m */,
 				26D416441A5B1FB40079AD89 /* AppDelegate.h */,
 				26D416451A5B1FB40079AD89 /* AppDelegate.m */,
+				26055BDB1A84067D0078C615 /* DataLoader.h */,
+				26055BDC1A84067D0078C615 /* DataLoader.m */,
+				26354A171A6F23070075FBCA /* RMSpotDetailView.h */,
+				26354A181A6F23070075FBCA /* RMSpotDetailView.m */,
 				26D416471A5B1FB40079AD89 /* RMEatViewController.h */,
 				26D416481A5B1FB40079AD89 /* RMEatViewController.m */,
 				2628B3061A5DD7C40008A533 /* RMDrinkViewController.h */,
@@ -391,6 +396,7 @@
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
 				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
 				26A1F6851A68C27B00845917 /* RMAttendAnnotation.m in Sources */,
+				26055BDD1A84067D0078C615 /* DataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
