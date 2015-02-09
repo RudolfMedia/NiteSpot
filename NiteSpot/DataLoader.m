@@ -13,15 +13,13 @@
 @implementation DataLoader
 
 
+
 - (void)downloadSpots{
     
     self.eatSpotsArray = [NSMutableArray new];
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
     self.allSpotsArray = [NSMutableArray new];
-
-    self.sortFinished = NO;
-    self.geocodeFinished = NO;
 
 
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thenitespot.com/active_index.php"]];
@@ -181,10 +179,11 @@
 
     }
 
-    self.geocodeFinished = YES;
 }
 
 - (void)geoCodeSingleSpot{
+
+
     
 }
 

@@ -70,21 +70,21 @@
 }
 
 #pragma mark - TabBar Delegate
-//
-//-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-//
-//    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMDrinkViewController class]]) {
-//        RMDrinkViewController *destination = (RMDrinkViewController *)viewController.childViewControllers.firstObject;
-//        destination.drinkSpotsArray = self.drinkSpotsArray;
-//
-//    }
-//    
-//    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
-//
-//        RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
-//        destination.attendSpotsArray = self.attendSpotsArray;
-//    }
-//
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+
+    if ([viewController.childViewControllers.firstObject isKindOfClass:[RMDrinkViewController class]]) {
+        RMDrinkViewController *destination = (RMDrinkViewController *)viewController.childViewControllers.firstObject;
+        destination.dataLoader = self.dataLoader;
+
+    }
+    
+    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMAttendViewController class]]){
+
+        RMAttendViewController *destination = (RMAttendViewController *)viewController.childViewControllers.firstObject;
+        destination.dataLoader = self.dataLoader;
+    }
+
 //    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
 //
 //        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
@@ -92,10 +92,10 @@
 //        destination.drinkSpotsArray = self.drinkSpotsArray;
 //        destination.attendSpotsArray = self.attendSpotsArray;
 //    }
-//
-//    return TRUE;
-//
-//}
+
+    return TRUE;
+
+}
 
 
 

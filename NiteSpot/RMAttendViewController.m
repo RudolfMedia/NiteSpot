@@ -27,9 +27,20 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.attendCollectionView];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadAttendView:)
+                                                 name:@"DownloadDone"
+                                               object:nil];
 
-    NSLog(@"%@",self.attendSpotsArray);
 }
+
+- (void)reloadAttendView:(NSNotification *)notification{
+
+    [self.attendCollectionView reloadData];
+
+}
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     self.attendCollectionView.alpha = 0;
@@ -56,7 +67,7 @@
 
     AttendCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
 
-    Spot *spot = [self.attendSpotsArray objectAtIndex:indexPath.row];
+    Spot *spot = [self.dataLoader.attendSpotsArray objectAtIndex:indexPath.row];
 
     cell.attendCellTitle.layer.masksToBounds = YES;
     cell.attendCellTitle.layer.cornerRadius = 3;
@@ -102,7 +113,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return self.attendSpotsArray.count;
+    return self.dataLoader.attendSpotsArray.count;
 }
 
 #pragma mark - ScrollView Delegate methods

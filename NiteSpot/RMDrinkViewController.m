@@ -15,6 +15,7 @@
 @interface RMDrinkViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
 
+
 @end
 
 @implementation RMDrinkViewController
@@ -25,6 +26,18 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.drinkCollectionView];
 
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showAttendCollectionView:)
+                                                 name:@"DownloadDone"
+                                               object:nil];
+
+}
+
+- (void)showAttendCollectionView:(NSNotification *)notification {
+
+    [self.drinkCollectionView reloadData];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -48,13 +61,13 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return self.drinkSpotsArray.count;
+    return self.dataLoader.drinkSpotsArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     DrinkCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    Spot *spot = [self.drinkSpotsArray objectAtIndex:indexPath.row];
+    Spot *spot = [self.dataLoader.drinkSpotsArray objectAtIndex:indexPath.row];
 
     cell.drinkCellTitle.layer.masksToBounds = YES;
     cell.drinkCellTitle.layer.cornerRadius = 3;

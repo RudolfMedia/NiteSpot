@@ -16,9 +16,8 @@
 @property NSMutableArray *attendSpotsArray;
 @property NSMutableArray *allSpotsArray;
 
-@property BOOL sortFinished;
-@property BOOL geocodeFinished;
 
 -(void)downloadSpots;
+
 
 @end

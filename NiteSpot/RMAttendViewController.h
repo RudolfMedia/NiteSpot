@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataLoader.h"
 
 @interface RMAttendViewController : UIViewController
 
-@property NSArray *attendSpotsArray;
+@property DataLoader *dataLoader;
 
 @end

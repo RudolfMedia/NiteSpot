@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataLoader.h"
 
 @interface RMDrinkViewController : UIViewController
 
-@property NSArray *drinkSpotsArray;
+@property DataLoader *dataLoader;
 
 @end
