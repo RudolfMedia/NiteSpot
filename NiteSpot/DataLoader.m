@@ -72,7 +72,6 @@
 
             [self.allSpotsArray addObject:spot];
         }
-    NSLog(@"%i",self.sortFinished);
 
     [self formatSpots];
 }
@@ -98,6 +97,14 @@
         NSString *urlString = [NSString stringWithFormat:@"http://www.thenitespot.com/images/spots/%@/%@",slug,spot.thumb];
         [spot addThumbURL:[NSURL URLWithString:urlString]];
 
+
+        if ([spot.spotAbout isKindOfClass:[NSString class]]) {
+
+        NSString *editedAbout = spot.spotAbout;
+        editedAbout = [editedAbout stringByReplacingOccurrencesOfString:@"<br />"
+                                                             withString:@""];
+            spot.spotAbout = editedAbout;
+        }
     }
 
     [self shuffleSpots];
@@ -155,7 +162,6 @@
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DownloadDone" object:self];
 
-    NSLog(@" Eat:%@ Drink:%@ Attend:%@ %i", self.eatSpotsArray, self.drinkSpotsArray, self.attendSpotsArray, self.sortFinished);
 }
 
 - (void)geocodeAllSpots{

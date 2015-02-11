@@ -11,6 +11,7 @@
 #import "RMEatViewController.h"
 #import "Spot.h"
 #import "UIViewController+ScrollingNavbar.h"
+#import "RMSpotDetailView.h"
 
 @interface RMDrinkViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
@@ -109,6 +110,17 @@
                     }];
 
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    NSIndexPath *selectedIndex = self.drinkCollectionView.indexPathsForSelectedItems.firstObject;
+    Spot *selectedSpot = [self.dataLoader.drinkSpotsArray objectAtIndex:selectedIndex.item];
+    RMSpotDetailView *destination = [segue destinationViewController];
+    destination.selectedSpot = selectedSpot;
+
+    NSLog(@"%@", selectedSpot.spotTitle);
+    
 }
 
 #pragma mark - ScrollView Delegate methods

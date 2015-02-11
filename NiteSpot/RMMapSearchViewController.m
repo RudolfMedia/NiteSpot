@@ -11,10 +11,12 @@
 #import "RMEatAnnotation.h"
 #import "RMDrinkAnnotation.h"
 #import "RMAttendAnnotation.h"
+#import "Mapbox.h"
 
 @interface RMMapSearchViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property CLLocationCoordinate2D currentLocation;
+@property RMMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *spotMapView;
 
@@ -25,39 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+    [self.spotMapView setHidden:YES];
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.spotMapView.delegate = self;
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
 
-    for (Spot *spot in self.eatSpotsArray) {
-        RMEatAnnotation *eatAnnotation = [[RMEatAnnotation alloc] init];
-        CLLocationCoordinate2D eatLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
-        eatAnnotation.coordinate = eatLocation;
-        eatAnnotation.title = spot.spotTitle;
+    [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1IjoicnVkb2xmbWVkaWEiLCJhIjoidDZSa2hYcyJ9.ucXq4hJcdZTuInE-gtM0ug"];
+    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
 
-        [self.spotMapView addAnnotation:eatAnnotation];
-    }
+    self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource];
 
-    for (Spot *spot in self.drinkSpotsArray) {
-        RMDrinkAnnotation *drinkAnnotation = [[RMDrinkAnnotation alloc] init];
-        CLLocationCoordinate2D drinkLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
-        drinkAnnotation.coordinate = drinkLocation;
-        drinkAnnotation.title = spot.spotTitle;
+    [self.view addSubview:self.mapView];
 
-        [self.spotMapView addAnnotation:drinkAnnotation];
-    }
-
-    for (Spot *spot in self.attendSpotsArray) {
-        RMAttendAnnotation *attendAnnotation = [[RMAttendAnnotation alloc] init];
-        CLLocationCoordinate2D attendLocation = CLLocationCoordinate2DMake([spot.lat.firstObject doubleValue], [spot.lon.firstObject doubleValue]);
-        attendAnnotation.coordinate = attendLocation;
-        attendAnnotation.title = spot.spotTitle;
-
-        [self.spotMapView addAnnotation:attendAnnotation];
-    }
+    self.mapView.zoom = 15;
 
 }
 
@@ -77,7 +61,6 @@
     
     
 }
-
 
 #pragma mark - Location Delegate
 
@@ -104,44 +87,16 @@
     CLLocationCoordinate2D zoomCenter;
     zoomCenter = self.locationManager.location.coordinate;
 
-    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(zoomCenter, 800, 1000);
+    [self.mapView setCenterCoordinate:zoomCenter];
+//
+//    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(zoomCenter, 800, 1000);
+//
+//    [self.spotMapView setRegion:zoomRegion animated:YES];
+//    [self.spotMapView showsUserLocation];
 
-    [self.spotMapView setRegion:zoomRegion animated:YES];
-    [self.spotMapView showsUserLocation];
-    
     
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
 
-    MKAnnotationView *spotView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationPin"];
-
-    UIImageView *eatPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"eatPin"]];
-    UIImageView *drinkPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"drinkPin"]];
-    UIImageView *attendPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"attendPin"]];
-
-    if([annotation isKindOfClass: [MKUserLocation class]]) {
-        return nil;
-    }
-
-    else if ([annotation isKindOfClass:[RMEatAnnotation class]]){
-
-        [spotView addSubview:eatPin];
-    }
-
-    else if ([annotation isKindOfClass:[RMDrinkAnnotation class]]){
-
-        [spotView addSubview:drinkPin];
-    }
-
-    else if ([annotation isKindOfClass:[RMAttendAnnotation class]]){
-
-        [spotView addSubview:attendPin];
-    }
-
-    spotView.canShowCallout = YES;
-    [spotView setCenterOffset:CGPointMake(0, -35)];
-    return spotView;
-}
 
 @end

@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GPUImage/GPUImage.h>
+
 #import "Spot.h"
 
 @interface RMSpotDetailView : UIViewController
 
 @property Spot *selectedSpot;
+@property (weak, nonatomic) IBOutlet UIImageView *detailTypeImage;
+
 
 @end
