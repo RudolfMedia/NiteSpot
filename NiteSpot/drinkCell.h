@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define IMAGE_HEIGHT 192
-#define IMAGE_OFFSET_SPEED 15
+#define IMAGE_OFFSET_SPEED 10
 
 @interface DrinkCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *drinkCellImageView;

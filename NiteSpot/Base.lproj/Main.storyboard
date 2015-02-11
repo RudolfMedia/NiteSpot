@@ -173,7 +173,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="0NE-WM-WPG"/>
+                    <navigationItem key="navigationItem" id="0NE-WM-WPG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="St1-vG-X58"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="drinkCollectionView" destination="NjM-k9-MMt" id="6SG-B5-bKH"/>
                     </connections>
@@ -386,22 +388,13 @@
                                     <rect key="frame" x="44" y="219" width="288" height="21"/>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-q2-1M5">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="73" y="325" width="275" height="128"/>
-                                </variation>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-PL-4od">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-PL-4od">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="29"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="14" y="332" width="61" height="21"/>
+                                    <rect key="frame" x="142" y="300" width="92" height="30"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-fY-dst">
@@ -460,6 +453,15 @@
                                     <rect key="frame" x="190" y="250" width="82" height="32"/>
                                 </variation>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-q2-1M5">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="338" width="348" height="210"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -469,13 +471,13 @@
                                 <exclude reference="0Qd-ub-kIQ"/>
                                 <exclude reference="Kvv-lj-pXe"/>
                                 <exclude reference="FEQ-Sc-mfY"/>
-                                <exclude reference="uRG-q2-1M5"/>
                                 <exclude reference="Qqf-PL-4od"/>
                                 <exclude reference="3fX-fY-dst"/>
                                 <exclude reference="vp7-tk-MEe"/>
                                 <exclude reference="kRJ-tK-ngg"/>
                                 <exclude reference="bIY-CH-8dM"/>
                                 <exclude reference="tzA-C4-rU3"/>
+                                <exclude reference="uRG-q2-1M5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -485,13 +487,13 @@
                                 <include reference="0Qd-ub-kIQ"/>
                                 <include reference="Kvv-lj-pXe"/>
                                 <include reference="FEQ-Sc-mfY"/>
-                                <include reference="uRG-q2-1M5"/>
                                 <include reference="Qqf-PL-4od"/>
                                 <include reference="3fX-fY-dst"/>
                                 <include reference="vp7-tk-MEe"/>
                                 <include reference="kRJ-tK-ngg"/>
                                 <include reference="bIY-CH-8dM"/>
                                 <include reference="tzA-C4-rU3"/>
+                                <include reference="uRG-q2-1M5"/>
                             </mask>
                         </variation>
                     </view>
@@ -565,7 +567,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
@@ -702,7 +704,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Zhh-yE-zE6"/>
+                    <navigationItem key="navigationItem" id="Zhh-yE-zE6">
+                        <barButtonItem key="backBarButtonItem" title=" " id="L3H-qX-U9R"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="eatCollectionView" destination="U4K-Bf-UIb" id="UpO-nA-1Ax"/>
                     </connections>
