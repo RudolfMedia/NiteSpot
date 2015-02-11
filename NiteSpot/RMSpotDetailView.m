@@ -15,13 +15,24 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailinfoString;
 @property (weak, nonatomic) IBOutlet UILabel *detailPriceTime;
 @property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
+@property (weak, nonatomic) IBOutlet UIButton *aboutButton;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (weak, nonatomic) IBOutlet UIButton *specialsButton;
+@property (weak, nonatomic) IBOutlet UIButton *hoursButton;
 
 @end
 
 @implementation RMSpotDetailView
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
+
+    [self formatButton:self.aboutButton];
+    [self.aboutButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    [self formatButton:self.locationButton];
+    [self formatButton:self.specialsButton];
+    [self formatButton:self.hoursButton];
 
     self.aboutTextView.scrollEnabled = NO;
 
@@ -56,6 +67,14 @@
         self.detailPhoto.image = [iosBlur imageByFilteringImage:image];
 
     }];
+}
+
+-(UIButton *)formatButton:(UIButton *)button{
+
+    button.layer.masksToBounds = YES;
+    button.layer.cornerRadius = 8;
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    return button;
 }
 
 
