@@ -394,7 +394,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="142" y="300" width="92" height="30"/>
+                                    <rect key="frame" x="142" y="288" width="92" height="30"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-fY-dst">
@@ -453,15 +453,15 @@
                                     <rect key="frame" x="190" y="250" width="82" height="32"/>
                                 </variation>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-q2-1M5">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-rV-VPd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="338" width="348" height="210"/>
+                                    <rect key="frame" x="16" y="326" width="348" height="205"/>
                                 </variation>
-                            </textView>
+                                <connections>
+                                    <segue destination="Cu2-fY-Juw" kind="embed" id="bah-V9-wyo"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -477,7 +477,7 @@
                                 <exclude reference="kRJ-tK-ngg"/>
                                 <exclude reference="bIY-CH-8dM"/>
                                 <exclude reference="tzA-C4-rU3"/>
-                                <exclude reference="uRG-q2-1M5"/>
+                                <exclude reference="UrB-rV-VPd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -493,13 +493,13 @@
                                 <include reference="kRJ-tK-ngg"/>
                                 <include reference="bIY-CH-8dM"/>
                                 <include reference="tzA-C4-rU3"/>
-                                <include reference="uRG-q2-1M5"/>
+                                <include reference="UrB-rV-VPd"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="aboutButton" destination="vp7-tk-MEe" id="4kn-g4-RES"/>
-                        <outlet property="aboutTextView" destination="uRG-q2-1M5" id="Awp-3z-WTn"/>
+                        <outlet property="container" destination="UrB-rV-VPd" id="11p-NL-3Eo"/>
                         <outlet property="detailPhoto" destination="hJG-v7-faj" id="GGH-vV-YrC"/>
                         <outlet property="detailPriceTime" destination="FEQ-Sc-mfY" id="FRa-98-xJU"/>
                         <outlet property="detailTitle" destination="0Qd-ub-kIQ" id="kfq-YP-a8F"/>
@@ -825,6 +825,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGc-5L-2rS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002" y="1815"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IYa-si-322">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Cu2-fY-Juw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ovb-EG-xif"/>
+                        <viewControllerLayoutGuide type="bottom" id="gaj-GV-LqN"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LAB-XT-twC">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xaq-gU-Luk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

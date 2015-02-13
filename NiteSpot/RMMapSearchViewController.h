@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "DataLoader.h"
 
 @interface RMMapSearchViewController : UIViewController
 
-@property NSArray *eatSpotsArray;
-@property NSArray *drinkSpotsArray;
-@property NSArray *attendSpotsArray;
+@property DataLoader *dataLoader;
 
 @end

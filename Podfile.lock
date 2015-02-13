@@ -1,5 +1,6 @@
 PODS:
-  - AMScrollingNavbar (1.3.1)
+  - AFScrollView (1.0)
+  - AMScrollingNavbar (1.3.2)
   - FMDB (2.3):
     - FMDB/standard (= 2.3)
   - FMDB/common (2.3)
@@ -16,12 +17,14 @@ PODS:
   - SMCalloutView (2.0)
 
 DEPENDENCIES:
+  - AFScrollView
   - AMScrollingNavbar
   - GPUImage
   - Mapbox-iOS-SDK
 
 SPEC CHECKSUMS:
-  AMScrollingNavbar: 242f5222ff927625d249940859af8dd414262ac7
+  AFScrollView: ec8f8f8513f1ef860d9c5a863e07b928410f1a01
+  AMScrollingNavbar: d17101ccb4871c4b9304cc51357ca1b8d2ed7ca8
   FMDB: 31ec26773c7f7b7890a6038235a1f2bbd933a7cb
   GPUImage: cecb0830bb9428f50192042e3c7b53810f51388e
   GRMustache: efecd3b603f0a7a99cf6bdf3998782ee0c465726

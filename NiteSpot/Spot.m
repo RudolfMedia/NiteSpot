@@ -54,10 +54,11 @@
     return self;
 }
 
--(Spot *) addlat:(NSString *)lat andLon:(NSString *)lon{
+-(Spot *) addlat:(NSArray *)lat andLon:(NSArray *)lon{
 
-    self.lat = lat;
-    self.lon = lon;
+    self.lat = [lat firstObject];
+    self.lon = [lon firstObject];
+    
     return self;
 
 }

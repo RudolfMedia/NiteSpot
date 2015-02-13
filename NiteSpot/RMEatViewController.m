@@ -85,13 +85,11 @@
         destination.dataLoader = self.dataLoader;
     }
 
-//    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
-//
-//        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
-//        destination.eatSpotsArray = self.eatSpotsArray;
-//        destination.drinkSpotsArray = self.drinkSpotsArray;
-//        destination.attendSpotsArray = self.attendSpotsArray;
-//    }
+    else if ([viewController.childViewControllers.firstObject isKindOfClass:[RMMapSearchViewController class]]){
+
+        RMMapSearchViewController *destination = (RMMapSearchViewController *)viewController.childViewControllers.firstObject;
+        destination.dataLoader = self.dataLoader;
+    }
 
     return TRUE;
 

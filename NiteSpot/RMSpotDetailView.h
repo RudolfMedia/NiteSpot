@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GPUImage/GPUImage.h>
+#import <AFScrollView/AFScrollView.h>
 
 #import "Spot.h"
 

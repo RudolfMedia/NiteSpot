@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UIButton *specialsButton;
 @property (weak, nonatomic) IBOutlet UIButton *hoursButton;
+@property (weak, nonatomic) IBOutlet UIView *container;
 
 @end
 
@@ -27,6 +28,18 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
+
+    AFScrollView *scrollView = [[AFScrollView alloc] initWithFrame:self.container.bounds andNumberOfPages:5];
+    [self.container addSubview:scrollView];
+    [scrollView configureViewAtIndexWithCompletion:^(UIView *view, NSInteger index, BOOL success) {
+
+        if (index == 0) {
+            view.backgroundColor = [UIColor redColor];
+        }
+
+        else if (index == 1)
+            view.backgroundColor = [UIColor greenColor];
+    }];
 
     [self formatButton:self.aboutButton];
     [self.aboutButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
@@ -76,6 +89,7 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
     return button;
 }
+
 
 
 

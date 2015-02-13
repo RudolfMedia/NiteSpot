@@ -159,6 +159,7 @@
         }
 
     }
+    [self geocodeAllSpots];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DownloadDone" object:self];
 
@@ -172,18 +173,24 @@
 
         NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
-        NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@thumbMaps=false&maxResults=1",apiKey, streetNoSpace, spot.spotZip]];
+        NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://open.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@",apiKey, streetNoSpace, spot.spotZip]];
+
         NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
+
         [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
     
             NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    
-            spot.lat = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject];
-            spot.lon = [[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject];
+            [spot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
+                  andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
+
+            NSLog(@"%@", geoURL);
 
         }];
 
     }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GeocodeDone" object:self];
+
 
 }
 

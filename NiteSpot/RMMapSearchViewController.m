@@ -42,6 +42,12 @@
     [self.view addSubview:self.mapView];
 
     self.mapView.zoom = 15;
+    [self addAnnotations];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addAnnotation:)
+                                                 name:@"GeocodeDone"
+                                               object:nil];
 
 }
 
@@ -88,13 +94,24 @@
     zoomCenter = self.locationManager.location.coordinate;
 
     [self.mapView setCenterCoordinate:zoomCenter];
-//
-//    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(zoomCenter, 800, 1000);
-//
-//    [self.spotMapView setRegion:zoomRegion animated:YES];
-//    [self.spotMapView showsUserLocation];
+    [self.mapView showsUserLocation];
 
     
+}
+
+-(void)addAnnotations{
+    NSLog(@"Add Annotations");
+
+    for (Spot *spot in self.dataLoader.allSpotsArray) {
+
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(spot.lat.floatValue, spot.lon.floatValue);
+
+        RMPointAnnotation *annotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+
+        [self.mapView addAnnotation:annotation];
+
+    }
+
 }
 
 
