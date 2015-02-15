@@ -13,12 +13,15 @@
 #import "RMAttendAnnotation.h"
 #import "Mapbox.h"
 
-@interface RMMapSearchViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
+@interface RMMapSearchViewController ()<CLLocationManagerDelegate, RMMapViewDelegate>
 
 @property CLLocationCoordinate2D currentLocation;
-@property RMMapView *mapView;
+@property (strong, nonatomic) RMMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (weak, nonatomic) IBOutlet MKMapView *spotMapView;
+
+@property RMAnnotation *eatAnnotation;
+@property RMAnnotation *drinkAnnotaion;
+@property RMAnnotation *attendAnnotaion;
 
 @end
 
@@ -27,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    [self.spotMapView setHidden:YES];
 
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -38,35 +40,38 @@
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
 
     self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource];
+    [self.mapView setDelegate:self];
 
     [self.view addSubview:self.mapView];
 
     self.mapView.zoom = 15;
-    [self addAnnotations];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(addAnnotation:)
+                                             selector:@selector(addAnnotations)
                                                  name:@"GeocodeDone"
                                                object:nil];
+    if (self.dataLoader.geoDone == 1) {
+        [self addAnnotations];
+    }
 
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    self.spotMapView.alpha = 0;
-
-    [UIView transitionWithView:self.spotMapView
-                      duration:0.40f
-                       options:UIViewAnimationOptionCurveEaseIn
-                    animations:^{
-
-                        //any animatable attribute here.
-                        self.spotMapView.alpha = 1.0f;
-
-                    } completion:^(BOOL finished) {
-                    }];
-    
-    
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    self.spotMapView.alpha = 0;
+//
+//    [UIView transitionWithView:self.spotMapView
+//                      duration:0.40f
+//                       options:UIViewAnimationOptionCurveEaseIn
+//                    animations:^{
+//
+//                        //any animatable attribute here.
+//                        self.spotMapView.alpha = 1.0f;
+//
+//                    } completion:^(BOOL finished) {
+//                    }];
+//    
+//    
+//}
 
 #pragma mark - Location Delegate
 
@@ -99,21 +104,82 @@
     
 }
 
+#pragma mark -MapViewDelegates
+
 -(void)addAnnotations{
+
     NSLog(@"Add Annotations");
+    NSLog(@"%i",self.dataLoader.geoDone);
 
-    for (Spot *spot in self.dataLoader.allSpotsArray) {
+    for (Spot *spot in self.dataLoader.eatSpotsArray) {
 
-        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(spot.lat.floatValue, spot.lon.floatValue);
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
 
-        RMPointAnnotation *annotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+        self.eatAnnotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
 
-        [self.mapView addAnnotation:annotation];
+        [self.mapView addAnnotation:self.eatAnnotation];
 
+    }
+
+    for (Spot *spot in self.dataLoader.drinkSpotsArray) {
+
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
+
+        self.drinkAnnotaion = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+
+        [self.mapView addAnnotation:self.drinkAnnotaion];
+    }
+
+    for (Spot *spot in self.dataLoader.attendSpotsArray) {
+
+        CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
+
+        self.attendAnnotaion = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+
+        [self.mapView addAnnotation:self.attendAnnotaion];
     }
 
 }
 
+
+-(RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation{
+
+    RMMarker *marker = [[RMMarker alloc] init];
+    //marker.canShowCallout = YES;
+
+    if ([annotation isUserLocationAnnotation]) {
+
+        return nil;
+
+    }
+
+    else if (self.eatAnnotation){
+
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor greenColor]];
+        marker.canShowCallout = YES;
+
+        return marker;
+    }
+
+    else if (self.drinkAnnotaion){
+
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor redColor]];
+        marker.canShowCallout = YES;
+
+        return marker;
+    }
+
+    else if (self.attendAnnotaion){
+
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor blueColor]];
+        marker.canShowCallout = YES;
+
+        return marker;
+    }
+
+    return marker;
+
+}
 
 
 @end

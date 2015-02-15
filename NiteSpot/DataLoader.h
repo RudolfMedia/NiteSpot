@@ -15,6 +15,7 @@
 @property NSMutableArray *drinkSpotsArray;
 @property NSMutableArray *attendSpotsArray;
 @property NSMutableArray *allSpotsArray;
+@property BOOL geoDone;
 
 
 -(void)downloadSpots;

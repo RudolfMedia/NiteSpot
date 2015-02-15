@@ -23,7 +23,6 @@
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -405,18 +404,6 @@
                                     <rect key="frame" x="0.0" y="263" width="400" height="5"/>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vp7-tk-MEe">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
-                                <state key="normal" title="About">
-                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="11" y="250" width="74" height="32"/>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tK-ngg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,7 +413,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="97" y="250" width="82" height="32"/>
+                                    <rect key="frame" x="31" y="250" width="100" height="32"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-CH-8dM">
@@ -438,19 +425,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="282" y="250" width="82" height="32"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzA-C4-rU3">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
-                                <state key="normal" title="Specials">
-                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="190" y="250" width="82" height="32"/>
+                                    <rect key="frame" x="141" y="250" width="100" height="32"/>
                                 </variation>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-rV-VPd">
@@ -462,6 +437,18 @@
                                     <segue destination="Cu2-fY-Juw" kind="embed" id="bah-V9-wyo"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzA-C4-rU3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                                <state key="normal" title="Specials">
+                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="252" y="250" width="100" height="32"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -473,11 +460,10 @@
                                 <exclude reference="FEQ-Sc-mfY"/>
                                 <exclude reference="Qqf-PL-4od"/>
                                 <exclude reference="3fX-fY-dst"/>
-                                <exclude reference="vp7-tk-MEe"/>
                                 <exclude reference="kRJ-tK-ngg"/>
                                 <exclude reference="bIY-CH-8dM"/>
-                                <exclude reference="tzA-C4-rU3"/>
                                 <exclude reference="UrB-rV-VPd"/>
+                                <exclude reference="tzA-C4-rU3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -489,16 +475,14 @@
                                 <include reference="FEQ-Sc-mfY"/>
                                 <include reference="Qqf-PL-4od"/>
                                 <include reference="3fX-fY-dst"/>
-                                <include reference="vp7-tk-MEe"/>
                                 <include reference="kRJ-tK-ngg"/>
                                 <include reference="bIY-CH-8dM"/>
-                                <include reference="tzA-C4-rU3"/>
                                 <include reference="UrB-rV-VPd"/>
+                                <include reference="tzA-C4-rU3"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="aboutButton" destination="vp7-tk-MEe" id="4kn-g4-RES"/>
                         <outlet property="container" destination="UrB-rV-VPd" id="11p-NL-3Eo"/>
                         <outlet property="detailPhoto" destination="hJG-v7-faj" id="GGH-vV-YrC"/>
                         <outlet property="detailPriceTime" destination="FEQ-Sc-mfY" id="FRa-98-xJU"/>
@@ -525,31 +509,9 @@
                     <view key="view" contentMode="scaleToFill" id="Iy6-wD-59Z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fl-Ud-ZWF">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-96" width="400" height="832"/>
-                                </variation>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="1fl-Ud-ZWF"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="1fl-Ud-ZWF"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Vwx-OI-i2b"/>
-                    <connections>
-                        <outlet property="spotMapView" destination="1fl-Ud-ZWF" id="5LQ-4K-dfi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teK-62-GqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -835,6 +797,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gaj-GV-LqN"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LAB-XT-twC">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -9,6 +9,11 @@
 #import "DataLoader.h"
 #import "Spot.h"
 
+@interface DataLoader ()
+
+@property NSUInteger count;
+
+@end
 
 @implementation DataLoader
 
@@ -20,6 +25,7 @@
     self.drinkSpotsArray = [NSMutableArray new];
     self.attendSpotsArray = [NSMutableArray new];
     self.allSpotsArray = [NSMutableArray new];
+    self.geoDone = NO;
 
 
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://thenitespot.com/active_index.php"]];
@@ -169,28 +175,40 @@
 
     NSString *apiKey = @"Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy";
 
-    for (Spot *spot in self.allSpotsArray) {
+   __block NSUInteger count = self.allSpotsArray.count;
 
-        NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+        for (Spot *spot in self.allSpotsArray) {
 
-        NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://open.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@",apiKey, streetNoSpace, spot.spotZip]];
+            NSString *streetNoSpace = [spot.spotStreet stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
-        NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
+            NSURL *geoURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://open.mapquestapi.com/geocoding/v1/address?key=%@&street=%@&city=Pittsburgh&state=PA&postalCode=%@",apiKey, streetNoSpace, spot.spotZip]];
 
-        [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-    
-            NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            [spot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
-                  andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
+            NSURLRequest *geoReques = [[NSURLRequest alloc] initWithURL:geoURL];
 
-            NSLog(@"%@", geoURL);
+            [NSURLConnection sendAsynchronousRequest:geoReques queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
-        }];
+                NSDictionary *jsonDictionay = [NSJSONSerialization JSONObjectWithData:data
+                                                                              options:NSJSONReadingAllowFragments
+                                                                                error:nil];
 
-    }
+                [spot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
+                      andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"GeocodeDone" object:self];
 
+                NSLog(@"%@ %@", spot.lat, spot.lon);
+                count --;
+
+                if (count == 0) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"GeocodeDone"
+                                                                        object:self];
+                    self.geoDone = YES;
+                    NSLog(@"%i",self.geoDone);
+
+                }
+
+            }];
+
+        }
 
 }
 
