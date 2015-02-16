@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUseSuperview:NO];
+
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.drinkCollectionView];

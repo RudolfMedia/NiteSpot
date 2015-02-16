@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUseSuperview:NO];
 
     [self setUpTabBar];
     [self.navigationController.navigationBar setTranslucent:NO];

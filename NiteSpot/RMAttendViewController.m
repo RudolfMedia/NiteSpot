@@ -10,6 +10,7 @@
 #import "AttendCell.h"
 #import "Spot.h"
 #import "UIViewController+ScrollingNavbar.h"
+#import "RMVenueLocationDetail.h"
 
 
 @interface RMAttendViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUseSuperview:NO];
+
     self.view.backgroundColor = [UIColor blackColor];
     
     [self.navigationController.navigationBar setTranslucent:NO];
@@ -114,6 +117,15 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
     return self.dataLoader.attendSpotsArray.count;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    NSIndexPath *selectedIndex = self.attendCollectionView.indexPathsForSelectedItems.firstObject;
+    Spot *selectedSpot = [self.dataLoader.attendSpotsArray objectAtIndex:selectedIndex.item];
+    RMVenueLocationDetail *destination = [segue destinationViewController];
+    destination.selectedSpot = selectedSpot;
+    
 }
 
 #pragma mark - ScrollView Delegate methods

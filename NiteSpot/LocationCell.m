@@ -13,12 +13,7 @@
 
 - (void)awakeFromNib {
 
-    [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1IjoicnVkb2xmbWVkaWEiLCJhIjoidDZSa2hYcyJ9.ucXq4hJcdZTuInE-gtM0ug"];
-    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
-
-    self.mapView = [[RMMapView alloc] initWithFrame:self.viewForBaselineLayout.bounds andTilesource:tileSource];
-
-    [self.mapView addSubview:self.viewForBaselineLayout];
+    
 
 }
 

@@ -23,6 +23,7 @@
 		269400261A914AD900373842 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400241A914AD900373842 /* LocationCell.m */; };
 		2694002B1A91611600373842 /* SpecialsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400291A91611600373842 /* SpecialsCell.m */; };
 		2694002C1A91611600373842 /* SpecialsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2694002A1A91611600373842 /* SpecialsCell.xib */; };
+		269400391A919C9D00373842 /* RMVenueLocationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400381A919C9D00373842 /* RMVenueLocationDetail.m */; };
 		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
 		26A1F6721A68795300845917 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6711A68795300845917 /* AddressBook.framework */; };
 		26A1F6741A68795A00845917 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6731A68795A00845917 /* CoreLocation.framework */; };
@@ -78,6 +79,8 @@
 		269400281A91611600373842 /* SpecialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsCell.h; sourceTree = "<group>"; };
 		269400291A91611600373842 /* SpecialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsCell.m; sourceTree = "<group>"; };
 		2694002A1A91611600373842 /* SpecialsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialsCell.xib; sourceTree = "<group>"; };
+		269400371A919C9D00373842 /* RMVenueLocationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMVenueLocationDetail.h; sourceTree = "<group>"; };
+		269400381A919C9D00373842 /* RMVenueLocationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMVenueLocationDetail.m; sourceTree = "<group>"; };
 		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26A1F6711A68795300845917 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		26A1F6731A68795A00845917 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -194,6 +197,8 @@
 				26ECF4971A65F4D100697BBF /* AttendCell.m */,
 				26D416661A5B1FE80079AD89 /* Spot.h */,
 				26D416671A5B1FE80079AD89 /* Spot.m */,
+				269400371A919C9D00373842 /* RMVenueLocationDetail.h */,
+				269400381A919C9D00373842 /* RMVenueLocationDetail.m */,
 				26D4164D1A5B1FB40079AD89 /* Images.xcassets */,
 				26D4164F1A5B1FB40079AD89 /* LaunchScreen.xib */,
 				26D416401A5B1FB40079AD89 /* Supporting Files */,
@@ -402,6 +407,7 @@
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
 				2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */,
 				2694002B1A91611600373842 /* SpecialsCell.m in Sources */,
+				269400391A919C9D00373842 /* RMVenueLocationDetail.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
 				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
 				26055BDD1A84067D0078C615 /* DataLoader.m in Sources */,
