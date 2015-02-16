@@ -8,10 +8,8 @@
 
 #import "RMMapSearchViewController.h"
 #import "Spot.h"
-#import "RMEatAnnotation.h"
-#import "RMDrinkAnnotation.h"
-#import "RMAttendAnnotation.h"
 #import "Mapbox.h"
+
 
 @interface RMMapSearchViewController ()<CLLocationManagerDelegate, RMMapViewDelegate>
 
@@ -19,9 +17,9 @@
 @property (strong, nonatomic) RMMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
-@property RMAnnotation *eatAnnotation;
-@property RMAnnotation *drinkAnnotaion;
-@property RMAnnotation *attendAnnotaion;
+@property (strong, nonatomic) RMAnnotation *eatAnnotation;
+@property (strong, nonatomic) RMAnnotation *drinkAnnotaion;
+@property (strong, nonatomic) RMAnnotation *attendAnnotaion;
 
 @end
 
@@ -45,6 +43,9 @@
     [self.view addSubview:self.mapView];
 
     self.mapView.zoom = 15;
+    self.mapView.tintColor = [UIColor blackColor];
+    //self.mapView.clusteringEnabled = YES;
+    [self.mapView showsUserLocation];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(addAnnotations)
@@ -108,76 +109,87 @@
 
 -(void)addAnnotations{
 
-    NSLog(@"Add Annotations");
-    NSLog(@"%i",self.dataLoader.geoDone);
 
     for (Spot *spot in self.dataLoader.eatSpotsArray) {
 
         CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
 
-        self.eatAnnotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
-
+        self.eatAnnotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+        self.eatAnnotation.annotationType = @"a";
+        self.eatAnnotation.clusteringEnabled = YES;
         [self.mapView addAnnotation:self.eatAnnotation];
-
     }
 
     for (Spot *spot in self.dataLoader.drinkSpotsArray) {
 
         CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
 
-        self.drinkAnnotaion = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
-
+        self.drinkAnnotaion = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+        self.drinkAnnotaion.annotationType = @"b";
+        self.drinkAnnotaion.clusteringEnabled = YES;
         [self.mapView addAnnotation:self.drinkAnnotaion];
+
     }
 
     for (Spot *spot in self.dataLoader.attendSpotsArray) {
 
         CLLocationCoordinate2D location = CLLocationCoordinate2DMake([spot.lat floatValue], [spot.lon floatValue]);
 
-        self.attendAnnotaion = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
-
+        self.attendAnnotaion = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:location andTitle:spot.spotTitle];
+        self.attendAnnotaion.annotationType = @"d";
+        self.attendAnnotaion.clusteringEnabled = YES;
         [self.mapView addAnnotation:self.attendAnnotaion];
+
     }
 
 }
 
 
+// gets called every time a marker goes on and off screen, cant subclass with their sdk, not sure how to check what ype of annotation it is. 
+
 -(RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation{
 
-    RMMarker *marker = [[RMMarker alloc] init];
-    //marker.canShowCallout = YES;
+    //RMMarker *marker = [[RMMarker alloc] init];
+    RMMapLayer *layer = nil;
 
-    if ([annotation isUserLocationAnnotation]) {
+     if([annotation.annotationType isEqualToString:@"a"]){
 
-        return nil;
-
-    }
-
-    else if (self.eatAnnotation){
-
-        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor greenColor]];
+         RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil
+                                                           tintColorHex:@"7ED934"];
         marker.canShowCallout = YES;
+        marker.borderColor = (__bridge CGColorRef)([UIColor blackColor]);
 
-        return marker;
+
+        layer = marker;
+        return layer;
     }
 
-    else if (self.drinkAnnotaion){
+    else if ([annotation.annotationType isEqualToString:@"b"]){
 
-        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor redColor]];
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil
+                                                          tintColorHex:@"DD4F4D"];
         marker.canShowCallout = YES;
+        marker.borderColor = (__bridge CGColorRef)([UIColor blackColor]);
 
-        return marker;
+        layer = marker;
+        return layer;
+
     }
 
-    else if (self.attendAnnotaion){
+    else if ([annotation.annotationType isEqualToString:@"d"]){
 
-        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil tintColor:[UIColor blueColor]];
+        RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil
+                                                          tintColorHex:@"3BBDE2"];
         marker.canShowCallout = YES;
+        marker.borderColor = (__bridge CGColorRef)([UIColor blackColor]);
 
-        return marker;
+
+        layer = marker;
+        return layer;
+
     }
 
-    return marker;
+    return layer;
 
 }
 

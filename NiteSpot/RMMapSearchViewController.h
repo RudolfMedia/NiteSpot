@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
 #import "DataLoader.h"
+#import <MapKit/MapKit.h>
 
 @interface RMMapSearchViewController : UIViewController
 

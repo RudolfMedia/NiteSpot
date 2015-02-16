@@ -10,11 +10,10 @@
             <string>TeXGyreAdventor-Bold</string>
             <string>TeXGyreAdventor-Bold</string>
             <string>TeXGyreAdventor-Bold</string>
+            <string>TeXGyreAdventor-Bold</string>
+            <string>TeXGyreAdventor-Bold</string>
         </mutableArray>
         <mutableArray key="texgyreadventor-regular.otf">
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
@@ -387,18 +386,18 @@
                                     <rect key="frame" x="44" y="219" width="288" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-PL-4od">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-PL-4od">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="29"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="142" y="288" width="92" height="30"/>
+                                    <rect key="frame" x="78" y="286" width="220" height="30"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-fY-dst">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="263" width="400" height="5"/>
@@ -406,51 +405,62 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tK-ngg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
-                                <state key="normal" title="Location">
-                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="17"/>
+                                <state key="normal" title="About">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="31" y="250" width="100" height="32"/>
+                                    <rect key="frame" x="78" y="250" width="100" height="37"/>
                                 </variation>
+                                <connections>
+                                    <action selector="onAboutPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="bux-gF-kLe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-CH-8dM">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
-                                <state key="normal" title="Hours">
-                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="17"/>
+                                <state key="normal" title="Location">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="141" y="250" width="100" height="32"/>
-                                </variation>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-rV-VPd">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="326" width="348" height="205"/>
+                                    <rect key="frame" x="198" y="250" width="100" height="37"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="Cu2-fY-Juw" kind="embed" id="bah-V9-wyo"/>
+                                    <action selector="onLocationPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="ldR-An-nwn"/>
                                 </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzA-C4-rU3">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
-                                <state key="normal" title="Specials">
-                                    <color key="titleColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="252" y="250" width="100" height="32"/>
-                                </variation>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-bb-lmx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y8s-of-556">
+                                    <size key="itemSize" width="367" height="246"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1fe-Xt-ntk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="367" height="246"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="4" y="324" width="367" height="246"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="HS6-ip-UTY" id="PNq-hI-Q4k"/>
+                                    <outlet property="delegate" destination="HS6-ip-UTY" id="lW2-Kl-N8l"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="hJG-v7-faj"/>
@@ -462,8 +472,7 @@
                                 <exclude reference="3fX-fY-dst"/>
                                 <exclude reference="kRJ-tK-ngg"/>
                                 <exclude reference="bIY-CH-8dM"/>
-                                <exclude reference="UrB-rV-VPd"/>
-                                <exclude reference="tzA-C4-rU3"/>
+                                <exclude reference="8wf-bb-lmx"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -477,21 +486,20 @@
                                 <include reference="3fX-fY-dst"/>
                                 <include reference="kRJ-tK-ngg"/>
                                 <include reference="bIY-CH-8dM"/>
-                                <include reference="UrB-rV-VPd"/>
-                                <include reference="tzA-C4-rU3"/>
+                                <include reference="8wf-bb-lmx"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="container" destination="UrB-rV-VPd" id="11p-NL-3Eo"/>
+                        <outlet property="detailAbout" destination="kRJ-tK-ngg" id="U17-Ac-tui"/>
+                        <outlet property="detailCollectionView" destination="8wf-bb-lmx" id="ce3-52-5b4"/>
+                        <outlet property="detailLocation" destination="bIY-CH-8dM" id="sEp-GK-aB9"/>
                         <outlet property="detailPhoto" destination="hJG-v7-faj" id="GGH-vV-YrC"/>
-                        <outlet property="detailPriceTime" destination="FEQ-Sc-mfY" id="FRa-98-xJU"/>
+                        <outlet property="detailPricePhone" destination="FEQ-Sc-mfY" id="gAL-dy-bBC"/>
                         <outlet property="detailTitle" destination="0Qd-ub-kIQ" id="kfq-YP-a8F"/>
+                        <outlet property="detailTitleLable" destination="Qqf-PL-4od" id="iST-g3-9lv"/>
                         <outlet property="detailTypeImage" destination="zOe-Pv-vNL" id="PNJ-sQ-Zwk"/>
                         <outlet property="detailinfoString" destination="Kvv-lj-pXe" id="1It-t1-Nae"/>
-                        <outlet property="hoursButton" destination="bIY-CH-8dM" id="OEZ-2s-kPR"/>
-                        <outlet property="locationButton" destination="kRJ-tK-ngg" id="AP3-ue-Xu5"/>
-                        <outlet property="specialsButton" destination="tzA-C4-rU3" id="FNN-Lk-Try"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBb-Fp-JlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -797,7 +805,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gaj-GV-LqN"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LAB-XT-twC">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
