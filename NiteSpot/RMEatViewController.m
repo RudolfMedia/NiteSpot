@@ -97,7 +97,6 @@
 }
 
 
-
 - (void)setUpTabBar{
 
     UITabBar *customTabBar = self.tabBarController.tabBar;
@@ -134,6 +133,8 @@
 
     EatCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     Spot *spot = [self.dataLoader.eatSpotsArray objectAtIndex:indexPath.row];
+    
+    [[cell contentView] setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
 
     cell.eatCellTitle.layer.masksToBounds = YES;
     cell.eatCellTitle.layer.cornerRadius = 3;
