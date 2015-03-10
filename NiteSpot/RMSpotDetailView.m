@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailinfoString;
 @property (weak, nonatomic) IBOutlet UILabel *detailPricePhone;
 @property (weak, nonatomic) IBOutlet UIButton *detailAbout;
+@property (weak, nonatomic) IBOutlet UIButton *detailSpecials;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *detailLocation;
@@ -24,6 +25,7 @@
 
 @property CLLocationCoordinate2D *currentLocation;
 @property CLLocationManager *locationManager;
+@property UICollectionViewFlowLayout *flowLayout;
 
 
 @end
@@ -34,11 +36,16 @@
 
     [super viewDidLoad];
     [self geoCodeCurrentSpot];
+
     self.detailCollectionView.delegate = self;
+
     NSLog(@"%@", self.selectedSpot.type);
+
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
 
     [self formatButton:self.detailAbout];
     [self formatButton:self.detailLocation];
+    [self formatButton:self.detailSpecials];
 
     self.detailPhoto.backgroundColor = [UIColor blackColor];
 
@@ -96,6 +103,13 @@
 }
 
 #pragma mark - UICollectionview Datasource / Delegate
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    CGSize cellSize = CGSizeMake(self.detailCollectionView.frame.size.width,
+                                 self.detailCollectionView.frame.size.height);
+    return cellSize;
+}
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 

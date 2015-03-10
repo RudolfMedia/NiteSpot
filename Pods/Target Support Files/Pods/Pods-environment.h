@@ -6,12 +6,6 @@
 // project.
 
 
-// AFScrollView
-#define COCOAPODS_POD_AVAILABLE_AFScrollView
-#define COCOAPODS_VERSION_MAJOR_AFScrollView 1
-#define COCOAPODS_VERSION_MINOR_AFScrollView 0
-#define COCOAPODS_VERSION_PATCH_AFScrollView 0
-
 // AMScrollingNavbar
 #define COCOAPODS_POD_AVAILABLE_AMScrollingNavbar
 #define COCOAPODS_VERSION_MAJOR_AMScrollingNavbar 1

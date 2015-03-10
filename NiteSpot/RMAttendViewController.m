@@ -119,6 +119,11 @@
     return self.dataLoader.attendSpotsArray.count;
 }
 
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+//
+//}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     NSIndexPath *selectedIndex = self.attendCollectionView.indexPathsForSelectedItems.firstObject;

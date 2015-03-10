@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
 @property DataLoader *dataLoader;
+@property UICollectionViewFlowLayout *flowLayout;
 
 @end
 
@@ -32,6 +33,10 @@
     [self setUpTabBar];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.eatCollectionView];
+
+    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [self.eatCollectionView setCollectionViewLayout:self.flowLayout];
+    [self.eatCollectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
 
     self.eatCollectionView.delegate = self;
 
@@ -128,6 +133,13 @@
 
 
 #pragma mark - CollectionView Delegate / Datasource
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    CGSize sizeForCell = CGSizeMake(collectionView.frame.size.width, 280);
+
+    return sizeForCell;
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
