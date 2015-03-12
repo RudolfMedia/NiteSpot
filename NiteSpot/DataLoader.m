@@ -74,7 +74,14 @@
                                            drinkSat:[dictionary objectForKey:@"drink_Sat"]
                                            drinkSun:[dictionary objectForKey:@"drink_Sun"]
                                                slug:[dictionary objectForKey:@"slug"]
-                                              thumb:[dictionary objectForKey:@"thumb"]];
+                                              thumb:[dictionary objectForKey:@"thumb"]
+                                           monHours:@{@"open":[dictionary objectForKey:@"open_Mon"], @"close":[dictionary objectForKey:@"close_Mon"]}
+                                           tueHours:@{@"open":[dictionary objectForKey:@"open_Tue"], @"close":[dictionary objectForKey:@"close_Tue"]}
+                                           wedHours:@{@"open":[dictionary objectForKey:@"open_Wed"], @"close":[dictionary objectForKey:@"close_Wed"]}
+                                           thuHours:@{@"open":[dictionary objectForKey:@"open_Thu"], @"close":[dictionary objectForKey:@"close_Thu"]}
+                                           friHours:@{@"open":[dictionary objectForKey:@"open_Fri"], @"close":[dictionary objectForKey:@"close_Fri"]}
+                                           satHours:@{@"open":[dictionary objectForKey:@"open_Sat"], @"close":[dictionary objectForKey:@"close_Sat"]}
+                                           sunHours:@{@"open":[dictionary objectForKey:@"open_Sun"], @"close":[dictionary objectForKey:@"close_Sun"]}];
 
             [self.allSpotsArray addObject:spot];
         }
@@ -95,6 +102,46 @@
             spot.price = @"$$";
 
         }
+
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"HH:mm:ss"];
+
+        NSDateFormatter *formatter2 = [[NSDateFormatter alloc] init];
+        [formatter2 setDateFormat:@"hh:mm a"];
+
+
+        if ([[spot.monHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.monHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+        NSDate *openMon = [formatter dateFromString:[spot.monHours objectForKey:@"open"]];
+        NSString *monOpen = [formatter2 stringFromDate:openMon];
+        NSDate *closeMon = [formatter dateFromString:[spot.monHours objectForKey:@"close"]];
+        NSString *monClose = [formatter2 stringFromDate:closeMon];
+
+        spot.monHours = @{@"open": monOpen, @"close":monClose};
+
+        }
+        if ([[spot.tueHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.tueHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openTue = [formatter dateFromString:[spot.tueHours objectForKey:@"open"]];
+            NSString *tueOpen = [formatter2 stringFromDate:openTue];
+            NSDate *closeTue = [formatter dateFromString:[spot.tueHours objectForKey:@"close"]];
+            NSString *tueClose = [formatter2 stringFromDate:closeTue];
+
+            spot.tueHours = @{@"open" : tueOpen, @"close" : tueClose};
+            
+        }
+
+
 
         NSString *parsedTitle = spot.spotTitle;
         parsedTitle = [parsedTitle stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];

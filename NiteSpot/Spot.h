@@ -45,6 +45,13 @@
 @property NSURL *thumbURL;
 @property NSString *lat;
 @property NSString *lon;
+@property NSDictionary *monHours;
+@property NSDictionary *tueHours;
+@property NSDictionary *wedHours;
+@property NSDictionary *thuHours;
+@property NSDictionary *friHours;
+@property NSDictionary *satHours;
+@property NSDictionary *sunHours;
 
 - (Spot *) initWithName:(NSString *)name
                    type:(NSString *)type
@@ -75,7 +82,14 @@
                drinkSat:(NSString *)drinkSat
                drinkSun:(NSString *)drinkSun
                    slug:(NSString *)slug
-                  thumb:(NSString *)thumb;
+                  thumb:(NSString *)thumb
+               monHours:(NSDictionary *)monHours
+               tueHours:(NSDictionary *)tueHours
+               wedHours:(NSDictionary *)wedHours
+               thuHours:(NSDictionary *)thuHours
+               friHours:(NSDictionary *)firHours
+               satHours:(NSDictionary *)satHours
+               sunHours:(NSDictionary *)sunHours;
 
 - (Spot *) addThumbURL:(NSURL *)url;
 
