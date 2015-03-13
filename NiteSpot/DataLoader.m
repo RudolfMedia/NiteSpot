@@ -125,6 +125,7 @@
         spot.monHours = @{@"open": monOpen, @"close":monClose};
 
         }
+        
         if ([[spot.tueHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
             spot.tueHours = @{@"open": @"Closed", @"close": @"Closed"};
 
@@ -138,6 +139,85 @@
             NSString *tueClose = [formatter2 stringFromDate:closeTue];
 
             spot.tueHours = @{@"open" : tueOpen, @"close" : tueClose};
+            
+        }
+
+        if ([[spot.wedHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.wedHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openWed = [formatter dateFromString:[spot.wedHours objectForKey:@"open"]];
+            NSString *wedOpen = [formatter2 stringFromDate:openWed];
+            NSDate *closeWed = [formatter dateFromString:[spot.wedHours objectForKey:@"close"]];
+            NSString *wedClose = [formatter2 stringFromDate:closeWed];
+
+            spot.wedHours = @{@"open" : wedOpen, @"close" : wedClose};
+            
+        }
+
+        if ([[spot.thuHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.thuHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openThu = [formatter dateFromString:[spot.thuHours objectForKey:@"open"]];
+            NSString *thuOpen = [formatter2 stringFromDate:openThu];
+            NSDate *closeThu = [formatter dateFromString:[spot.thuHours objectForKey:@"close"]];
+            NSString *thuClose = [formatter2 stringFromDate:closeThu];
+
+            spot.thuHours = @{@"open" : thuOpen, @"close" : thuClose};
+            
+        }
+
+        if ([[spot.friHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.friHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openFri = [formatter dateFromString:[spot.friHours objectForKey:@"open"]];
+            NSString *friOpen = [formatter2 stringFromDate:openFri];
+            NSDate *closeFri = [formatter dateFromString:[spot.friHours objectForKey:@"close"]];
+            NSString *friClose = [formatter2 stringFromDate:closeFri];
+
+            spot.friHours = @{@"open" : friOpen, @"close" : friClose};
+            
+        }
+
+        if ([[spot.satHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.satHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openSat = [formatter dateFromString:[spot.satHours objectForKey:@"open"]];
+            NSString *satOpen = [formatter2 stringFromDate:openSat];
+            NSDate *closeSat = [formatter dateFromString:[spot.satHours objectForKey:@"close"]];
+            NSString *satClose = [formatter2 stringFromDate:closeSat];
+
+            spot.satHours = @{@"open" : satOpen, @"close" : satClose};
+            
+        }
+        if ([[spot.sunHours objectForKey:@"open"] isKindOfClass:[NSNull class]]) {
+            spot.sunHours = @{@"open": @"Closed", @"close": @"Closed"};
+
+        }
+
+        else{
+
+            NSDate *openSun = [formatter dateFromString:[spot.sunHours objectForKey:@"open"]];
+            NSString *sunOpen = [formatter2 stringFromDate:openSun];
+            NSDate *closeSun = [formatter dateFromString:[spot.sunHours objectForKey:@"close"]];
+            NSString *sunClose = [formatter2 stringFromDate:closeSun];
+
+            spot.sunHours = @{@"open" : sunOpen, @"close" : sunClose};
             
         }
 

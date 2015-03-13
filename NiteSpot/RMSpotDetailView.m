@@ -41,7 +41,6 @@
 
     NSLog(@"%@", self.selectedSpot.type);
 
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
 
     [self formatButton:self.detailAbout];
     [self formatButton:self.detailLocation];
@@ -100,6 +99,8 @@
     [self.detailCollectionView registerNib:[UINib nibWithNibName:@"AboutCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"AboutCell"];
 
         [self.detailCollectionView registerClass:[LocationCell class] forCellWithReuseIdentifier:@"LocationCell"];
+
+    NSLog(@"%@ %@ %@ %@ %@ %@ %@", self.selectedSpot.monHours, self.selectedSpot.tueHours, self.selectedSpot.wedHours, self.selectedSpot.thuHours, self.selectedSpot.friHours, self.selectedSpot.satHours, self.selectedSpot.sunHours);
 }
 
 #pragma mark - UICollectionview Datasource / Delegate
