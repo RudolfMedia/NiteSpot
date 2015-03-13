@@ -6,9 +6,6 @@
     <customFonts key="customFonts">
         <mutableArray key="texgyreadventor-regular.otf">
             <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -20,41 +17,22 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="367" height="244"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-5A-gQX">
-                        <rect key="frame" x="8" y="116" width="351" height="128"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-5A-gQX">
+                        <rect key="frame" x="8" y="0.0" width="351" height="244"/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-mg-Qeo">
-                        <rect key="frame" x="133" y="13" width="100" height="30"/>
-                        <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EY-1w-pg5">
-                        <rect key="frame" x="49" y="50" width="100" height="30"/>
-                        <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Close:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3d-wn-6mr">
-                        <rect key="frame" x="210" y="50" width="100" height="30"/>
-                        <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="20"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="zxL-mg-Qeo" secondAttribute="centerX" id="7CD-Jn-j7b"/>
                 <constraint firstAttribute="trailing" secondItem="r5Q-5A-gQX" secondAttribute="trailing" constant="8" id="CxD-xV-h7g"/>
                 <constraint firstAttribute="bottom" secondItem="r5Q-5A-gQX" secondAttribute="bottom" id="Hpg-NQ-gnE"/>
-                <constraint firstItem="r5Q-5A-gQX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="116" id="Tz7-bt-gOJ"/>
                 <constraint firstItem="r5Q-5A-gQX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ebE-ns-zXi"/>
+                <constraint firstItem="r5Q-5A-gQX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yYg-OL-kMu"/>
             </constraints>
             <size key="customSize" width="225" height="144"/>
             <point key="canvasLocation" x="185.5" y="325"/>

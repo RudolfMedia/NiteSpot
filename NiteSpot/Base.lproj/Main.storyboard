@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8I7-AL-W97">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="texgyreadventor-bold.otf">
@@ -12,6 +13,7 @@
             <string>TeXGyreAdventor-Bold</string>
         </mutableArray>
         <mutableArray key="texgyreadventor-regular.otf">
+            <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
@@ -38,7 +40,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
                                 <rect key="frame" x="0.0" y="-64" width="320" height="570"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="Iis-sC-1iT">
                                     <size key="itemSize" width="320" height="280"/>
@@ -54,19 +56,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-PN-ChN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-PN-ChN">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBb-EH-YRE">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBb-EH-YRE">
                                                     <rect key="frame" x="0.0" y="214" width="320" height="66"/>
                                                     <subviews>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-sp-TOQ">
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-sp-TOQ">
                                                             <rect key="frame" x="271" y="-26" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drinkicon" translatesAutoresizingMaskIntoConstraints="NO" id="aGO-yJ-e8w">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="drinkicon" translatesAutoresizingMaskIntoConstraints="NO" id="aGO-yJ-e8w">
                                                             <rect key="frame" x="224" y="-26" width="40" height="40"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH8-lJ-yud">
@@ -83,11 +85,26 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Rbe-sp-TOQ" secondAttribute="trailing" constant="9" id="bje-QR-NTK"/>
+                                                        <constraint firstItem="Rbe-sp-TOQ" firstAttribute="leading" secondItem="aGO-yJ-e8w" secondAttribute="trailing" constant="7" id="dcU-Dr-9Pl"/>
+                                                        <constraint firstAttribute="height" constant="66" id="f7O-zP-Zxr"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.062745098040000002" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LBb-EH-YRE" secondAttribute="trailing" id="B0v-nD-Md8"/>
+                                            <constraint firstAttribute="trailing" secondItem="LBb-EH-YRE" secondAttribute="trailing" id="F0F-in-Wd0"/>
+                                            <constraint firstItem="dvY-PN-ChN" firstAttribute="top" secondItem="9D3-yd-kWf" secondAttribute="top" id="GqA-YH-DgI"/>
+                                            <constraint firstItem="dvY-PN-ChN" firstAttribute="leading" secondItem="9D3-yd-kWf" secondAttribute="leading" id="KlJ-R5-2fi"/>
+                                            <constraint firstAttribute="bottom" secondItem="LBb-EH-YRE" secondAttribute="bottom" id="ZGe-4O-GCP"/>
+                                            <constraint firstAttribute="trailing" secondItem="dvY-PN-ChN" secondAttribute="trailing" id="eUJ-vU-jqp"/>
+                                            <constraint firstItem="LBb-EH-YRE" firstAttribute="leading" secondItem="9D3-yd-kWf" secondAttribute="leading" id="fMO-fj-vPt"/>
+                                            <constraint firstAttribute="bottom" secondItem="dvY-PN-ChN" secondAttribute="bottom" constant="14" id="wOF-DC-by7"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="addressLabel" destination="p9Y-gM-OWM" id="dDO-81-4VM"/>
                                             <outlet property="drinkCellImageView" destination="dvY-PN-ChN" id="36P-hh-cmY"/>
@@ -109,6 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NjM-k9-MMt" firstAttribute="top" secondItem="htb-6W-oH8" secondAttribute="top" id="NNS-Z5-m9u"/>
                             <constraint firstItem="NjM-k9-MMt" firstAttribute="leading" secondItem="htb-6W-oH8" secondAttribute="leading" id="SbW-ss-XAJ"/>
                             <constraint firstAttribute="trailing" secondItem="NjM-k9-MMt" secondAttribute="trailing" id="lR5-eN-Ugu"/>
                             <constraint firstAttribute="bottom" secondItem="NjM-k9-MMt" secondAttribute="bottom" id="ncL-e0-snR"/>
@@ -255,30 +273,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-v7-faj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="213" id="LCF-dV-unt"/>
+                                    <constraint firstAttribute="width" secondItem="hJG-v7-faj" secondAttribute="height" multiplier="320:213" id="Co0-e4-ds8"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zOe-Pv-vNL">
-                                <rect key="frame" x="123" y="15" width="75" height="75"/>
+                                <rect key="frame" x="123" y="20" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="iO6-Dl-tph"/>
                                     <constraint firstAttribute="width" constant="75" id="nOY-ld-dw1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qd-ub-kIQ">
-                                <rect key="frame" x="16" y="105" width="288" height="25"/>
+                                <rect key="frame" x="16" y="110" width="288" height="25"/>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="20"/>
                                 <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvv-lj-pXe">
-                                <rect key="frame" x="16" y="134" width="288" height="21"/>
+                                <rect key="frame" x="16" y="139" width="288" height="21"/>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
                                 <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEQ-Sc-mfY">
-                                <rect key="frame" x="16" y="155" width="288" height="21"/>
+                                <rect key="frame" x="16" y="160" width="288" height="21"/>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
                                 <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -298,7 +316,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-bb-lmx">
-                                <rect key="frame" x="0.0" y="252" width="320" height="195"/>
+                                <rect key="frame" x="0.0" y="239" width="320" height="208"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y8s-of-556">
                                     <size key="itemSize" width="320" height="246"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -321,12 +339,8 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tK-ngg">
-                                <rect key="frame" x="16" y="201" width="85" height="30"/>
+                                <rect key="frame" x="8" y="199" width="70" height="34"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NVE-fw-nRA"/>
-                                    <constraint firstAttribute="width" constant="85" id="bYa-Wr-e1S"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
                                 <state key="normal" title="About">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -336,29 +350,9 @@
                                     <action selector="onAboutPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="bux-gF-kLe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmn-CE-eMI">
-                                <rect key="frame" x="118" y="201" width="85" height="34"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fgy-ea-EzL"/>
-                                    <constraint firstAttribute="width" constant="85" id="xy1-PL-UIR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
-                                <state key="normal" title="Specials">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onAboutPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="XFE-TR-FfR"/>
-                                </connections>
-                            </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-CH-8dM">
-                                <rect key="frame" x="219" y="201" width="85" height="30"/>
+                                <rect key="frame" x="86" y="199" width="70" height="34"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="V7a-7g-hqe"/>
-                                    <constraint firstAttribute="width" constant="85" id="aws-jQ-PHG"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
                                 <state key="normal" title="Location">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -368,15 +362,42 @@
                                     <action selector="onLocationPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="ldR-An-nwn"/>
                                 </connections>
                             </button>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fee-t5-j15">
+                                <rect key="frame" x="242" y="199" width="70" height="34"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
+                                <state key="normal" title="Hours">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onHoursPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="FH6-3W-rmq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmn-CE-eMI">
+                                <rect key="frame" x="164" y="199" width="70" height="34"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
+                                <state key="normal" title="Specials">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSpecialsPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="Ffm-7P-YjZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zOe-Pv-vNL" firstAttribute="top" secondItem="CRa-VT-uJ5" secondAttribute="bottom" constant="15" id="1fb-3i-OEA"/>
-                            <constraint firstItem="tmn-CE-eMI" firstAttribute="leading" secondItem="kRJ-tK-ngg" secondAttribute="trailing" constant="16" id="1o7-Er-ob1"/>
                             <constraint firstAttribute="centerX" secondItem="Kvv-lj-pXe" secondAttribute="centerX" id="2bB-Zt-TpC"/>
                             <constraint firstItem="FEQ-Sc-mfY" firstAttribute="top" secondItem="Kvv-lj-pXe" secondAttribute="bottom" id="6fd-m7-DtB"/>
+                            <constraint firstItem="fee-t5-j15" firstAttribute="leading" secondItem="tmn-CE-eMI" secondAttribute="trailing" constant="8" id="6wd-HQ-cLQ"/>
                             <constraint firstItem="Kvv-lj-pXe" firstAttribute="top" secondItem="0Qd-ub-kIQ" secondAttribute="bottom" constant="2" id="7Vh-1Y-fLf"/>
+                            <constraint firstAttribute="trailing" secondItem="fee-t5-j15" secondAttribute="trailing" constant="8" id="8zm-1z-OqS"/>
                             <constraint firstItem="hJG-v7-faj" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="Ac9-ei-WV9"/>
+                            <constraint firstItem="zOe-Pv-vNL" firstAttribute="top" secondItem="CRa-VT-uJ5" secondAttribute="bottom" constant="20" id="Few-Nk-CLO"/>
+                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="kRJ-tK-ngg" secondAttribute="width" id="Guu-FX-bs9"/>
+                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="fee-t5-j15" secondAttribute="width" id="HlB-GL-aVD"/>
                             <constraint firstAttribute="trailing" secondItem="3fX-fY-dst" secondAttribute="trailing" id="Hlv-8V-mpg"/>
                             <constraint firstAttribute="trailing" secondItem="8wf-bb-lmx" secondAttribute="trailing" id="Htd-v1-d6l"/>
                             <constraint firstAttribute="centerX" secondItem="FEQ-Sc-mfY" secondAttribute="centerX" id="IZo-HS-GYE"/>
@@ -384,21 +405,26 @@
                             <constraint firstAttribute="trailing" secondItem="hJG-v7-faj" secondAttribute="trailing" id="Pyo-qf-QWh"/>
                             <constraint firstItem="3fX-fY-dst" firstAttribute="top" secondItem="hJG-v7-faj" secondAttribute="bottom" id="QLd-ch-oFp"/>
                             <constraint firstAttribute="centerX" secondItem="zOe-Pv-vNL" secondAttribute="centerX" id="QSD-xu-hzB"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="leading" secondItem="tmn-CE-eMI" secondAttribute="trailing" constant="16" id="Sdc-mI-lpM"/>
+                            <constraint firstItem="kRJ-tK-ngg" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" constant="8" id="SNY-3o-ctJ"/>
                             <constraint firstItem="3fX-fY-dst" firstAttribute="top" secondItem="hJG-v7-faj" secondAttribute="bottom" id="TLs-Wy-xMS"/>
-                            <constraint firstAttribute="centerX" secondItem="tmn-CE-eMI" secondAttribute="centerX" id="YUs-n6-VEe"/>
+                            <constraint firstItem="bIY-CH-8dM" firstAttribute="centerY" secondItem="3fX-fY-dst" secondAttribute="centerY" constant="0.5" id="c4t-i0-9tu"/>
                             <constraint firstAttribute="centerX" secondItem="0Qd-ub-kIQ" secondAttribute="centerX" id="cjU-eo-dfe"/>
+                            <constraint firstItem="tmn-CE-eMI" firstAttribute="leading" secondItem="bIY-CH-8dM" secondAttribute="trailing" constant="8" id="elE-Ja-tmM"/>
+                            <constraint firstItem="8wf-bb-lmx" firstAttribute="top" secondItem="3fX-fY-dst" secondAttribute="bottom" constant="21" id="gww-x9-Bbu"/>
+                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="tmn-CE-eMI" secondAttribute="width" id="hn2-zz-zrK"/>
+                            <constraint firstItem="bIY-CH-8dM" firstAttribute="leading" secondItem="kRJ-tK-ngg" secondAttribute="trailing" constant="8" id="iEp-Gq-XEO"/>
                             <constraint firstItem="Vcz-Yt-0sH" firstAttribute="top" secondItem="8wf-bb-lmx" secondAttribute="bottom" constant="8" id="k5f-br-X2Y"/>
                             <constraint firstItem="Vcz-Yt-0sH" firstAttribute="top" secondItem="8wf-bb-lmx" secondAttribute="bottom" constant="8" id="k7f-3p-i1g"/>
                             <constraint firstItem="3fX-fY-dst" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="lm1-Wc-TLk"/>
                             <constraint firstItem="8wf-bb-lmx" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="rqq-13-jAm"/>
-                            <constraint firstItem="8wf-bb-lmx" firstAttribute="top" secondItem="3fX-fY-dst" secondAttribute="bottom" constant="34" id="uLe-j9-GdU"/>
+                            <constraint firstItem="8wf-bb-lmx" firstAttribute="leading" secondItem="3fX-fY-dst" secondAttribute="trailing" constant="-320" id="znd-2D-Rcc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nSQ-h1-JpD"/>
                     <connections>
                         <outlet property="detailAbout" destination="kRJ-tK-ngg" id="U17-Ac-tui"/>
                         <outlet property="detailCollectionView" destination="8wf-bb-lmx" id="ce3-52-5b4"/>
+                        <outlet property="detailHours" destination="fee-t5-j15" id="grO-Tb-h7m"/>
                         <outlet property="detailLocation" destination="bIY-CH-8dM" id="sEp-GK-aB9"/>
                         <outlet property="detailPhoto" destination="hJG-v7-faj" id="GGH-vV-YrC"/>
                         <outlet property="detailPricePhone" destination="FEQ-Sc-mfY" id="gAL-dy-bBC"/>
@@ -411,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBb-Fp-JlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="83"/>
+            <point key="canvasLocation" x="1561" y="79"/>
         </scene>
         <!--Map Search View Controller-->
         <scene sceneID="pfA-1R-nf3">
@@ -685,6 +711,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OQe-5r-dbl"/>
+        <segue reference="5e6-7V-xEG"/>
     </inferredMetricsTieBreakers>
 </document>

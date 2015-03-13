@@ -9,6 +9,8 @@
 #import "RMSpotDetailView.h"
 #import "AboutCell.h"
 #import "LocationCell.h"
+#import "HoursCell.h"
+#import "SpecialsCell.h"
 
 @interface RMSpotDetailView () <UICollectionViewDataSource, UIBarPositioningDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate>
 
@@ -18,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailPricePhone;
 @property (weak, nonatomic) IBOutlet UIButton *detailAbout;
 @property (weak, nonatomic) IBOutlet UIButton *detailSpecials;
+@property (weak, nonatomic) IBOutlet UIButton *detailHours;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *detailLocation;
@@ -45,6 +48,7 @@
     [self formatButton:self.detailAbout];
     [self formatButton:self.detailLocation];
     [self formatButton:self.detailSpecials];
+    [self formatButton:self.detailHours];
 
     self.detailPhoto.backgroundColor = [UIColor blackColor];
 
@@ -96,11 +100,22 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 
-    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"AboutCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"AboutCell"];
+    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"AboutCell"
+                                                          bundle:[NSBundle mainBundle]]
+                                      forCellWithReuseIdentifier:@"AboutCell"];
 
-        [self.detailCollectionView registerClass:[LocationCell class] forCellWithReuseIdentifier:@"LocationCell"];
+    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HoursCell"
+                                                          bundle:[NSBundle mainBundle]]
+                                      forCellWithReuseIdentifier:@"HoursCell"];
 
-    NSLog(@"%@ %@ %@ %@ %@ %@ %@", self.selectedSpot.monHours, self.selectedSpot.tueHours, self.selectedSpot.wedHours, self.selectedSpot.thuHours, self.selectedSpot.friHours, self.selectedSpot.satHours, self.selectedSpot.sunHours);
+
+    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"SpecialsCell"
+                                                          bundle:[NSBundle mainBundle]]
+                forCellWithReuseIdentifier:@"SpecialsCell"];
+
+    [self.detailCollectionView registerClass:[LocationCell class]
+                  forCellWithReuseIdentifier:@"LocationCell"];
+
 }
 
 #pragma mark - UICollectionview Datasource / Delegate
@@ -114,7 +129,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
-    return 2;
+    return 4;
 
 }
 
@@ -163,10 +178,33 @@
 
     else if (indexPath == [NSIndexPath indexPathForItem:2 inSection:0]){
 
+        SpecialsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SpecialsCell" forIndexPath:indexPath];
+
+        return cell;
+
     }
 
     else if (indexPath == [NSIndexPath indexPathForItem:3 inSection:0]){
+        HoursCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HoursCell" forIndexPath:indexPath];
+        UILabel *mon = (UILabel *)[cell viewWithTag:1000];
+        UILabel *tue = (UILabel *)[cell viewWithTag:2000];
+        UILabel *wed = (UILabel *)[cell viewWithTag:3000];
+        UILabel *thu = (UILabel *)[cell viewWithTag:4000];
+        UILabel *fri = (UILabel *)[cell viewWithTag:5000];
+        UILabel *sat = (UILabel *)[cell viewWithTag:6000];
+        UILabel *sun = (UILabel *)[cell viewWithTag:7000];
 
+        mon.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.monHours objectForKey:@"open"], [self.selectedSpot.monHours objectForKey:@"close"]];
+        tue.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.tueHours objectForKey:@"open"], [self.selectedSpot.tueHours objectForKey:@"close"]];
+        wed.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.wedHours objectForKey:@"open"], [self.selectedSpot.wedHours objectForKey:@"close"]];
+        thu.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.thuHours objectForKey:@"open"], [self.selectedSpot.thuHours objectForKey:@"close"]];
+        fri.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.friHours objectForKey:@"open"], [self.selectedSpot.friHours objectForKey:@"close"]];
+        sat.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.satHours objectForKey:@"open"], [self.selectedSpot.satHours objectForKey:@"close"]];
+        sun.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.sunHours objectForKey:@"open"], [self.selectedSpot.sunHours objectForKey:@"close"]];
+
+
+
+        return cell;
     }
 
     return cell;
@@ -207,18 +245,24 @@
 
 - (IBAction)onAboutPressed:(id)sender {
 
-    [self.detailTitleLable setText:@"About"];
-
     [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
 - (IBAction)onLocationPressed:(id)sender {
 
-    [self.detailTitleLable setText:@"Location"];
-
     [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 
 }
 
+- (IBAction)onSpecialsPressed:(id)sender {
+
+    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+
+}
+- (IBAction)onHoursPressed:(id)sender {
+
+    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+
+}
 
 @end

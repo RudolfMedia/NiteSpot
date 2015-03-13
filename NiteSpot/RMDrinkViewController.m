@@ -62,6 +62,13 @@
 
 #pragma mark - CollectionView Datsource / Delegate
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    CGSize sizeForCell = CGSizeMake(collectionView.frame.size.width, 280);
+
+    return sizeForCell;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
 
     return self.dataLoader.drinkSpotsArray.count;
