@@ -145,20 +145,17 @@
 }
 
 
-// gets called every time a marker goes on and off screen, cant subclass with their sdk, not sure how to check what ype of annotation it is. 
 
 -(RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation{
 
-    //RMMarker *marker = [[RMMarker alloc] init];
     RMMapLayer *layer = nil;
 
      if([annotation.annotationType isEqualToString:@"a"]){
 
          RMMarker *marker = [[RMMarker alloc] initWithMapboxMarkerImage:nil
                                                            tintColorHex:@"7ED934"];
-        marker.canShowCallout = YES;
-        marker.borderColor = (__bridge CGColorRef)([UIColor blackColor]);
-
+         marker.canShowCallout = YES;
+         marker.borderColor = (__bridge CGColorRef)([UIColor blackColor]);
 
         layer = marker;
         return layer;

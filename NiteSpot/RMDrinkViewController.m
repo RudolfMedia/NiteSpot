@@ -14,6 +14,7 @@
 #import "RMSpotDetailView.h"
 
 @interface RMDrinkViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
 
 
@@ -28,6 +29,8 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.drinkCollectionView];
+
+    [self followScrollView:self.drinkCollectionView usingTopConstraint:self.topLayoutConstraint];
 
 
     [[NSNotificationCenter defaultCenter] addObserver:self

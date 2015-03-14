@@ -19,6 +19,7 @@
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @property DataLoader *dataLoader;
 @property UICollectionViewFlowLayout *flowLayout;
 
@@ -41,6 +42,8 @@
     self.eatCollectionView.delegate = self;
 
     self.tabBarController.delegate = self;
+
+    [self followScrollView:self.eatCollectionView usingTopConstraint:self.topLayoutConstraint];
 
     self.dataLoader = [[DataLoader alloc] init];
     [self.dataLoader downloadSpots];
@@ -74,6 +77,7 @@
     [self.eatCollectionView reloadData];
 
 }
+
 
 #pragma mark - TabBar Delegate
 

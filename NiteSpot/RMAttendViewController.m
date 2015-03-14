@@ -16,6 +16,7 @@
 @interface RMAttendViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *attendCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 
 @end
 
@@ -29,6 +30,9 @@
     
     [self.navigationController.navigationBar setTranslucent:NO];
     [self followScrollView:self.attendCollectionView];
+    [self followScrollView:self.attendCollectionView usingTopConstraint:self.topLayoutConstraint];
+
+
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadAttendView:)
@@ -119,9 +123,13 @@
     return self.dataLoader.attendSpotsArray.count;
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//
-//}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    CGSize sizeForCell = CGSizeMake(collectionView.frame.size.width, 280);
+
+    return sizeForCell;
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
