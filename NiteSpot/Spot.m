@@ -46,7 +46,15 @@
               thuHours:(NSDictionary *)thuHours
               friHours:(NSDictionary *)friHours
               satHours:(NSDictionary *)satHours
-              sunHours:(NSDictionary *)sunHours;
+              sunHours:(NSDictionary *)sunHours
+               general:(NSString *)general
+            monSpecial:(NSDictionary *)monSpecial
+            tueSpecial:(NSDictionary *)tueSpecial
+            wedSpecial:(NSDictionary *)wedSpecial
+            thuSpecial:(NSDictionary *)thuSpecial
+            friSpecial:(NSDictionary *)friSpecial
+            satSpecial:(NSDictionary *)satSpecial
+            sunSpecial:(NSDictionary *)sunSpecial;
 {
 
     self.spotTitle = name;
@@ -87,7 +95,14 @@
     self.friHours = friHours;
     self.satHours = satHours;
     self.sunHours = sunHours;
-
+    self.monSpecial = monSpecial;
+    self.tueSpecial = tueSpecial;
+    self.wedSpecial = wedSpecial;
+    self.thuSpecial = thuSpecial;
+    self.friSpecial = friSpecial;
+    self.satSpecial = satSpecial;
+    self.sunSpecial = sunSpecial;
+    self.general = general;
 
 
     return self;

@@ -38,7 +38,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IGn-GK-w9D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="htb-6W-oH8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
@@ -154,7 +154,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8VY-fh-kXX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dtX-6D-Jl6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
@@ -281,7 +281,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Vcz-Yt-0sH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Zej-gD-2q1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-v7-faj">
@@ -462,7 +462,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wOr-Yq-klW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Iy6-wD-59Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -472,7 +472,7 @@
             </objects>
             <point key="canvasLocation" x="1024" y="1718.2"/>
         </scene>
-        <!--Eat View Controller-->
+        <!--NITESPOT-->
         <scene sceneID="bIj-to-2a4">
             <objects>
                 <viewController id="TPZ-hf-e9P" customClass="RMEatViewController" sceneMemberID="viewController">
@@ -481,7 +481,7 @@
                         <viewControllerLayoutGuide type="bottom" id="s2Z-Iv-1N5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2dF-IX-Uun">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
@@ -572,7 +572,7 @@
                             <constraint firstItem="U4K-Bf-UIb" firstAttribute="leading" secondItem="2dF-IX-Uun" secondAttribute="leading" id="ofi-oY-s68"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Zhh-yE-zE6">
+                    <navigationItem key="navigationItem" title="NITESPOT" id="Zhh-yE-zE6">
                         <barButtonItem key="backBarButtonItem" title=" " id="L3H-qX-U9R"/>
                     </navigationItem>
                     <connections>
@@ -589,10 +589,11 @@
             <objects>
                 <tabBarController modalTransitionStyle="crossDissolve" id="8I7-AL-W97" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="aea-0s-OPJ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="aea-0s-OPJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Lwt-dh-IeM" kind="relationship" relationship="viewControllers" id="bqd-M4-zHx"/>
@@ -726,6 +727,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5e6-7V-xEG"/>
+        <segue reference="OQe-5r-dbl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -52,6 +52,14 @@
 @property NSDictionary *friHours;
 @property NSDictionary *satHours;
 @property NSDictionary *sunHours;
+@property NSDictionary *monSpecial;
+@property NSDictionary *tueSpecial;
+@property NSDictionary *wedSpecial;
+@property NSDictionary *thuSpecial;
+@property NSDictionary *friSpecial;
+@property NSDictionary *satSpecial;
+@property NSDictionary *sunSpecial;
+@property NSString *general;
 
 - (Spot *) initWithName:(NSString *)name
                    type:(NSString *)type
@@ -89,7 +97,15 @@
                thuHours:(NSDictionary *)thuHours
                friHours:(NSDictionary *)firHours
                satHours:(NSDictionary *)satHours
-               sunHours:(NSDictionary *)sunHours;
+               sunHours:(NSDictionary *)sunHours
+                general:(NSString *)general
+             monSpecial:(NSDictionary *)monSpecial
+             tueSpecial:(NSDictionary *)tueSpecial
+             wedSpecial:(NSDictionary *)wedSpecial
+             thuSpecial:(NSDictionary *)thuSpecial
+             friSpecial:(NSDictionary *)friSpecial
+             satSpecial:(NSDictionary *)satSpecial
+             sunSpecial:(NSDictionary *)sunSpecial;
 
 - (Spot *) addThumbURL:(NSURL *)url;
 

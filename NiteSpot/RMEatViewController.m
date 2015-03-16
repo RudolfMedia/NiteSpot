@@ -202,12 +202,6 @@
 }
 
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-
-}
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     NSIndexPath *selectedIndex = self.eatCollectionView.indexPathsForSelectedItems.firstObject;

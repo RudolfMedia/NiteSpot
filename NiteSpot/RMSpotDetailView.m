@@ -50,6 +50,8 @@
     [self formatButton:self.detailSpecials];
     [self formatButton:self.detailHours];
 
+    NSLog(@"%@ %@ %@ %@ %@ %@", self.selectedSpot.monSpecial, self.selectedSpot.tueSpecial, self.selectedSpot.thuSpecial, self.selectedSpot.friSpecial, self.selectedSpot.satSpecial, self.selectedSpot.sunSpecial);
+
     self.detailPhoto.backgroundColor = [UIColor blackColor];
 
     if ([self.selectedSpot.type isEqualToString:@"a"]) {

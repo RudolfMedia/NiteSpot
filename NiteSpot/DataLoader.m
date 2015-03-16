@@ -81,7 +81,17 @@
                                            thuHours:@{@"open":[dictionary objectForKey:@"open_Thu"], @"close":[dictionary objectForKey:@"close_Thu"]}
                                            friHours:@{@"open":[dictionary objectForKey:@"open_Fri"], @"close":[dictionary objectForKey:@"close_Fri"]}
                                            satHours:@{@"open":[dictionary objectForKey:@"open_Sat"], @"close":[dictionary objectForKey:@"close_Sat"]}
-                                           sunHours:@{@"open":[dictionary objectForKey:@"open_Sun"], @"close":[dictionary objectForKey:@"close_Sun"]}];
+                                           sunHours:@{@"open":[dictionary objectForKey:@"open_Sun"], @"close":[dictionary objectForKey:@"close_Sun"]}
+                                            general:[dictionary objectForKey:@"general"]
+                                         monSpecial:@{@"eat": [dictionary objectForKey:@"eat_Mon"], @"drink": [dictionary objectForKey:@"drink_Mon"]}
+                                         tueSpecial:@{@"eat": [dictionary objectForKey:@"eat_Tue"], @"drink": [dictionary objectForKey:@"drink_Tue"]}
+                                         wedSpecial:@{@"eat": [dictionary objectForKey:@"eat_Wed"], @"drink": [dictionary objectForKey:@"drink_Wed"]}
+                                         thuSpecial:@{@"eat": [dictionary objectForKey:@"eat_Thu"], @"drink": [dictionary objectForKey:@"drink_Thu"]}
+                                         friSpecial:@{@"eat": [dictionary objectForKey:@"eat_Fri"], @"drink": [dictionary objectForKey:@"drink_Fri"]}
+                                         satSpecial:@{@"eat": [dictionary objectForKey:@"eat_Sat"], @"drink": [dictionary objectForKey:@"drink_Sat"]}
+                                         sunSpecial:@{@"eat": [dictionary objectForKey:@"eat_Sun"], @"drink": [dictionary objectForKey:@"drink_Sun"]}];
+
+
 
             [self.allSpotsArray addObject:spot];
         }
