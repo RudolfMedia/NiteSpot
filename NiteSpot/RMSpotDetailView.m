@@ -193,15 +193,54 @@
         UILabel *fri = (UILabel *)[cell viewWithTag:5000];
         UILabel *sat = (UILabel *)[cell viewWithTag:6000];
         UILabel *sun = (UILabel *)[cell viewWithTag:7000];
+        UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
+        content.delegate = self;
+        NSString *closedString = @"Closed";
 
+        if ([[self.selectedSpot.monHours objectForKey:@"open"] isEqualToString:closedString]) {
+            mon.text = closedString;
+        }
+        else{
         mon.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.monHours objectForKey:@"open"], [self.selectedSpot.monHours objectForKey:@"close"]];
-        tue.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.tueHours objectForKey:@"open"], [self.selectedSpot.tueHours objectForKey:@"close"]];
-        wed.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.wedHours objectForKey:@"open"], [self.selectedSpot.wedHours objectForKey:@"close"]];
-        thu.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.thuHours objectForKey:@"open"], [self.selectedSpot.thuHours objectForKey:@"close"]];
-        fri.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.friHours objectForKey:@"open"], [self.selectedSpot.friHours objectForKey:@"close"]];
-        sat.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.satHours objectForKey:@"open"], [self.selectedSpot.satHours objectForKey:@"close"]];
-        sun.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.sunHours objectForKey:@"open"], [self.selectedSpot.sunHours objectForKey:@"close"]];
+        }
+        if ([[self.selectedSpot.tueHours objectForKey:@"open"] isEqualToString:closedString]) {
+            tue.text = closedString;
+        }
+        else{
 
+        tue.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.tueHours objectForKey:@"open"], [self.selectedSpot.tueHours objectForKey:@"close"]];
+        }
+
+        if ([[self.selectedSpot.wedHours objectForKey:@"open"] isEqualToString:closedString]) {
+            wed.text = closedString;
+        }
+        else{
+        wed.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.wedHours objectForKey:@"open"], [self.selectedSpot.wedHours objectForKey:@"close"]];
+        }
+        if ([[self.selectedSpot.thuHours objectForKey:@"open"] isEqualToString:closedString]) {
+            thu.text = closedString;
+        }
+        else{
+        thu.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.thuHours objectForKey:@"open"], [self.selectedSpot.thuHours objectForKey:@"close"]];
+        }
+        if ([[self.selectedSpot.friHours objectForKey:@"open"] isEqualToString:closedString]) {
+            fri.text = closedString;
+        }
+        else{
+        fri.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.friHours objectForKey:@"open"], [self.selectedSpot.friHours objectForKey:@"close"]];
+        }
+        if ([[self.selectedSpot.satHours objectForKey:@"open"] isEqualToString:closedString]) {
+            sat.text = closedString;
+        }
+        else{
+        sat.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.satHours objectForKey:@"open"], [self.selectedSpot.satHours objectForKey:@"close"]];
+        }
+        if ([[self.selectedSpot.sunHours objectForKey:@"open"] isEqualToString:closedString]) {
+            sun.text = closedString;
+        }
+        else{
+        sun.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.sunHours objectForKey:@"open"], [self.selectedSpot.sunHours objectForKey:@"close"]];
+        }
 
 
         return cell;
