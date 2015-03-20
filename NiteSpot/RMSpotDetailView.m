@@ -29,6 +29,7 @@
 @property CLLocationCoordinate2D *currentLocation;
 @property CLLocationManager *locationManager;
 @property UICollectionViewFlowLayout *flowLayout;
+@property UIScrollView *specialsContent;
 
 
 @end
@@ -195,8 +196,8 @@
     else if (indexPath == [NSIndexPath indexPathForItem:2 inSection:0]){
 
         SpecialsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SpecialsCell" forIndexPath:indexPath];
-        UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
-        content.delegate = self;
+        self.specialsContent = (UIScrollView *)[cell viewWithTag:60];
+        self.specialsContent.delegate = self;
 
         UIView *container = (UIView *)[cell viewWithTag:1001];
         [container addConstraint:[NSLayoutConstraint constraintWithItem:container
