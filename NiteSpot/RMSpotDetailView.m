@@ -12,7 +12,7 @@
 #import "HoursCell.h"
 #import "SpecialsCell.h"
 
-@interface RMSpotDetailView () <UICollectionViewDataSource, UIBarPositioningDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate>
+@interface RMSpotDetailView () <UICollectionViewDataSource, UIBarPositioningDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *detailPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *detailTitle;
@@ -120,6 +120,20 @@
 
 }
 
+#pragma mark - UItableview Datasource/ Delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 20;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpecialDetailCell"];
+    cell.textLabel.text = @"derp";
+    return cell;
+}
+
 #pragma mark - UICollectionview Datasource / Delegate
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -181,6 +195,8 @@
     else if (indexPath == [NSIndexPath indexPathForItem:2 inSection:0]){
 
         SpecialsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SpecialsCell" forIndexPath:indexPath];
+        UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
+        content.delegate = self;
 
         return cell;
 
