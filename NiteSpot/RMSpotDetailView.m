@@ -198,6 +198,15 @@
         UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
         content.delegate = self;
 
+        UIView *container = (UIView *)[cell viewWithTag:1001];
+        [container addConstraint:[NSLayoutConstraint constraintWithItem:container
+                                                            attribute:NSLayoutAttributeHeight
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.height]];
+
+
         UIView *monView = (UIView *)[cell viewWithTag:1001];
         [monView addConstraint:[NSLayoutConstraint constraintWithItem:monView
                                                             attribute:NSLayoutAttributeWidth

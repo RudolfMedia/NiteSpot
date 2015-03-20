@@ -40,7 +40,7 @@
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="69" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jxH-qI-smU">
                         <rect key="frame" x="0.0" y="0.0" width="2203" height="247"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6I-Z5-Yai">
+                            <view tag="5050" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c6I-Z5-Yai">
                                 <rect key="frame" x="0.0" y="0.0" width="2202" height="247"/>
                                 <subviews>
                                     <view tag="2001" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xp7-r5-b9u" userLabel="tueView">
