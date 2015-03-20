@@ -198,6 +198,62 @@
         UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
         content.delegate = self;
 
+        UIView *monView = (UIView *)[cell viewWithTag:1001];
+        [monView addConstraint:[NSLayoutConstraint constraintWithItem:monView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+        UIView *tueView = (UIView *)[cell viewWithTag:2001];
+        [tueView addConstraint:[NSLayoutConstraint constraintWithItem:tueView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+        UIView *wedView = (UIView *)[cell viewWithTag:3001];
+        [wedView addConstraint:[NSLayoutConstraint constraintWithItem:wedView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+        UIView *thuView = (UIView *)[cell viewWithTag:4001];
+        [thuView addConstraint:[NSLayoutConstraint constraintWithItem:thuView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+        UIView *friView = (UIView *)[cell viewWithTag:5001];
+        [friView addConstraint:[NSLayoutConstraint constraintWithItem:friView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+        UIView *satView = (UIView *)[cell viewWithTag:6001];
+        [satView addConstraint:[NSLayoutConstraint constraintWithItem:satView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+        UIView *sunView = (UIView *)[cell viewWithTag:7001];
+        [sunView addConstraint:[NSLayoutConstraint constraintWithItem:sunView
+                                                            attribute:NSLayoutAttributeWidth
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:nil
+                                                            attribute:NSLayoutAttributeNotAnAttribute
+                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
+
+
         return cell;
 
     }
