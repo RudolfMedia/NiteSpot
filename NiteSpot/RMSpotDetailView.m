@@ -13,11 +13,8 @@
 
 @interface RMSpotDetailView () <UIBarPositioningDelegate, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *detailPhoto;
-@property (weak, nonatomic) IBOutlet UILabel *detailTitle;
-@property (weak, nonatomic) IBOutlet UILabel *detailinfoString;
-@property (weak, nonatomic) IBOutlet UILabel *detailPricePhone;
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
+@property RMSpotDetailContent *detailContent;
 
 @property UIScrollView *specialsContent;
 
@@ -32,46 +29,65 @@
     [self geoCodeCurrentSpot];
 
     self.contentScroll.delegate = self;
-
-    RMSpotDetailContent *detailContent = [RMSpotDetailContent spotDetailContent];
-    self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, detailContent.frame.size.height);
+    self.detailContent = [RMSpotDetailContent spotDetailContent];
+    self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailContent.frame.size.height);
+    CGRect sizedFrame = CGRectMake(0, 0, self.view.frame.size.width, self.detailContent.frame.size.height);
+    self.detailContent.frame = sizedFrame;
+    [self formatButton:self.detailContent.callButton];
+    [self formatButton:self.detailContent.webButton];
+    [self formatButton:self.detailContent.menuButton];
 
     
-    [self.contentScroll addSubview:detailContent];
+    [self.contentScroll addSubview:self.detailContent];
     NSLog(@"%f", self.contentScroll.contentSize.height);
 
 
     //NSLog(@"%@ %@ %@ %@ %@ %@", self.selectedSpot.monSpecial, self.selectedSpot.tueSpecial, self.selectedSpot.thuSpecial, self.selectedSpot.friSpecial, self.selectedSpot.satSpecial, self.selectedSpot.sunSpecial);
 
-    self.detailPhoto.backgroundColor = [UIColor blackColor];
-
     if ([self.selectedSpot.type isEqualToString:@"a"]) {
 
-        self.detailTypeImage.image = [UIImage imageNamed:@"detailEat"];
+        self.detailContent.detailImageTwo.image = [UIImage imageNamed:@"detailEat"];
+        self.detailContent.detailTwoLabel.text = @"Food";
+        [self.detailContent.detailImageOne setHidden:YES];
+        [self.detailContent.detailImageThree setHidden:YES];
+        [self.detailContent.detailOneLabel setHidden:YES];
+        [self.detailContent.detailThreeLabel setHidden:YES];
 
     }
 
     else if ([self.selectedSpot.type isEqualToString:@"b"]){
 
-        self.detailTypeImage.image = [UIImage imageNamed:@"detailDrink"];
+        self.detailContent.detailImageTwo.image = [UIImage imageNamed:@"detailDrink"];
+        self.detailContent.detailTwoLabel.text = @"Drinks";
+        [self.detailContent.detailImageOne setHidden:YES];
+        [self.detailContent.detailImageThree setHidden:YES];
+        [self.detailContent.detailOneLabel setHidden:YES];
+        [self.detailContent.detailThreeLabel setHidden:YES];
 
     }
 
     else if ([self.selectedSpot.type isEqualToString:@"c"]){
 
-        self.detailTypeImage.image = [UIImage imageNamed:@"eatDrinkDetail"];
+        self.detailContent.detailImageOne.image = [UIImage imageNamed:@"detailEat"];
+        self.detailContent.detailImageThree.image = [UIImage imageNamed:@"detailDrink"];
+        self.detailContent.detailOneLabel.text = @"Food";
+        self.detailContent.detailThreeLabel.text = @"Drinks";
+        [self.detailContent.detailImageTwo setHidden:YES];
+        [self.detailContent.detailTwoLabel setHidden:YES];
         
     }
 
+    NSLog(@"%@", self.selectedSpot.type);
 
 
-    self.detailTitle.text = self.selectedSpot.spotTitle;
 
-    self.detailinfoString.text = [NSString stringWithFormat:@"%@ \u2022 %@",
+    self.detailContent.detailTitle.text = self.selectedSpot.spotTitle;
+
+    self.detailContent.detailInfoString.text = [NSString stringWithFormat:@"%@ \u2022 %@",
                                   self.selectedSpot.foodType,
                                   self.selectedSpot.drinkType];
 
-    self.detailPricePhone.text = [NSString stringWithFormat:@"%@ \u2022 %@",
+    self.detailContent.detailPricePhone.text = [NSString stringWithFormat:@"%@ \u2022 %@",
                                   self.selectedSpot.price,
                                   self.selectedSpot.spotTel];
 
@@ -83,10 +99,21 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
         UIImage *image = [UIImage imageWithData:data];
-        self.detailPhoto.image = [iosBlur imageByFilteringImage:image];
+        self.detailContent.detailPhoto.image = [iosBlur imageByFilteringImage:image];
+        self.detailContent.detailPhoto.layer.masksToBounds = YES;
 
     }];
 
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    CGFloat scale = 1;
+    if(self.contentScroll.contentOffset.y<0){
+        scale -= self.contentScroll.contentOffset.y/250;
+    }
+
+    self.detailContent.detailPhoto.transform = CGAffineTransformMakeScale(scale,scale);
 }
 
 
@@ -115,8 +142,10 @@
 -(UIButton *)formatButton:(UIButton *)button{
 
     button.layer.masksToBounds = YES;
-    button.layer.cornerRadius = 10;
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    button.layer.cornerRadius = button.layer.frame.size.height/2;
+    [[button layer] setBorderWidth:2.0f];
+    [[button layer] setBorderColor:[UIColor whiteColor].CGColor];
+
     return button;
 }
 

@@ -1,17 +1,207 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="texgyreadventor-bold.otf">
+            <string>TeXGyreAdventor-Bold</string>
+        </mutableArray>
+        <mutableArray key="texgyreadventor-regular.otf">
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RMSpotDetailContent">
-            <rect key="frame" x="0.0" y="0.0" width="409" height="1030"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="RMSpotDetailContent">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="1030"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-EA-GOB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1030"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-Cy-8ib">
+                            <rect key="frame" x="0.0" y="213" width="320" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="ebj-23-05p"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-nd-0vN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="cKD-nd-0vN" secondAttribute="height" multiplier="320:213" id="oyv-6z-OMC"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-iw-qBX" userLabel="lab3">
+                            <rect key="frame" x="153" y="73" width="68" height="21"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noD-Un-WOz" userLabel="lab2">
+                            <rect key="frame" x="126" y="73" width="68" height="21"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sN1-71-Xbf" userLabel="3">
+                            <rect key="frame" x="162" y="26" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="DYv-uG-ZN0"/>
+                                <constraint firstAttribute="height" constant="50" id="xgU-Rb-b6j"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0F1-3k-p80" userLabel="1">
+                            <rect key="frame" x="108" y="26" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="bRG-uF-zef"/>
+                                <constraint firstAttribute="width" constant="50" id="eT4-M2-4ua"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP3-jJ-Uvd" userLabel="three">
+                            <rect key="frame" x="8" y="158" width="304" height="25"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlD-72-hPO" userLabel="two">
+                            <rect key="frame" x="8" y="138" width="304" height="25"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzO-47-OAD" userLabel="one">
+                            <rect key="frame" x="8" y="111" width="304" height="33"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="22"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-Gr-dIy" userLabel="2">
+                            <rect key="frame" x="135" y="26" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="Icf-ZE-1kj"/>
+                                <constraint firstAttribute="height" constant="50" id="idC-95-6cP"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T29-8D-Kg7" userLabel="lab1">
+                            <rect key="frame" x="99" y="73" width="68" height="21"/>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-lH-AQ9" userLabel="call">
+                            <rect key="frame" x="135" y="187" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-2"/>
+                            <state key="normal" image="callIcon">
+                                <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkC-2c-OOX">
+                            <rect key="frame" x="87" y="192" width="40" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="hee-jk-ASX"/>
+                                <constraint firstAttribute="height" constant="40" id="qlr-TM-YSn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="14"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                            <state key="normal" title="web">
+                                <color key="titleColor" red="0.99607843139999996" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcc-Bi-TRU" userLabel="menu">
+                            <rect key="frame" x="193" y="192" width="40" height="40"/>
+                            <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                            <state key="normal" image="menuIconM">
+                                <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMo-J0-AJK">
+                            <rect key="frame" x="124" y="245" width="73" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="73" id="KSk-4z-qeS"/>
+                                <constraint firstAttribute="height" constant="25" id="eDD-zs-W17"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TeK-Cy-8ib" secondAttribute="trailing" id="0kt-EP-31g"/>
+                        <constraint firstItem="KsV-lH-AQ9" firstAttribute="top" secondItem="YP3-jJ-Uvd" secondAttribute="bottom" constant="4" id="1oQ-Tl-yjc"/>
+                        <constraint firstItem="jcc-Bi-TRU" firstAttribute="leading" secondItem="KsV-lH-AQ9" secondAttribute="trailing" constant="8" id="1yq-yv-Xw6"/>
+                        <constraint firstItem="vQd-iw-qBX" firstAttribute="top" secondItem="sN1-71-Xbf" secondAttribute="bottom" constant="-3" id="3cZ-Um-2ax"/>
+                        <constraint firstItem="vQd-iw-qBX" firstAttribute="leading" secondItem="noD-Un-WOz" secondAttribute="trailing" constant="-41" id="7Tr-id-OD2"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="GkC-2c-OOX" secondAttribute="centerY" constant="2" id="8xA-ic-b5f"/>
+                        <constraint firstAttribute="centerX" secondItem="GFL-Gr-dIy" secondAttribute="centerX" id="Fcy-n0-o2u"/>
+                        <constraint firstItem="cKD-nd-0vN" firstAttribute="top" secondItem="ND8-EA-GOB" secondAttribute="top" id="FfW-rp-okO"/>
+                        <constraint firstItem="noD-Un-WOz" firstAttribute="top" secondItem="GFL-Gr-dIy" secondAttribute="bottom" constant="-3" id="GEJ-Mg-1oJ"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="KsV-lH-AQ9" secondAttribute="centerY" constant="2" id="H56-XT-peS"/>
+                        <constraint firstAttribute="trailing" secondItem="cKD-nd-0vN" secondAttribute="trailing" id="HtJ-qd-4kA"/>
+                        <constraint firstItem="T29-8D-Kg7" firstAttribute="top" secondItem="0F1-3k-p80" secondAttribute="bottom" constant="-3" id="Iv5-JQ-ocS"/>
+                        <constraint firstAttribute="centerX" secondItem="YP3-jJ-Uvd" secondAttribute="centerX" id="JeQ-Dz-b5W"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="leading" secondItem="ND8-EA-GOB" secondAttribute="leading" id="O9x-Pj-i2v"/>
+                        <constraint firstItem="nMo-J0-AJK" firstAttribute="top" secondItem="KsV-lH-AQ9" secondAttribute="bottom" constant="8" id="VUl-XQ-D7E"/>
+                        <constraint firstItem="KsV-lH-AQ9" firstAttribute="leading" secondItem="GkC-2c-OOX" secondAttribute="trailing" constant="8" id="Wnp-EB-tke"/>
+                        <constraint firstAttribute="centerX" secondItem="LzO-47-OAD" secondAttribute="centerX" id="ZHe-Xl-2pm"/>
+                        <constraint firstItem="YP3-jJ-Uvd" firstAttribute="top" secondItem="RlD-72-hPO" secondAttribute="bottom" constant="-5" id="bAn-xp-FrO"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="jcc-Bi-TRU" secondAttribute="centerY" constant="2" id="czC-6V-tb5"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="top" secondItem="cKD-nd-0vN" secondAttribute="bottom" id="eRq-Xo-C5Z"/>
+                        <constraint firstItem="GFL-Gr-dIy" firstAttribute="leading" secondItem="0F1-3k-p80" secondAttribute="trailing" constant="-23" id="fyf-4p-Nq3"/>
+                        <constraint firstItem="noD-Un-WOz" firstAttribute="leading" secondItem="T29-8D-Kg7" secondAttribute="trailing" constant="-41" id="kzc-tt-d1D"/>
+                        <constraint firstAttribute="centerX" secondItem="RlD-72-hPO" secondAttribute="centerX" id="loh-Ut-D0j"/>
+                        <constraint firstAttribute="centerX" secondItem="noD-Un-WOz" secondAttribute="centerX" id="oVr-KI-TIW"/>
+                        <constraint firstItem="cKD-nd-0vN" firstAttribute="leading" secondItem="ND8-EA-GOB" secondAttribute="leading" id="opQ-gw-F3f"/>
+                        <constraint firstItem="sN1-71-Xbf" firstAttribute="leading" secondItem="GFL-Gr-dIy" secondAttribute="trailing" constant="-23" id="slC-5B-6qF"/>
+                        <constraint firstAttribute="centerX" secondItem="nMo-J0-AJK" secondAttribute="centerX" id="ut2-k3-AQz"/>
+                        <constraint firstAttribute="centerX" secondItem="KsV-lH-AQ9" secondAttribute="centerX" id="zqB-Xq-yq3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ND8-EA-GOB" secondAttribute="bottom" id="7Mt-TO-j14"/>
+                <constraint firstItem="ND8-EA-GOB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8NA-DE-eW4"/>
+                <constraint firstItem="ND8-EA-GOB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qon-Xp-FrP"/>
+                <constraint firstAttribute="trailing" secondItem="ND8-EA-GOB" secondAttribute="trailing" id="QxS-sg-PEv"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="282.5" y="385"/>
+            <connections>
+                <outlet property="callButton" destination="KsV-lH-AQ9" id="Z6a-IR-e3f"/>
+                <outlet property="detailImageOne" destination="0F1-3k-p80" id="Spf-kS-b82"/>
+                <outlet property="detailImageThree" destination="sN1-71-Xbf" id="ifZ-bg-ZWo"/>
+                <outlet property="detailImageTwo" destination="GFL-Gr-dIy" id="vdt-cb-ozR"/>
+                <outlet property="detailInfoString" destination="YP3-jJ-Uvd" id="J9L-Of-QCx"/>
+                <outlet property="detailOneLabel" destination="T29-8D-Kg7" id="DvT-qX-fVa"/>
+                <outlet property="detailPhoto" destination="cKD-nd-0vN" id="LLK-ib-K3e"/>
+                <outlet property="detailPricePhone" destination="RlD-72-hPO" id="Zwu-7N-SEb"/>
+                <outlet property="detailThreeLabel" destination="vQd-iw-qBX" id="jnk-Wk-EJd"/>
+                <outlet property="detailTitle" destination="LzO-47-OAD" id="p9N-bh-cLl"/>
+                <outlet property="detailTwoLabel" destination="noD-Un-WOz" id="Cfd-dm-EYf"/>
+                <outlet property="menuButton" destination="jcc-Bi-TRU" id="huh-QA-8OX"/>
+                <outlet property="webButton" destination="GkC-2c-OOX" id="QDI-Et-ixb"/>
+                <outlet property="xibView" destination="ND8-EA-GOB" id="wgr-hh-j1J"/>
+            </connections>
+            <point key="canvasLocation" x="277" y="361"/>
         </view>
     </objects>
+    <resources>
+        <image name="callIcon" width="50" height="50"/>
+        <image name="menuIconM" width="40" height="40"/>
+    </resources>
 </document>
