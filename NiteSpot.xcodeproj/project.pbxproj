@@ -18,11 +18,8 @@
 		26497ADE1A70A3CC00EF8200 /* texgyreadventor-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1B1A6F37CA0075FBCA /* texgyreadventor-bold.otf */; };
 		26497ADF1A70A3CE00EF8200 /* texgyreadventor-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1C1A6F37CA0075FBCA /* texgyreadventor-bolditalic.otf */; };
 		26497AE01A70A3D100EF8200 /* texgyreadventor-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26354A1D1A6F37CA0075FBCA /* texgyreadventor-italic.otf */; };
-		2694001E1A9023C000373842 /* AboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2694001C1A9023C000373842 /* AboutCell.m */; };
-		2694001F1A9023C000373842 /* AboutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2694001D1A9023C000373842 /* AboutCell.xib */; };
-		269400261A914AD900373842 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400241A914AD900373842 /* LocationCell.m */; };
-		2694002B1A91611600373842 /* SpecialsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400291A91611600373842 /* SpecialsCell.m */; };
-		2694002C1A91611600373842 /* SpecialsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2694002A1A91611600373842 /* SpecialsCell.xib */; };
+		265C464A1ABCCC1700E9AFBB /* RMSpotDetailContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C46491ABCCC1700E9AFBB /* RMSpotDetailContent.m */; };
+		265C464C1ABCCC4800E9AFBB /* RMSpotDetailContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265C464B1ABCCC4800E9AFBB /* RMSpotDetailContent.xib */; };
 		269400391A919C9D00373842 /* RMVenueLocationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 269400381A919C9D00373842 /* RMVenueLocationDetail.m */; };
 		26968B811A638A1C00757E32 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26968B801A638A1C00757E32 /* MapKit.framework */; };
 		26A1F6721A68795300845917 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6711A68795300845917 /* AddressBook.framework */; };
@@ -30,8 +27,6 @@
 		26A1F6761A68796600845917 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6751A68796600845917 /* SystemConfiguration.framework */; };
 		26A1F6781A68797400845917 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6771A68797400845917 /* QuartzCore.framework */; };
 		26A1F67A1A68799200845917 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A1F6791A68799200845917 /* libxml2.dylib */; };
-		26A810141AB387B0002572F0 /* HoursCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A810121AB387B0002572F0 /* HoursCell.m */; };
-		26A810151AB387B0002572F0 /* HoursCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A810131AB387B0002572F0 /* HoursCell.xib */; };
 		26D416431A5B1FB40079AD89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416421A5B1FB40079AD89 /* main.m */; };
 		26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416451A5B1FB40079AD89 /* AppDelegate.m */; };
 		26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D416481A5B1FB40079AD89 /* RMEatViewController.m */; };
@@ -73,14 +68,9 @@
 		26354A1B1A6F37CA0075FBCA /* texgyreadventor-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bold.otf"; sourceTree = "<group>"; };
 		26354A1C1A6F37CA0075FBCA /* texgyreadventor-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-bolditalic.otf"; sourceTree = "<group>"; };
 		26354A1D1A6F37CA0075FBCA /* texgyreadventor-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "texgyreadventor-italic.otf"; sourceTree = "<group>"; };
-		2694001B1A9023C000373842 /* AboutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutCell.h; sourceTree = "<group>"; };
-		2694001C1A9023C000373842 /* AboutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutCell.m; sourceTree = "<group>"; };
-		2694001D1A9023C000373842 /* AboutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutCell.xib; sourceTree = "<group>"; };
-		269400231A914AD900373842 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
-		269400241A914AD900373842 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
-		269400281A91611600373842 /* SpecialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialsCell.h; sourceTree = "<group>"; };
-		269400291A91611600373842 /* SpecialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialsCell.m; sourceTree = "<group>"; };
-		2694002A1A91611600373842 /* SpecialsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecialsCell.xib; sourceTree = "<group>"; };
+		265C46481ABCCC1700E9AFBB /* RMSpotDetailContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSpotDetailContent.h; sourceTree = "<group>"; };
+		265C46491ABCCC1700E9AFBB /* RMSpotDetailContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSpotDetailContent.m; sourceTree = "<group>"; };
+		265C464B1ABCCC4800E9AFBB /* RMSpotDetailContent.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMSpotDetailContent.xib; sourceTree = "<group>"; };
 		269400371A919C9D00373842 /* RMVenueLocationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMVenueLocationDetail.h; sourceTree = "<group>"; };
 		269400381A919C9D00373842 /* RMVenueLocationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMVenueLocationDetail.m; sourceTree = "<group>"; };
 		26968B801A638A1C00757E32 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -89,9 +79,6 @@
 		26A1F6751A68796600845917 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		26A1F6771A68797400845917 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		26A1F6791A68799200845917 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		26A810111AB387B0002572F0 /* HoursCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursCell.h; sourceTree = "<group>"; };
-		26A810121AB387B0002572F0 /* HoursCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursCell.m; sourceTree = "<group>"; };
-		26A810131AB387B0002572F0 /* HoursCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoursCell.xib; sourceTree = "<group>"; };
 		26D4163D1A5B1FB40079AD89 /* NiteSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiteSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D416411A5B1FB40079AD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26D416421A5B1FB40079AD89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,17 +165,9 @@
 				26055BDC1A84067D0078C615 /* DataLoader.m */,
 				26354A171A6F23070075FBCA /* RMSpotDetailView.h */,
 				26354A181A6F23070075FBCA /* RMSpotDetailView.m */,
-				269400281A91611600373842 /* SpecialsCell.h */,
-				269400291A91611600373842 /* SpecialsCell.m */,
-				2694002A1A91611600373842 /* SpecialsCell.xib */,
-				26A810111AB387B0002572F0 /* HoursCell.h */,
-				26A810121AB387B0002572F0 /* HoursCell.m */,
-				26A810131AB387B0002572F0 /* HoursCell.xib */,
-				269400231A914AD900373842 /* LocationCell.h */,
-				269400241A914AD900373842 /* LocationCell.m */,
-				2694001B1A9023C000373842 /* AboutCell.h */,
-				2694001C1A9023C000373842 /* AboutCell.m */,
-				2694001D1A9023C000373842 /* AboutCell.xib */,
+				265C46481ABCCC1700E9AFBB /* RMSpotDetailContent.h */,
+				265C46491ABCCC1700E9AFBB /* RMSpotDetailContent.m */,
+				265C464B1ABCCC4800E9AFBB /* RMSpotDetailContent.xib */,
 				26D416471A5B1FB40079AD89 /* RMEatViewController.h */,
 				26D416481A5B1FB40079AD89 /* RMEatViewController.m */,
 				2628B3061A5DD7C40008A533 /* RMDrinkViewController.h */,
@@ -343,16 +322,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A810151AB387B0002572F0 /* HoursCell.xib in Resources */,
 				26D4164C1A5B1FB40079AD89 /* Main.storyboard in Resources */,
 				26D416511A5B1FB40079AD89 /* LaunchScreen.xib in Resources */,
 				26497ADE1A70A3CC00EF8200 /* texgyreadventor-bold.otf in Resources */,
 				26354A111A6F0C3D0075FBCA /* Podfile in Resources */,
 				26497ADD1A70A3C900EF8200 /* texgyreadventor-regular.otf in Resources */,
-				2694002C1A91611600373842 /* SpecialsCell.xib in Resources */,
 				26497ADF1A70A3CE00EF8200 /* texgyreadventor-bolditalic.otf in Resources */,
-				2694001F1A9023C000373842 /* AboutCell.xib in Resources */,
 				26D4164E1A5B1FB40079AD89 /* Images.xcassets in Resources */,
+				265C464C1ABCCC4800E9AFBB /* RMSpotDetailContent.xib in Resources */,
 				26497AE01A70A3D100EF8200 /* texgyreadventor-italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,19 +383,16 @@
 			files = (
 				2628B3081A5DD7C40008A533 /* RMDrinkViewController.m in Sources */,
 				26ECF4981A65F4D100697BBF /* AttendCell.m in Sources */,
-				269400261A914AD900373842 /* LocationCell.m in Sources */,
-				2694001E1A9023C000373842 /* AboutCell.m in Sources */,
 				2628B30B1A5DD7E70008A533 /* RMAttendViewController.m in Sources */,
+				265C464A1ABCCC1700E9AFBB /* RMSpotDetailContent.m in Sources */,
 				26ECF4951A65F4B100697BBF /* DrinkCell.m in Sources */,
 				26D416491A5B1FB40079AD89 /* RMEatViewController.m in Sources */,
 				26354A191A6F23070075FBCA /* RMSpotDetailView.m in Sources */,
 				2628B3111A5DDD5C0008A533 /* EatCell.m in Sources */,
 				26D416461A5B1FB40079AD89 /* AppDelegate.m in Sources */,
 				2628B30E1A5DD81C0008A533 /* RMMapSearchViewController.m in Sources */,
-				2694002B1A91611600373842 /* SpecialsCell.m in Sources */,
 				269400391A919C9D00373842 /* RMVenueLocationDetail.m in Sources */,
 				26D416431A5B1FB40079AD89 /* main.m in Sources */,
-				26A810141AB387B0002572F0 /* HoursCell.m in Sources */,
 				26D416681A5B1FE80079AD89 /* Spot.m in Sources */,
 				26055BDD1A84067D0078C615 /* DataLoader.m in Sources */,
 			);
