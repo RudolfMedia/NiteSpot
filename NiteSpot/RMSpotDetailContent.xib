@@ -28,6 +28,24 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-EA-GOB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="1030"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIg-in-SWb">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-nd-0vN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="cKD-nd-0vN" secondAttribute="height" multiplier="320:213" id="oyv-6z-OMC"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="cKD-nd-0vN" secondAttribute="bottom" id="R1p-BT-gVU"/>
+                                <constraint firstItem="cKD-nd-0vN" firstAttribute="leading" secondItem="jIg-in-SWb" secondAttribute="leading" id="o9j-ae-oyN"/>
+                                <constraint firstItem="cKD-nd-0vN" firstAttribute="top" secondItem="jIg-in-SWb" secondAttribute="top" id="vSK-7b-gJe"/>
+                                <constraint firstAttribute="trailing" secondItem="cKD-nd-0vN" secondAttribute="trailing" id="zIG-01-oqi"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeK-Cy-8ib">
                             <rect key="frame" x="0.0" y="213" width="320" height="2"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,12 +53,6 @@
                                 <constraint firstAttribute="height" constant="2" id="ebj-23-05p"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-nd-0vN">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="cKD-nd-0vN" secondAttribute="height" multiplier="320:213" id="oyv-6z-OMC"/>
-                            </constraints>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-iw-qBX" userLabel="lab3">
                             <rect key="frame" x="153" y="73" width="68" height="21"/>
                             <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="12"/>
@@ -108,21 +120,21 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkC-2c-OOX">
-                            <rect key="frame" x="87" y="192" width="40" height="40"/>
+                            <rect key="frame" x="83" y="192" width="40" height="40"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="hee-jk-ASX"/>
                                 <constraint firstAttribute="height" constant="40" id="qlr-TM-YSn"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="14"/>
-                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                            <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="3"/>
                             <state key="normal" title="web">
                                 <color key="titleColor" red="0.99607843139999996" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcc-Bi-TRU" userLabel="menu">
-                            <rect key="frame" x="193" y="192" width="40" height="40"/>
+                            <rect key="frame" x="197" y="192" width="40" height="40"/>
                             <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                             <state key="normal" image="menuIconM">
                                 <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,31 +156,32 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TeK-Cy-8ib" secondAttribute="trailing" id="0kt-EP-31g"/>
                         <constraint firstItem="KsV-lH-AQ9" firstAttribute="top" secondItem="YP3-jJ-Uvd" secondAttribute="bottom" constant="4" id="1oQ-Tl-yjc"/>
-                        <constraint firstItem="jcc-Bi-TRU" firstAttribute="leading" secondItem="KsV-lH-AQ9" secondAttribute="trailing" constant="8" id="1yq-yv-Xw6"/>
+                        <constraint firstItem="jcc-Bi-TRU" firstAttribute="leading" secondItem="KsV-lH-AQ9" secondAttribute="trailing" constant="12" id="1yq-yv-Xw6"/>
                         <constraint firstItem="vQd-iw-qBX" firstAttribute="top" secondItem="sN1-71-Xbf" secondAttribute="bottom" constant="-3" id="3cZ-Um-2ax"/>
                         <constraint firstItem="vQd-iw-qBX" firstAttribute="leading" secondItem="noD-Un-WOz" secondAttribute="trailing" constant="-41" id="7Tr-id-OD2"/>
+                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="top" secondItem="jIg-in-SWb" secondAttribute="bottom" id="8cd-i4-opK"/>
                         <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="GkC-2c-OOX" secondAttribute="centerY" constant="2" id="8xA-ic-b5f"/>
                         <constraint firstAttribute="centerX" secondItem="GFL-Gr-dIy" secondAttribute="centerX" id="Fcy-n0-o2u"/>
-                        <constraint firstItem="cKD-nd-0vN" firstAttribute="top" secondItem="ND8-EA-GOB" secondAttribute="top" id="FfW-rp-okO"/>
                         <constraint firstItem="noD-Un-WOz" firstAttribute="top" secondItem="GFL-Gr-dIy" secondAttribute="bottom" constant="-3" id="GEJ-Mg-1oJ"/>
                         <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="KsV-lH-AQ9" secondAttribute="centerY" constant="2" id="H56-XT-peS"/>
-                        <constraint firstAttribute="trailing" secondItem="cKD-nd-0vN" secondAttribute="trailing" id="HtJ-qd-4kA"/>
+                        <constraint firstAttribute="trailing" secondItem="jIg-in-SWb" secondAttribute="trailing" id="Hj1-uY-HUO"/>
                         <constraint firstItem="T29-8D-Kg7" firstAttribute="top" secondItem="0F1-3k-p80" secondAttribute="bottom" constant="-3" id="Iv5-JQ-ocS"/>
                         <constraint firstAttribute="centerX" secondItem="YP3-jJ-Uvd" secondAttribute="centerX" id="JeQ-Dz-b5W"/>
                         <constraint firstItem="TeK-Cy-8ib" firstAttribute="leading" secondItem="ND8-EA-GOB" secondAttribute="leading" id="O9x-Pj-i2v"/>
+                        <constraint firstItem="jIg-in-SWb" firstAttribute="leading" secondItem="ND8-EA-GOB" secondAttribute="leading" id="Uhy-vW-V1c"/>
                         <constraint firstItem="nMo-J0-AJK" firstAttribute="top" secondItem="KsV-lH-AQ9" secondAttribute="bottom" constant="8" id="VUl-XQ-D7E"/>
-                        <constraint firstItem="KsV-lH-AQ9" firstAttribute="leading" secondItem="GkC-2c-OOX" secondAttribute="trailing" constant="8" id="Wnp-EB-tke"/>
+                        <constraint firstItem="KsV-lH-AQ9" firstAttribute="leading" secondItem="GkC-2c-OOX" secondAttribute="trailing" constant="12" id="Wnp-EB-tke"/>
                         <constraint firstAttribute="centerX" secondItem="LzO-47-OAD" secondAttribute="centerX" id="ZHe-Xl-2pm"/>
+                        <constraint firstItem="jcc-Bi-TRU" firstAttribute="leading" secondItem="KsV-lH-AQ9" secondAttribute="trailing" constant="12" id="aPR-ra-7vT"/>
                         <constraint firstItem="YP3-jJ-Uvd" firstAttribute="top" secondItem="RlD-72-hPO" secondAttribute="bottom" constant="-5" id="bAn-xp-FrO"/>
                         <constraint firstItem="TeK-Cy-8ib" firstAttribute="centerY" secondItem="jcc-Bi-TRU" secondAttribute="centerY" constant="2" id="czC-6V-tb5"/>
-                        <constraint firstItem="TeK-Cy-8ib" firstAttribute="top" secondItem="cKD-nd-0vN" secondAttribute="bottom" id="eRq-Xo-C5Z"/>
                         <constraint firstItem="GFL-Gr-dIy" firstAttribute="leading" secondItem="0F1-3k-p80" secondAttribute="trailing" constant="-23" id="fyf-4p-Nq3"/>
                         <constraint firstItem="noD-Un-WOz" firstAttribute="leading" secondItem="T29-8D-Kg7" secondAttribute="trailing" constant="-41" id="kzc-tt-d1D"/>
                         <constraint firstAttribute="centerX" secondItem="RlD-72-hPO" secondAttribute="centerX" id="loh-Ut-D0j"/>
                         <constraint firstAttribute="centerX" secondItem="noD-Un-WOz" secondAttribute="centerX" id="oVr-KI-TIW"/>
-                        <constraint firstItem="cKD-nd-0vN" firstAttribute="leading" secondItem="ND8-EA-GOB" secondAttribute="leading" id="opQ-gw-F3f"/>
                         <constraint firstItem="sN1-71-Xbf" firstAttribute="leading" secondItem="GFL-Gr-dIy" secondAttribute="trailing" constant="-23" id="slC-5B-6qF"/>
                         <constraint firstAttribute="centerX" secondItem="nMo-J0-AJK" secondAttribute="centerX" id="ut2-k3-AQz"/>
+                        <constraint firstItem="jIg-in-SWb" firstAttribute="top" secondItem="ND8-EA-GOB" secondAttribute="top" id="zU1-5r-sRI"/>
                         <constraint firstAttribute="centerX" secondItem="KsV-lH-AQ9" secondAttribute="centerX" id="zqB-Xq-yq3"/>
                     </constraints>
                 </view>
@@ -193,11 +206,12 @@
                 <outlet property="detailThreeLabel" destination="vQd-iw-qBX" id="jnk-Wk-EJd"/>
                 <outlet property="detailTitle" destination="LzO-47-OAD" id="p9N-bh-cLl"/>
                 <outlet property="detailTwoLabel" destination="noD-Un-WOz" id="Cfd-dm-EYf"/>
+                <outlet property="imageContainer" destination="jIg-in-SWb" id="OzW-p3-6cg"/>
                 <outlet property="menuButton" destination="jcc-Bi-TRU" id="huh-QA-8OX"/>
                 <outlet property="webButton" destination="GkC-2c-OOX" id="QDI-Et-ixb"/>
                 <outlet property="xibView" destination="ND8-EA-GOB" id="wgr-hh-j1J"/>
             </connections>
-            <point key="canvasLocation" x="277" y="361"/>
+            <point key="canvasLocation" x="273" y="361"/>
         </view>
     </objects>
     <resources>

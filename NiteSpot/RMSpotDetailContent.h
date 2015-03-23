@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *webButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *xibView;
+@property (weak, nonatomic) IBOutlet UIView *imageContainer;
 
 
 +(id)spotDetailContent;

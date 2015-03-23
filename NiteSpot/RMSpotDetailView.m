@@ -100,7 +100,7 @@
 
         UIImage *image = [UIImage imageWithData:data];
         self.detailContent.detailPhoto.image = [iosBlur imageByFilteringImage:image];
-        self.detailContent.detailPhoto.layer.masksToBounds = YES;
+        self.detailContent.imageContainer.layer.masksToBounds = YES;
 
     }];
 
@@ -110,10 +110,15 @@
 
     CGFloat scale = 1;
     if(self.contentScroll.contentOffset.y<0){
-        scale -= self.contentScroll.contentOffset.y/250;
+        scale -= self.contentScroll.contentOffset.y/200;
     }
 
     self.detailContent.detailPhoto.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.detailTitle.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.callButton.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.menuButton.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.webButton.transform = CGAffineTransformMakeScale(scale,scale);
+
 }
 
 
