@@ -10,6 +10,9 @@
 
 @implementation RMSpotDetailContent
 
+- (IBAction)onMonPressed:(id)sender {
+}
+
 + (id)spotDetailContent{
 
     RMSpotDetailContent *detailContent = [[[NSBundle mainBundle] loadNibNamed:@"RMSpotDetailContent"

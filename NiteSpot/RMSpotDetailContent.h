@@ -25,7 +25,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *xibView;
 @property (weak, nonatomic) IBOutlet UIView *imageContainer;
-
+@property (weak, nonatomic) IBOutlet UITextView *aboutTextView;
+@property (weak, nonatomic) IBOutlet UIView *aboutView;
+@property (weak, nonatomic) IBOutlet UIView *specialsContainerView;
+@property (weak, nonatomic) IBOutlet UIView *specialsInnerContainer;
+@property (weak, nonatomic) IBOutlet UIButton *monSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *tueSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *wedSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *thuSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *friSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *satSpecialButton;
+@property (weak, nonatomic) IBOutlet UIButton *sunSpecialButton;
+@property (weak, nonatomic) IBOutlet UITextView *eatSpecial;
+@property (weak, nonatomic) IBOutlet UITextView *drinkSpecial;
+@property (weak, nonatomic) IBOutlet UIButton *callPressed;
 
 +(id)spotDetailContent;
 
