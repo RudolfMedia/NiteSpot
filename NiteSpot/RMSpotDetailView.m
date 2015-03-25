@@ -31,6 +31,7 @@
     [self geoCodeCurrentSpot];
     [self applySelectors];
     [self callFormats];
+    [self displayHours];
 
     self.detailContent.eatSpecial.layer.borderWidth = 2;
     self.detailContent.eatSpecial.layer.borderColor = [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1].CGColor;
@@ -117,6 +118,8 @@
     [self roundViewCorners:self.detailContent.drinkSpecial];
     [self roundViewCorners:self.detailContent.locationContainer];
     [self roundViewCorners:self.detailContent.locationMapContainer];
+    [self roundViewCorners:self.detailContent.hoursView];
+    [self roundViewCorners:self.detailContent.hoursContainer];
 
 }
 
@@ -537,6 +540,32 @@
 
     }
 }
+
+-(void)displayHours{
+
+    [self setHours:self.selectedSpot.monHours forLabel:self.detailContent.hoursMon];
+    [self setHours:self.selectedSpot.tueHours forLabel:self.detailContent.hoursTue];
+    [self setHours:self.selectedSpot.wedHours forLabel:self.detailContent.hoursWed];
+    [self setHours:self.selectedSpot.thuHours forLabel:self.detailContent.hoursThurs];
+    [self setHours:self.selectedSpot.friHours forLabel:self.detailContent.hoursFri];
+    [self setHours:self.selectedSpot.satHours forLabel:self.detailContent.hoursSat];
+    [self setHours:self.selectedSpot.sunHours forLabel:self.detailContent.hoursSun];
+}
+
+-(void)setHours:(NSDictionary *)hours forLabel:(UILabel *)label{
+
+    NSString *closedString = @"Closed";
+
+    if ([[hours objectForKey:@"open"] isEqualToString:closedString]){
+        label.text = closedString;
+    }
+
+    else{
+        label.text = [NSString stringWithFormat:@"%@ - %@", [hours objectForKey:@"open"], [hours objectForKey:@"close"]];
+    }
+}
+
+
 
 
 
