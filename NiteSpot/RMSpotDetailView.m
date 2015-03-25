@@ -89,7 +89,7 @@
         [self.selectedSpot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
               andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
 
-      //  [[NSNotificationCenter defaultCenter] postNotificationName:@"SingleSpotDone" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SingleSpotDone" object:self];
 
     }];
 
