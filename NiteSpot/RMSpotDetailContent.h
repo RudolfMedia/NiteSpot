@@ -45,6 +45,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *noDrinkIndicator;
 @property (weak, nonatomic) IBOutlet UIView *locationContainer;
 @property (weak, nonatomic) IBOutlet UIView *locationMapContainer;
+@property (weak, nonatomic) IBOutlet UIView *hoursView;
+@property (weak, nonatomic) IBOutlet UIView *hoursContainer;
+@property (weak, nonatomic) IBOutlet UILabel *hoursMon;
+@property (weak, nonatomic) IBOutlet UILabel *hoursTue;
+@property (weak, nonatomic) IBOutlet UILabel *hoursWed;
+@property (weak, nonatomic) IBOutlet UILabel *hoursThurs;
+@property (weak, nonatomic) IBOutlet UILabel *hoursFri;
+@property (weak, nonatomic) IBOutlet UILabel *hoursSat;
+@property (weak, nonatomic) IBOutlet UILabel *hoursSun;
 
 +(id)spotDetailContent;
 
