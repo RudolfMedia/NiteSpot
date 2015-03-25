@@ -349,11 +349,6 @@
 
 }
 
-- (void)geoCodeSingleSpot{
-
-
-    
-}
 
 
 @end

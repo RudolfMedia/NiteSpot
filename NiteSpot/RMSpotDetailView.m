@@ -48,10 +48,14 @@
     [self.contentScroll addSubview:self.detailContent];
     NSLog(@"%f", self.contentScroll.contentSize.height);
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setUpMapView)
+                                                 name:@"SingleSpotDone"
+                                               object:nil];
 
-    //NSLog(@"%@ %@ %@ %@ %@ %@", self.selectedSpot.monSpecial, self.selectedSpot.tueSpecial, self.selectedSpot.thuSpecial, self.selectedSpot.friSpecial, self.selectedSpot.satSpecial, self.selectedSpot.sunSpecial);
 
 }
+
 
 #pragma mark - ScrollView Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -84,7 +88,9 @@
 
         [self.selectedSpot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
               andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
-        NSLog(@"%@ %@", self.selectedSpot.lat, self.selectedSpot.lon);
+
+      //  [[NSNotificationCenter defaultCenter] postNotificationName:@"SingleSpotDone" object:self];
+
     }];
 
 }
@@ -109,6 +115,8 @@
     [self roundViewCorners:self.detailContent.sunSpecialButton];
     [self roundViewCorners:self.detailContent.eatSpecial];
     [self roundViewCorners:self.detailContent.drinkSpecial];
+    [self roundViewCorners:self.detailContent.locationContainer];
+    [self roundViewCorners:self.detailContent.locationMapContainer];
 
 }
 
@@ -174,6 +182,31 @@
         
     }];
 }
+
+- (void)setUpMapView{
+
+    [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1IjoicnVkb2xmbWVkaWEiLCJhIjoidDZSa2hYcyJ9.ucXq4hJcdZTuInE-gtM0ug"];
+    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
+
+    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.detailContent.locationMapContainer.bounds andTilesource:tileSource];
+
+    [self.detailContent.locationMapContainer addSubview:mapView];
+    mapView.delegate = self;
+    mapView.tintColor = [UIColor lightGrayColor];
+    mapView.clusteringEnabled = YES;
+    mapView.zoom = 13;
+    [mapView setCenterCoordinate:CLLocationCoordinate2DMake(40.4397, -79.9764)];
+    mapView.tintColor = [UIColor blackColor];
+    CLLocationCoordinate2D zoomCenter = CLLocationCoordinate2DMake([self.selectedSpot.lat floatValue], [self.selectedSpot.lon floatValue]);
+
+    [mapView setCenterCoordinate:zoomCenter];
+
+    RMPointAnnotation *singleAnnotation = [[RMPointAnnotation alloc] initWithMapView:mapView coordinate:zoomCenter andTitle:self.selectedSpot.spotTitle];
+
+    [mapView addAnnotation:singleAnnotation];
+
+}
+
 
 
 -(UIButton *)formatButton:(UIButton *)button{
@@ -471,7 +504,7 @@
 
 
     if ([[daySpecial objectForKey:@"eat"] length] < 2){
-
+        [self animateView:self.detailContent.noFoodIndicator];
         [self.detailContent.noFoodIndicator setHidden:NO];
         [self.detailContent.eatSpecial setHidden:YES];
         [self.detailContent.eatSpecialImage setHidden:YES];
@@ -489,6 +522,7 @@
 
     if ([[daySpecial objectForKey:@"drink"] length] < 2) {
 
+        [self animateView:self.detailContent.noDrinkIndicator];
         [self.detailContent.drinkSpecial setHidden:YES];
         [self.detailContent.noDrinkIndicator setHidden:NO];
         [self.detailContent.drinkSpecialImage setHidden:YES];

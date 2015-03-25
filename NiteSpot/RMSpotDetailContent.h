@@ -43,6 +43,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *drinkSpecialImage;
 @property (weak, nonatomic) IBOutlet UILabel *noFoodIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *noDrinkIndicator;
+@property (weak, nonatomic) IBOutlet UIView *locationContainer;
+@property (weak, nonatomic) IBOutlet UIView *locationMapContainer;
 
 +(id)spotDetailContent;
 
