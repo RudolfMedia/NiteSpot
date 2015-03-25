@@ -32,6 +32,7 @@
     [self applySelectors];
     [self callFormats];
     [self displayHours];
+    [self setCurrentDay];
 
     self.detailContent.eatSpecial.layer.borderWidth = 2;
     self.detailContent.eatSpecial.layer.borderColor = [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1].CGColor;
@@ -197,7 +198,7 @@
     mapView.delegate = self;
     mapView.tintColor = [UIColor lightGrayColor];
     mapView.clusteringEnabled = YES;
-    mapView.zoom = 13;
+    mapView.zoom = 14;
     [mapView setCenterCoordinate:CLLocationCoordinate2DMake(40.4397, -79.9764)];
     mapView.tintColor = [UIColor blackColor];
     CLLocationCoordinate2D zoomCenter = CLLocationCoordinate2DMake([self.selectedSpot.lat floatValue], [self.selectedSpot.lon floatValue]);
@@ -565,23 +566,40 @@
     }
 }
 
+-(void)setCurrentDay{
+
+    NSDateFormatter *currentDay = [[NSDateFormatter alloc] init];
+    [currentDay setDateFormat:@"EEEE"];
+
+    if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Monday"]) {
+        [self onMonPressed];
+    }
+
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Tuesday"]){
+        [self onTuesdayPressed];
+    }
+
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Wednesday"]){
+        [self onWednesdayPressed];
+    }
+
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Thursday"]){
+        [self onThursdayPressed];
+    }
+
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Friday"]){
+        [self onFridayPressed];
+    }
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Saturday"]){
+        [self onSaturdayPressed];
+    }
+    else if ([[currentDay stringFromDate:[NSDate date]] isEqualToString:@"Sunday"]){
+        [self onSundayPressed];
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

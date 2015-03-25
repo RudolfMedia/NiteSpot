@@ -302,7 +302,7 @@
         }
 
     }
-  //  [self geocodeAllSpots];
+    [self geocodeAllSpots];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DownloadDone" object:self];
 

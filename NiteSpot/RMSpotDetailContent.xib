@@ -430,89 +430,89 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bf-wb-Ghi">
                                     <rect key="frame" x="8" y="37" width="288" height="197"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7N0-e8-owM">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7N0-e8-owM">
                                             <rect key="frame" x="22" y="0.0" width="245" height="197"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-RW-e9l">
-                                                    <rect key="frame" x="20" y="10" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="10" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMK-SL-pjz">
-                                                    <rect key="frame" x="20" y="36" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="36" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Thu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-7z-jSR">
-                                                    <rect key="frame" x="20" y="88" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="88" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fri" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-VU-QFm">
-                                                    <rect key="frame" x="20" y="114" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="114" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ff-88-54b">
-                                                    <rect key="frame" x="20" y="140" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="140" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sun" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SD-DO-buj">
-                                                    <rect key="frame" x="20" y="166" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="166" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNp-xF-MWu">
-                                                    <rect key="frame" x="72" y="10" width="145" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 AM - 10:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNp-xF-MWu">
+                                                    <rect key="frame" x="63" y="10" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH7-wR-GGH">
-                                                    <rect key="frame" x="72" y="36" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="36" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NE5-ep-bsy">
-                                                    <rect key="frame" x="72" y="62" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="62" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npa-fe-BMv">
-                                                    <rect key="frame" x="72" y="88" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="88" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-xD-oLy">
-                                                    <rect key="frame" x="72" y="114" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="114" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQY-nP-JHA">
-                                                    <rect key="frame" x="72" y="140" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="140" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="11:00 - 10:00 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN8-J0-NYl">
-                                                    <rect key="frame" x="72" y="166" width="145" height="21"/>
+                                                    <rect key="frame" x="63" y="166" width="170" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Wed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgb-de-HBj">
-                                                    <rect key="frame" x="20" y="62" width="42" height="21"/>
+                                                    <rect key="frame" x="11" y="62" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -522,33 +522,40 @@
                                                 <constraint firstItem="3ql-RW-e9l" firstAttribute="top" secondItem="7N0-e8-owM" secondAttribute="top" constant="10" id="1h8-FE-saE"/>
                                                 <constraint firstItem="1ff-88-54b" firstAttribute="top" secondItem="Tw2-VU-QFm" secondAttribute="bottom" constant="5" id="2Bo-dA-dyP"/>
                                                 <constraint firstItem="sH7-wR-GGH" firstAttribute="leading" secondItem="uMK-SL-pjz" secondAttribute="trailing" constant="10" id="2Ix-UO-04e"/>
-                                                <constraint firstItem="Es1-7z-jSR" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="2Pr-vP-Lre"/>
+                                                <constraint firstAttribute="trailing" secondItem="VQY-nP-JHA" secondAttribute="trailing" constant="12" id="4rc-y7-3sW"/>
                                                 <constraint firstItem="Tw2-VU-QFm" firstAttribute="top" secondItem="Es1-7z-jSR" secondAttribute="bottom" constant="5" id="6lc-7s-mNk"/>
+                                                <constraint firstItem="Dgb-de-HBj" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="BBy-kr-LAj"/>
                                                 <constraint firstItem="uMK-SL-pjz" firstAttribute="top" secondItem="3ql-RW-e9l" secondAttribute="bottom" constant="5" id="E6O-Ui-dFi"/>
-                                                <constraint firstItem="3ql-RW-e9l" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="E6p-LW-hwz"/>
+                                                <constraint firstAttribute="trailing" secondItem="sH7-wR-GGH" secondAttribute="trailing" constant="12" id="ICr-gX-sYf"/>
                                                 <constraint firstItem="VQY-nP-JHA" firstAttribute="top" secondItem="Qro-xD-oLy" secondAttribute="bottom" constant="5" id="ILe-1L-RYi"/>
+                                                <constraint firstItem="Tw2-VU-QFm" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="IUV-qj-iEd"/>
                                                 <constraint firstItem="pN8-J0-NYl" firstAttribute="leading" secondItem="0SD-DO-buj" secondAttribute="trailing" constant="10" id="J42-LC-On0"/>
                                                 <constraint firstItem="ZNp-xF-MWu" firstAttribute="top" secondItem="7N0-e8-owM" secondAttribute="top" constant="10" id="JXI-b6-X4X"/>
+                                                <constraint firstItem="1ff-88-54b" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="NEh-Fy-wih"/>
+                                                <constraint firstItem="0SD-DO-buj" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="OxK-h2-Wf7"/>
+                                                <constraint firstItem="3ql-RW-e9l" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="RyY-O7-CE6"/>
                                                 <constraint firstItem="Qro-xD-oLy" firstAttribute="leading" secondItem="Tw2-VU-QFm" secondAttribute="trailing" constant="10" id="T5Z-wa-Yzt"/>
                                                 <constraint firstItem="Qro-xD-oLy" firstAttribute="top" secondItem="Npa-fe-BMv" secondAttribute="bottom" constant="5" id="Up1-Tu-Xas"/>
-                                                <constraint firstItem="1ff-88-54b" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="YAo-34-K0u"/>
-                                                <constraint firstItem="Dgb-de-HBj" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="Ybo-v3-sMc"/>
                                                 <constraint firstItem="0SD-DO-buj" firstAttribute="top" secondItem="1ff-88-54b" secondAttribute="bottom" constant="5" id="bM2-cW-1Uc"/>
+                                                <constraint firstAttribute="trailing" secondItem="NE5-ep-bsy" secondAttribute="trailing" constant="12" id="bs6-tK-Ucv"/>
                                                 <constraint firstItem="Dgb-de-HBj" firstAttribute="top" secondItem="uMK-SL-pjz" secondAttribute="bottom" constant="5" id="cCx-Bv-en3"/>
                                                 <constraint firstItem="Es1-7z-jSR" firstAttribute="top" secondItem="Dgb-de-HBj" secondAttribute="bottom" constant="5" id="ilr-F4-geC"/>
                                                 <constraint firstItem="ZNp-xF-MWu" firstAttribute="leading" secondItem="3ql-RW-e9l" secondAttribute="trailing" constant="10" id="kO9-0E-gFb"/>
                                                 <constraint firstItem="Npa-fe-BMv" firstAttribute="leading" secondItem="Es1-7z-jSR" secondAttribute="trailing" constant="10" id="l1c-DU-Vzx"/>
+                                                <constraint firstAttribute="trailing" secondItem="Npa-fe-BMv" secondAttribute="trailing" constant="12" id="lYg-h1-8dH"/>
+                                                <constraint firstItem="Es1-7z-jSR" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="nI4-iI-tnK"/>
                                                 <constraint firstAttribute="bottom" secondItem="0SD-DO-buj" secondAttribute="bottom" constant="10" id="ppL-1F-JSU"/>
-                                                <constraint firstItem="0SD-DO-buj" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="ptl-il-keU"/>
+                                                <constraint firstItem="uMK-SL-pjz" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="11" id="qUa-hv-QkZ"/>
                                                 <constraint firstItem="NE5-ep-bsy" firstAttribute="leading" secondItem="Dgb-de-HBj" secondAttribute="trailing" constant="10" id="qb8-yN-bmP"/>
-                                                <constraint firstItem="uMK-SL-pjz" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="rG2-TW-BI2"/>
                                                 <constraint firstItem="sH7-wR-GGH" firstAttribute="top" secondItem="ZNp-xF-MWu" secondAttribute="bottom" constant="5" id="sg1-cr-PwV"/>
-                                                <constraint firstItem="Tw2-VU-QFm" firstAttribute="leading" secondItem="7N0-e8-owM" secondAttribute="leading" constant="20" id="sjp-XT-lWL"/>
                                                 <constraint firstItem="Npa-fe-BMv" firstAttribute="top" secondItem="NE5-ep-bsy" secondAttribute="bottom" constant="5" id="t30-D2-UHU"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZNp-xF-MWu" secondAttribute="trailing" constant="12" id="vPD-Ko-3oU"/>
                                                 <constraint firstItem="VQY-nP-JHA" firstAttribute="leading" secondItem="1ff-88-54b" secondAttribute="trailing" constant="10" id="wNb-JP-8lL"/>
                                                 <constraint firstItem="NE5-ep-bsy" firstAttribute="top" secondItem="sH7-wR-GGH" secondAttribute="bottom" constant="5" id="wdP-10-8aa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qro-xD-oLy" secondAttribute="trailing" constant="12" id="x3C-Vw-8wg"/>
                                                 <constraint firstItem="pN8-J0-NYl" firstAttribute="top" secondItem="VQY-nP-JHA" secondAttribute="bottom" constant="5" id="xGo-LB-EZG"/>
                                                 <constraint firstAttribute="bottom" secondItem="pN8-J0-NYl" secondAttribute="bottom" constant="10" id="xgY-fB-fGm"/>
+                                                <constraint firstAttribute="trailing" secondItem="pN8-J0-NYl" secondAttribute="trailing" constant="12" id="zSg-HS-JMa"/>
                                             </constraints>
                                         </view>
                                     </subviews>
