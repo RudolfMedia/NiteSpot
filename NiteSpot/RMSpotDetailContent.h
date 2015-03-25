@@ -39,6 +39,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *eatSpecial;
 @property (weak, nonatomic) IBOutlet UITextView *drinkSpecial;
 @property (weak, nonatomic) IBOutlet UIButton *callPressed;
+@property (weak, nonatomic) IBOutlet UIImageView *eatSpecialImage;
+@property (weak, nonatomic) IBOutlet UIImageView *drinkSpecialImage;
+@property (weak, nonatomic) IBOutlet UILabel *noFoodIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *noDrinkIndicator;
 
 +(id)spotDetailContent;
 

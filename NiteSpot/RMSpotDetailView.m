@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMSpotDetailContent *detailContent;
-
 @property UIScrollView *specialsContent;
 
 
@@ -239,8 +238,12 @@
 
 -(void)onMonPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.monSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.monSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.monSpecial];
 
     [self animatedSelected:self.detailContent.monSpecialButton];
     [self resetButton:self.detailContent.tueSpecialButton];
@@ -254,8 +257,12 @@
 
 -(void)onTuesdayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.tueSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.tueSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.tueSpecial];
 
     [self animatedSelected:self.detailContent.tueSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -270,8 +277,12 @@
 
 -(void)onWednesdayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.wedSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.wedSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.wedSpecial];
 
     [self animatedSelected:self.detailContent.wedSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -286,8 +297,12 @@
 
 -(void)onThursdayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.thuSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.thuSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.thuSpecial];
 
     [self animatedSelected:self.detailContent.thuSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -301,8 +316,12 @@
 
 -(void)onFridayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.friSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.friSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.friSpecial];
 
     [self animatedSelected:self.detailContent.friSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -316,8 +335,12 @@
 
 -(void)onSaturdayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.satSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.satSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.satSpecial];
 
     [self animatedSelected:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -332,8 +355,12 @@
 
 -(void)onSundayPressed{
 
-    self.detailContent.eatSpecial.text = [self.selectedSpot.sunSpecial objectForKey:@"eat"];
-    self.detailContent.drinkSpecial.text = [self.selectedSpot.sunSpecial objectForKey:@"drink"];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.sunSpecial];
 
     [self animatedSelected:self.detailContent.sunSpecialButton];
     [self resetButton:self.detailContent.monSpecialButton];
@@ -418,5 +445,84 @@
 
 
 }
+
+-(void)animateView:(UIView *)view{
+
+    view.alpha = 0;
+    [UIView transitionWithView:view
+                      duration:0.3f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        view.alpha = 1;
+                    }
+
+                    completion:^(BOOL finished) {
+                        
+                    }];
+
+
+}
+
+#pragma mark - Display Logic 
+
+
+-(void)displaySpecial:(NSDictionary *)daySpecial{
+
+
+    if ([[daySpecial objectForKey:@"eat"] length] < 2){
+
+        [self.detailContent.noFoodIndicator setHidden:NO];
+        [self.detailContent.eatSpecial setHidden:YES];
+        [self.detailContent.eatSpecialImage setHidden:YES];
+    }
+    else{
+
+        [self.detailContent.eatSpecial setHidden:NO];
+        [self.detailContent.noFoodIndicator setHidden:YES];
+        self.detailContent.eatSpecial.text = [daySpecial objectForKey:@"eat"];
+        [self.detailContent.eatSpecialImage setHidden:NO];
+
+    }
+
+
+
+    if ([[daySpecial objectForKey:@"drink"] length] < 2) {
+
+        [self.detailContent.drinkSpecial setHidden:YES];
+        [self.detailContent.noDrinkIndicator setHidden:NO];
+        [self.detailContent.drinkSpecialImage setHidden:YES];
+
+    }
+    else{
+
+        [self.detailContent.drinkSpecial setHidden:NO];
+        [self.detailContent.noDrinkIndicator setHidden:YES];
+        [self.detailContent.drinkSpecialImage setHidden:NO];
+        self.detailContent.drinkSpecial.text = [daySpecial objectForKey:@"drink"];
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
