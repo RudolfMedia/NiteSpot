@@ -7,28 +7,14 @@
 //
 
 #import "RMSpotDetailView.h"
-#import "AboutCell.h"
-#import "LocationCell.h"
-#import "HoursCell.h"
-#import "SpecialsCell.h"
+#import "RMSpotDetailContent.h"
+#import "MapBox.h"
 
-@interface RMSpotDetailView () <UICollectionViewDataSource, UIBarPositioningDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *detailPhoto;
-@property (weak, nonatomic) IBOutlet UILabel *detailTitle;
-@property (weak, nonatomic) IBOutlet UILabel *detailinfoString;
-@property (weak, nonatomic) IBOutlet UILabel *detailPricePhone;
-@property (weak, nonatomic) IBOutlet UIButton *detailAbout;
-@property (weak, nonatomic) IBOutlet UIButton *detailSpecials;
-@property (weak, nonatomic) IBOutlet UIButton *detailHours;
+@interface RMSpotDetailView () <UIBarPositioningDelegate, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *detailCollectionView;
-@property (weak, nonatomic) IBOutlet UIButton *detailLocation;
-@property (weak, nonatomic) IBOutlet UILabel *detailTitleLable;
-
-@property CLLocationCoordinate2D *currentLocation;
-@property CLLocationManager *locationManager;
-@property UICollectionViewFlowLayout *flowLayout;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
+@property RMSpotDetailContent *detailContent;
 @property UIScrollView *specialsContent;
 
 
@@ -39,304 +25,49 @@
 - (void)viewDidLoad {
 
     [super viewDidLoad];
+    self.detailContent = [RMSpotDetailContent spotDetailContent];
+
+    [self formatHeader];
     [self geoCodeCurrentSpot];
+    [self applySelectors];
+    [self callFormats];
 
-    self.detailCollectionView.delegate = self;
+    self.detailContent.eatSpecial.layer.borderWidth = 2;
+    self.detailContent.eatSpecial.layer.borderColor = [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1].CGColor;
+    self.detailContent.drinkSpecial.layer.borderWidth = 2;
+    self.detailContent.drinkSpecial.layer.borderColor = [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1].CGColor;
 
-    NSLog(@"%@", self.selectedSpot.type);
+    self.contentScroll.delegate = self;
+    self.contentScroll.contentSize = CGSizeMake(self.view.frame.size.width, self.detailContent.frame.size.height);
 
+    CGRect sizedFrame = CGRectMake(0, 0, self.view.frame.size.width, self.detailContent.frame.size.height);
+    self.detailContent.frame = sizedFrame;
+    self.detailContent.aboutTextView.text = self.selectedSpot.spotAbout;
 
-    [self formatButton:self.detailAbout];
-    [self formatButton:self.detailLocation];
-    [self formatButton:self.detailSpecials];
-    [self formatButton:self.detailHours];
-
-    NSLog(@"%@ %@ %@ %@ %@ %@", self.selectedSpot.monSpecial, self.selectedSpot.tueSpecial, self.selectedSpot.thuSpecial, self.selectedSpot.friSpecial, self.selectedSpot.satSpecial, self.selectedSpot.sunSpecial);
-
-    self.detailPhoto.backgroundColor = [UIColor blackColor];
-
-    if ([self.selectedSpot.type isEqualToString:@"a"]) {
-
-        self.detailTypeImage.image = [UIImage imageNamed:@"detailEat"];
-
-    }
-
-    else if ([self.selectedSpot.type isEqualToString:@"b"]){
-
-        self.detailTypeImage.image = [UIImage imageNamed:@"detailDrink"];
-
-    }
-
-    else if ([self.selectedSpot.type isEqualToString:@"c"]){
-
-        self.detailTypeImage.image = [UIImage imageNamed:@"eatDrinkDetail"];
-        
-    }
-
-
-
-    self.detailTitle.text = self.selectedSpot.spotTitle;
-
-    self.detailinfoString.text = [NSString stringWithFormat:@"%@ \u2022 %@",
-                                  self.selectedSpot.foodType,
-                                  self.selectedSpot.drinkType];
-
-    self.detailPricePhone.text = [NSString stringWithFormat:@"%@ \u2022 %@",
-                                  self.selectedSpot.price,
-                                  self.selectedSpot.spotTel];
-
-
-    GPUImageiOSBlurFilter *iosBlur = [[GPUImageiOSBlurFilter alloc] init];
-    iosBlur.blurRadiusInPixels = 1;
-    self.detailCollectionView.scrollEnabled = NO;
     
+    [self.contentScroll addSubview:self.detailContent];
+    NSLog(@"%f", self.contentScroll.contentSize.height);
 
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.selectedSpot.thumbURL];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
-        UIImage *image = [UIImage imageWithData:data];
-        self.detailPhoto.image = [iosBlur imageByFilteringImage:image];
-
-    }];
+    //NSLog(@"%@ %@ %@ %@ %@ %@", self.selectedSpot.monSpecial, self.selectedSpot.tueSpecial, self.selectedSpot.thuSpecial, self.selectedSpot.friSpecial, self.selectedSpot.satSpecial, self.selectedSpot.sunSpecial);
 
 }
 
--(void)viewWillAppear:(BOOL)animated{
+#pragma mark - ScrollView Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
-    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"AboutCell"
-                                                          bundle:[NSBundle mainBundle]]
-                                      forCellWithReuseIdentifier:@"AboutCell"];
-
-    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"HoursCell"
-                                                          bundle:[NSBundle mainBundle]]
-                                      forCellWithReuseIdentifier:@"HoursCell"];
-
-
-    [self.detailCollectionView registerNib:[UINib nibWithNibName:@"SpecialsCell"
-                                                          bundle:[NSBundle mainBundle]]
-                forCellWithReuseIdentifier:@"SpecialsCell"];
-
-    [self.detailCollectionView registerClass:[LocationCell class]
-                  forCellWithReuseIdentifier:@"LocationCell"];
-
-}
-
-#pragma mark - UItableview Datasource/ Delegate
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    return 20;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpecialDetailCell"];
-    cell.textLabel.text = @"derp";
-    return cell;
-}
-
-#pragma mark - UICollectionview Datasource / Delegate
-
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    CGSize cellSize = CGSizeMake(self.detailCollectionView.frame.size.width,
-                                 self.detailCollectionView.frame.size.height);
-    return cellSize;
-}
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-
-    return 4;
-
-}
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    AboutCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AboutCell" forIndexPath:indexPath];
-    UITextView *textView = (UITextView *)[cell viewWithTag:100];
-    textView.text = self.selectedSpot.spotAbout;
-
-    if (indexPath == [NSIndexPath indexPathForItem:0 inSection:0]) {
-
-        AboutCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AboutCell" forIndexPath:indexPath];
-        UITextView *textView = (UITextView *)[cell viewWithTag:100];
-        textView.text = self.selectedSpot.spotAbout;
-
-
-        return cell;
-
-    }
-    else if(indexPath == [NSIndexPath indexPathForItem:1 inSection:0]){
-
-        LocationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LocationCell" forIndexPath:indexPath];
-
-        [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1IjoicnVkb2xmbWVkaWEiLCJhIjoidDZSa2hYcyJ9.ucXq4hJcdZTuInE-gtM0ug"];
-        RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
-
-        RMMapView *mapView = [[RMMapView alloc] initWithFrame:cell.bounds andTilesource:tileSource];
-
-        [cell addSubview:mapView];
-        mapView.delegate = self;
-        mapView.tintColor = [UIColor lightGrayColor];
-        mapView.clusteringEnabled = YES;
-        mapView.zoom = 13;
-
-        CLLocationCoordinate2D zoomCenter = CLLocationCoordinate2DMake([self.selectedSpot.lat floatValue], [self.selectedSpot.lon floatValue]);
-
-        [mapView setCenterCoordinate:zoomCenter];
-
-        RMPointAnnotation *singleAnnotation = [[RMPointAnnotation alloc] initWithMapView:mapView coordinate:zoomCenter andTitle:self.selectedSpot.spotTitle];
-
-        [mapView addAnnotation:singleAnnotation];
-
-        return cell;
-      
+    CGFloat scale = 1;
+    if(self.contentScroll.contentOffset.y<0){
+        scale -= self.contentScroll.contentOffset.y/200;
     }
 
-    else if (indexPath == [NSIndexPath indexPathForItem:2 inSection:0]){
+    self.detailContent.detailPhoto.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.detailTitle.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.callButton.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.menuButton.transform = CGAffineTransformMakeScale(scale,scale);
+    self.detailContent.webButton.transform = CGAffineTransformMakeScale(scale,scale);
 
-        SpecialsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SpecialsCell" forIndexPath:indexPath];
-        self.specialsContent = (UIScrollView *)[cell viewWithTag:60];
-        self.specialsContent.delegate = self;
-
-        UIView *container = (UIView *)[cell viewWithTag:1001];
-        [container addConstraint:[NSLayoutConstraint constraintWithItem:container
-                                                            attribute:NSLayoutAttributeHeight
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.height]];
-
-
-        UIView *monView = (UIView *)[cell viewWithTag:1001];
-        [monView addConstraint:[NSLayoutConstraint constraintWithItem:monView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-        UIView *tueView = (UIView *)[cell viewWithTag:2001];
-        [tueView addConstraint:[NSLayoutConstraint constraintWithItem:tueView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-        UIView *wedView = (UIView *)[cell viewWithTag:3001];
-        [wedView addConstraint:[NSLayoutConstraint constraintWithItem:wedView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-        UIView *thuView = (UIView *)[cell viewWithTag:4001];
-        [thuView addConstraint:[NSLayoutConstraint constraintWithItem:thuView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-        UIView *friView = (UIView *)[cell viewWithTag:5001];
-        [friView addConstraint:[NSLayoutConstraint constraintWithItem:friView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-        UIView *satView = (UIView *)[cell viewWithTag:6001];
-        [satView addConstraint:[NSLayoutConstraint constraintWithItem:satView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-        UIView *sunView = (UIView *)[cell viewWithTag:7001];
-        [sunView addConstraint:[NSLayoutConstraint constraintWithItem:sunView
-                                                            attribute:NSLayoutAttributeWidth
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:nil
-                                                            attribute:NSLayoutAttributeNotAnAttribute
-                                                           multiplier:1.0f constant:collectionView.frame.size.width]];
-
-
-        return cell;
-
-    }
-
-    else if (indexPath == [NSIndexPath indexPathForItem:3 inSection:0]){
-        HoursCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HoursCell" forIndexPath:indexPath];
-        UILabel *mon = (UILabel *)[cell viewWithTag:1000];
-        UILabel *tue = (UILabel *)[cell viewWithTag:2000];
-        UILabel *wed = (UILabel *)[cell viewWithTag:3000];
-        UILabel *thu = (UILabel *)[cell viewWithTag:4000];
-        UILabel *fri = (UILabel *)[cell viewWithTag:5000];
-        UILabel *sat = (UILabel *)[cell viewWithTag:6000];
-        UILabel *sun = (UILabel *)[cell viewWithTag:7000];
-        UIScrollView *content = (UIScrollView *)[cell viewWithTag:60];
-        content.delegate = self;
-        NSString *closedString = @"Closed";
-
-        if ([[self.selectedSpot.monHours objectForKey:@"open"] isEqualToString:closedString]) {
-            mon.text = closedString;
-        }
-        else{
-        mon.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.monHours objectForKey:@"open"], [self.selectedSpot.monHours objectForKey:@"close"]];
-        }
-        if ([[self.selectedSpot.tueHours objectForKey:@"open"] isEqualToString:closedString]) {
-            tue.text = closedString;
-        }
-        else{
-
-        tue.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.tueHours objectForKey:@"open"], [self.selectedSpot.tueHours objectForKey:@"close"]];
-        }
-
-        if ([[self.selectedSpot.wedHours objectForKey:@"open"] isEqualToString:closedString]) {
-            wed.text = closedString;
-        }
-        else{
-        wed.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.wedHours objectForKey:@"open"], [self.selectedSpot.wedHours objectForKey:@"close"]];
-        }
-        if ([[self.selectedSpot.thuHours objectForKey:@"open"] isEqualToString:closedString]) {
-            thu.text = closedString;
-        }
-        else{
-        thu.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.thuHours objectForKey:@"open"], [self.selectedSpot.thuHours objectForKey:@"close"]];
-        }
-        if ([[self.selectedSpot.friHours objectForKey:@"open"] isEqualToString:closedString]) {
-            fri.text = closedString;
-        }
-        else{
-        fri.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.friHours objectForKey:@"open"], [self.selectedSpot.friHours objectForKey:@"close"]];
-        }
-        if ([[self.selectedSpot.satHours objectForKey:@"open"] isEqualToString:closedString]) {
-            sat.text = closedString;
-        }
-        else{
-        sat.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.satHours objectForKey:@"open"], [self.selectedSpot.satHours objectForKey:@"close"]];
-        }
-        if ([[self.selectedSpot.sunHours objectForKey:@"open"] isEqualToString:closedString]) {
-            sun.text = closedString;
-        }
-        else{
-        sun.text = [NSString stringWithFormat:@"%@ - %@",[self.selectedSpot.sunHours objectForKey:@"open"], [self.selectedSpot.sunHours objectForKey:@"close"]];
-        }
-
-
-        return cell;
-    }
-
-    return cell;
 }
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%@", indexPath);
-}
-
 
 -(void)geoCodeCurrentSpot{
 
@@ -358,36 +89,440 @@
 
 }
 
+#pragma mark - Format View
+
+-(void)callFormats{
+
+    [self formatButton:self.detailContent.callButton];
+    [self formatButton:self.detailContent.webButton];
+    [self formatButton:self.detailContent.menuButton];
+    [self roundViewCorners:self.detailContent.aboutTextView];
+    [self roundViewCorners:self.detailContent.aboutView];
+    [self roundViewCorners:self.detailContent.specialsContainerView];
+    [self roundViewCorners:self.detailContent.specialsInnerContainer];
+    [self roundViewCorners:self.detailContent.monSpecialButton];
+    [self roundViewCorners:self.detailContent.tueSpecialButton];
+    [self roundViewCorners:self.detailContent.wedSpecialButton];
+    [self roundViewCorners:self.detailContent.thuSpecialButton];
+    [self roundViewCorners:self.detailContent.friSpecialButton];
+    [self roundViewCorners:self.detailContent.satSpecialButton];
+    [self roundViewCorners:self.detailContent.sunSpecialButton];
+    [self roundViewCorners:self.detailContent.eatSpecial];
+    [self roundViewCorners:self.detailContent.drinkSpecial];
+
+}
+
+-(void)formatHeader{
+
+    if ([self.selectedSpot.type isEqualToString:@"a"]) {
+
+        self.detailContent.detailImageTwo.image = [UIImage imageNamed:@"detailEat"];
+        self.detailContent.detailTwoLabel.text = @"Food";
+        [self.detailContent.detailImageOne setHidden:YES];
+        [self.detailContent.detailImageThree setHidden:YES];
+        [self.detailContent.detailOneLabel setHidden:YES];
+        [self.detailContent.detailThreeLabel setHidden:YES];
+
+    }
+
+    else if ([self.selectedSpot.type isEqualToString:@"b"]){
+
+        self.detailContent.detailImageTwo.image = [UIImage imageNamed:@"detailDrink"];
+        self.detailContent.detailTwoLabel.text = @"Drinks";
+        [self.detailContent.detailImageOne setHidden:YES];
+        [self.detailContent.detailImageThree setHidden:YES];
+        [self.detailContent.detailOneLabel setHidden:YES];
+        [self.detailContent.detailThreeLabel setHidden:YES];
+
+    }
+
+    else if ([self.selectedSpot.type isEqualToString:@"c"]){
+
+        self.detailContent.detailImageOne.image = [UIImage imageNamed:@"detailEat"];
+        self.detailContent.detailImageThree.image = [UIImage imageNamed:@"detailDrink"];
+        self.detailContent.detailOneLabel.text = @"Food";
+        self.detailContent.detailThreeLabel.text = @"Drinks";
+        [self.detailContent.detailImageTwo setHidden:YES];
+        [self.detailContent.detailTwoLabel setHidden:YES];
+
+    }
+
+    NSLog(@"%@", self.selectedSpot.type);
+
+
+
+    self.detailContent.detailTitle.text = self.selectedSpot.spotTitle;
+
+    self.detailContent.detailInfoString.text = [NSString stringWithFormat:@"%@ \u2022 %@",
+                                                self.selectedSpot.foodType,
+                                                self.selectedSpot.drinkType];
+
+    self.detailContent.detailPricePhone.text = [NSString stringWithFormat:@"%@ \u2022 %@",
+                                                self.selectedSpot.price,
+                                                self.selectedSpot.spotTel];
+
+
+    GPUImageiOSBlurFilter *iosBlur = [[GPUImageiOSBlurFilter alloc] init];
+    iosBlur.blurRadiusInPixels = 1;
+
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:self.selectedSpot.thumbURL];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        UIImage *image = [UIImage imageWithData:data];
+        self.detailContent.detailPhoto.image = [iosBlur imageByFilteringImage:image];
+        self.detailContent.imageContainer.layer.masksToBounds = YES;
+        
+    }];
+}
 
 
 -(UIButton *)formatButton:(UIButton *)button{
 
     button.layer.masksToBounds = YES;
-    button.layer.cornerRadius = 10;
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    button.layer.cornerRadius = button.layer.frame.size.height/2;
+    [[button layer] setBorderWidth:2.0f];
+    [[button layer] setBorderColor:[UIColor whiteColor].CGColor];
+
     return button;
 }
 
-- (IBAction)onAboutPressed:(id)sender {
+-(UIView *)roundViewCorners:(UIView *)view{
 
-    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 5;
+
+    return view;
 }
 
-- (IBAction)onLocationPressed:(id)sender {
 
-    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+#pragma mark Outlet Selectors
+
+-(void)applySelectors{
+
+    [self.detailContent.monSpecialButton addTarget:self
+                                            action:@selector(onMonPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailContent.tueSpecialButton addTarget:self
+                                            action:@selector(onTuesdayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailContent.wedSpecialButton addTarget:self
+                                            action:@selector(onWednesdayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailContent.thuSpecialButton addTarget:self
+                                            action:@selector(onThursdayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailContent.friSpecialButton addTarget:self
+                                            action:@selector(onFridayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+
+    [self.detailContent.satSpecialButton addTarget:self
+                                            action:@selector(onSaturdayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+    [self.detailContent.sunSpecialButton addTarget:self
+                                            action:@selector(onSundayPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+    [self.detailContent.callButton addTarget:self
+                                            action:@selector(onCallPressed)
+                                  forControlEvents:UIControlEventTouchUpInside];
+
+
+
 
 }
 
-- (IBAction)onSpecialsPressed:(id)sender {
+-(void)onMonPressed{
 
-    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.monSpecial];
+
+    [self animatedSelected:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
 
 }
-- (IBAction)onHoursPressed:(id)sender {
 
-    [self.detailCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:3 inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+-(void)onTuesdayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.tueSpecial];
+
+    [self animatedSelected:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
+
 
 }
+
+-(void)onWednesdayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.wedSpecial];
+
+    [self animatedSelected:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
+
+
+}
+
+-(void)onThursdayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.thuSpecial];
+
+    [self animatedSelected:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
+
+}
+
+-(void)onFridayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.friSpecial];
+
+    [self animatedSelected:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
+
+}
+
+-(void)onSaturdayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+     [self displaySpecial:self.selectedSpot.satSpecial];
+
+    [self animatedSelected:self.detailContent.satSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.sunSpecialButton];
+
+
+}
+
+-(void)onSundayPressed{
+
+    [self animateView:self.detailContent.eatSpecial];
+    [self animateView:self.detailContent.drinkSpecial];
+    [self animateView:self.detailContent.eatSpecialImage];
+    [self animateView:self.detailContent.drinkSpecialImage];
+
+    [self displaySpecial:self.selectedSpot.sunSpecial];
+
+    [self animatedSelected:self.detailContent.sunSpecialButton];
+    [self resetButton:self.detailContent.monSpecialButton];
+    [self resetButton:self.detailContent.tueSpecialButton];
+    [self resetButton:self.detailContent.wedSpecialButton];
+    [self resetButton:self.detailContent.thuSpecialButton];
+    [self resetButton:self.detailContent.friSpecialButton];
+    [self resetButton:self.detailContent.satSpecialButton];
+
+}
+
+-(void)onCallPressed{
+//    NSString *tel = @"4127607595";
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://%@", tel]];
+
+}
+
+
+#pragma mark - Animations
+-(void)animatedSelected:(UIButton *)button{
+
+    if (button.selected == NO) {
+
+    [UIView transitionWithView:button
+                      duration:0.10f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        button.backgroundColor = [UIColor colorWithRed:0.133 green:0.133 blue:0.133 alpha:1];
+                        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+                        [button.layer setBorderWidth:2.0f];
+                        [button.layer setBorderColor:[UIColor whiteColor].CGColor];
+
+                        button.selected = YES;
+                    }
+
+                    completion:^(BOOL finished) {
+
+                    }];
+    }
+    else{
+
+        [UIView transitionWithView:button
+                          duration:0.10f
+                           options:UIViewAnimationOptionCurveEaseIn
+                        animations:^{
+
+                            //any animatable attribute here.
+                            button.backgroundColor = [UIColor whiteColor];
+                            [button setTitleColor:[UIColor colorWithRed:0.133 green:0.133 blue:0.133 alpha:1] forState:UIControlStateNormal];
+                            [button.layer setBorderWidth:0.0f];
+
+                            button.selected = NO;
+                        }
+         
+                        completion:^(BOOL finished) {
+                            
+                        }];
+
+
+    }
+}
+
+-(void)resetButton:(UIButton *)button{
+    [UIView transitionWithView:button
+                      duration:0.10f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        //any animatable attribute here.
+                        button.backgroundColor = [UIColor whiteColor];
+                        [button setTitleColor:[UIColor colorWithRed:0.133 green:0.133 blue:0.133 alpha:1] forState:UIControlStateNormal];
+                        [button.layer setBorderWidth:0.0f];
+
+                        button.selected = NO;
+                    }
+
+                    completion:^(BOOL finished) {
+
+                    }];
+
+
+}
+
+-(void)animateView:(UIView *)view{
+
+    view.alpha = 0;
+    [UIView transitionWithView:view
+                      duration:0.3f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^{
+
+                        view.alpha = 1;
+                    }
+
+                    completion:^(BOOL finished) {
+                        
+                    }];
+
+
+}
+
+#pragma mark - Display Logic 
+
+
+-(void)displaySpecial:(NSDictionary *)daySpecial{
+
+
+    if ([[daySpecial objectForKey:@"eat"] length] < 2){
+
+        [self.detailContent.noFoodIndicator setHidden:NO];
+        [self.detailContent.eatSpecial setHidden:YES];
+        [self.detailContent.eatSpecialImage setHidden:YES];
+    }
+    else{
+
+        [self.detailContent.eatSpecial setHidden:NO];
+        [self.detailContent.noFoodIndicator setHidden:YES];
+        self.detailContent.eatSpecial.text = [daySpecial objectForKey:@"eat"];
+        [self.detailContent.eatSpecialImage setHidden:NO];
+
+    }
+
+
+
+    if ([[daySpecial objectForKey:@"drink"] length] < 2) {
+
+        [self.detailContent.drinkSpecial setHidden:YES];
+        [self.detailContent.noDrinkIndicator setHidden:NO];
+        [self.detailContent.drinkSpecialImage setHidden:YES];
+
+    }
+    else{
+
+        [self.detailContent.drinkSpecial setHidden:NO];
+        [self.detailContent.noDrinkIndicator setHidden:YES];
+        [self.detailContent.drinkSpecialImage setHidden:NO];
+        self.detailContent.drinkSpecial.text = [daySpecial objectForKey:@"drink"];
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

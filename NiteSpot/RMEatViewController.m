@@ -208,7 +208,7 @@
     Spot *selectedSpot = [self.dataLoader.eatSpotsArray objectAtIndex:selectedIndex.item];
     RMSpotDetailView *destination = [segue destinationViewController];
     destination.selectedSpot = selectedSpot;
-    destination.detailTypeImage.image = [UIImage imageNamed:@"detailEat"];
+//    destination.detailTypeImage.image = [UIImage imageNamed:@"detailEat"];
 
     NSLog(@"%@", selectedSpot.spotTitle);
 

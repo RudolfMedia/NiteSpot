@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8I7-AL-W97">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8I7-AL-W97">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="texgyreadventor-bold.otf">
-            <string>TeXGyreAdventor-Bold</string>
-            <string>TeXGyreAdventor-Bold</string>
             <string>TeXGyreAdventor-Bold</string>
             <string>TeXGyreAdventor-Bold</string>
             <string>TeXGyreAdventor-Bold</string>
@@ -20,16 +17,10 @@
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
-            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Drink View Controller-->
+        <!--NITESPOT-->
         <scene sceneID="EFO-15-bl5">
             <objects>
                 <viewController id="d06-40-8Pl" customClass="RMDrinkViewController" sceneMemberID="viewController">
@@ -41,8 +32,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NjM-k9-MMt">
                                 <rect key="frame" x="0.0" y="-64" width="320" height="570"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="Iis-sC-1iT">
                                     <size key="itemSize" width="320" height="280"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -133,7 +125,7 @@
                             <constraint firstAttribute="bottom" secondItem="NjM-k9-MMt" secondAttribute="bottom" id="ncL-e0-snR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0NE-WM-WPG">
+                    <navigationItem key="navigationItem" title="NITESPOT" id="0NE-WM-WPG">
                         <barButtonItem key="backBarButtonItem" title=" " id="St1-vG-X58"/>
                     </navigationItem>
                     <connections>
@@ -145,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="1024" y="407.54000000000002"/>
         </scene>
-        <!--Attend View Controller-->
+        <!--NITESPOT-->
         <scene sceneID="EEt-AI-X2L">
             <objects>
                 <viewController id="2Cb-iB-w9y" customClass="RMAttendViewController" sceneMemberID="viewController">
@@ -157,8 +149,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-iZ-HH6">
                                 <rect key="frame" x="0.0" y="-63" width="320" height="570"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="SgE-dT-tGc">
                                     <size key="itemSize" width="320" height="280"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -244,7 +237,7 @@
                             <constraint firstItem="mJc-iZ-HH6" firstAttribute="top" secondItem="dtX-6D-Jl6" secondAttribute="topMargin" id="kiC-oq-pcK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4BJ-hb-OCj"/>
+                    <navigationItem key="navigationItem" title="NITESPOT" id="4BJ-hb-OCj"/>
                     <connections>
                         <outlet property="attendCollectionView" destination="mJc-iZ-HH6" id="CTg-qW-rIp"/>
                         <outlet property="topLayoutConstraint" destination="kiC-oq-pcK" id="6G9-uS-SNb"/>
@@ -272,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="1561.5999999999999" y="1080.6199999999999"/>
         </scene>
-        <!--Spot Detail View-->
+        <!--NITESPOT-->
         <scene sceneID="qil-Gt-INx">
             <objects>
                 <viewController id="HS6-ip-UTY" customClass="RMSpotDetailView" sceneMemberID="viewController">
@@ -284,176 +277,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-v7-faj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hJG-v7-faj" secondAttribute="height" multiplier="320:213" id="Co0-e4-ds8"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zOe-Pv-vNL">
-                                <rect key="frame" x="123" y="20" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="iO6-Dl-tph"/>
-                                    <constraint firstAttribute="width" constant="75" id="nOY-ld-dw1"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qd-ub-kIQ">
-                                <rect key="frame" x="16" y="110" width="288" height="25"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="20"/>
-                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvv-lj-pXe">
-                                <rect key="frame" x="16" y="139" width="288" height="21"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
-                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEQ-Sc-mfY">
-                                <rect key="frame" x="16" y="160" width="288" height="21"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="16"/>
-                                <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-PL-4od">
-                                <rect key="frame" x="90" y="286" width="220" height="30"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Bold" family="TeX Gyre Adventor" pointSize="29"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-fY-dst">
-                                <rect key="frame" x="0.0" y="213" width="320" height="5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="5" id="sAA-Sd-gd9"/>
-                                </constraints>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8wf-bb-lmx">
-                                <rect key="frame" x="0.0" y="239" width="320" height="208"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y8s-of-556">
-                                    <size key="itemSize" width="320" height="246"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1fe-Xt-ntk">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="246"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="HS6-ip-UTY" id="PNq-hI-Q4k"/>
-                                    <outlet property="delegate" destination="HS6-ip-UTY" id="lW2-Kl-N8l"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-tK-ngg">
-                                <rect key="frame" x="8" y="199" width="70" height="34"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
-                                <state key="normal" title="About">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onAboutPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="bux-gF-kLe"/>
-                                </connections>
-                            </button>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIY-CH-8dM">
-                                <rect key="frame" x="86" y="199" width="70" height="34"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
-                                <state key="normal" title="Location">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onLocationPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="ldR-An-nwn"/>
-                                </connections>
-                            </button>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fee-t5-j15">
-                                <rect key="frame" x="242" y="199" width="70" height="34"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
-                                <state key="normal" title="Hours">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onHoursPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="FH6-3W-rmq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmn-CE-eMI">
-                                <rect key="frame" x="164" y="199" width="70" height="34"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="15"/>
-                                <state key="normal" title="Specials">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSpecialsPressed:" destination="HS6-ip-UTY" eventType="touchUpInside" id="Ffm-7P-YjZ"/>
-                                </connections>
-                            </button>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipB-YC-kV1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Kvv-lj-pXe" secondAttribute="centerX" id="2bB-Zt-TpC"/>
-                            <constraint firstItem="FEQ-Sc-mfY" firstAttribute="top" secondItem="Kvv-lj-pXe" secondAttribute="bottom" id="6fd-m7-DtB"/>
-                            <constraint firstItem="fee-t5-j15" firstAttribute="leading" secondItem="tmn-CE-eMI" secondAttribute="trailing" constant="8" id="6wd-HQ-cLQ"/>
-                            <constraint firstItem="Kvv-lj-pXe" firstAttribute="top" secondItem="0Qd-ub-kIQ" secondAttribute="bottom" constant="2" id="7Vh-1Y-fLf"/>
-                            <constraint firstAttribute="trailing" secondItem="fee-t5-j15" secondAttribute="trailing" constant="8" id="8zm-1z-OqS"/>
-                            <constraint firstItem="hJG-v7-faj" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="Ac9-ei-WV9"/>
-                            <constraint firstItem="zOe-Pv-vNL" firstAttribute="top" secondItem="CRa-VT-uJ5" secondAttribute="bottom" constant="20" id="Few-Nk-CLO"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="kRJ-tK-ngg" secondAttribute="width" id="Guu-FX-bs9"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="fee-t5-j15" secondAttribute="width" id="HlB-GL-aVD"/>
-                            <constraint firstAttribute="trailing" secondItem="3fX-fY-dst" secondAttribute="trailing" id="Hlv-8V-mpg"/>
-                            <constraint firstAttribute="trailing" secondItem="8wf-bb-lmx" secondAttribute="trailing" id="Htd-v1-d6l"/>
-                            <constraint firstAttribute="centerX" secondItem="FEQ-Sc-mfY" secondAttribute="centerX" id="IZo-HS-GYE"/>
-                            <constraint firstItem="0Qd-ub-kIQ" firstAttribute="top" secondItem="zOe-Pv-vNL" secondAttribute="bottom" constant="5" id="Js7-wB-urc"/>
-                            <constraint firstAttribute="trailing" secondItem="hJG-v7-faj" secondAttribute="trailing" id="Pyo-qf-QWh"/>
-                            <constraint firstItem="3fX-fY-dst" firstAttribute="top" secondItem="hJG-v7-faj" secondAttribute="bottom" id="QLd-ch-oFp"/>
-                            <constraint firstAttribute="centerX" secondItem="zOe-Pv-vNL" secondAttribute="centerX" id="QSD-xu-hzB"/>
-                            <constraint firstItem="kRJ-tK-ngg" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" constant="8" id="SNY-3o-ctJ"/>
-                            <constraint firstItem="3fX-fY-dst" firstAttribute="top" secondItem="hJG-v7-faj" secondAttribute="bottom" id="TLs-Wy-xMS"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="centerY" secondItem="3fX-fY-dst" secondAttribute="centerY" constant="0.5" id="c4t-i0-9tu"/>
-                            <constraint firstAttribute="centerX" secondItem="0Qd-ub-kIQ" secondAttribute="centerX" id="cjU-eo-dfe"/>
-                            <constraint firstItem="tmn-CE-eMI" firstAttribute="leading" secondItem="bIY-CH-8dM" secondAttribute="trailing" constant="8" id="elE-Ja-tmM"/>
-                            <constraint firstItem="8wf-bb-lmx" firstAttribute="top" secondItem="3fX-fY-dst" secondAttribute="bottom" constant="21" id="gww-x9-Bbu"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="width" secondItem="tmn-CE-eMI" secondAttribute="width" id="hn2-zz-zrK"/>
-                            <constraint firstItem="bIY-CH-8dM" firstAttribute="leading" secondItem="kRJ-tK-ngg" secondAttribute="trailing" constant="8" id="iEp-Gq-XEO"/>
-                            <constraint firstItem="Vcz-Yt-0sH" firstAttribute="top" secondItem="8wf-bb-lmx" secondAttribute="bottom" constant="8" id="k5f-br-X2Y"/>
-                            <constraint firstItem="Vcz-Yt-0sH" firstAttribute="top" secondItem="8wf-bb-lmx" secondAttribute="bottom" constant="8" id="k7f-3p-i1g"/>
-                            <constraint firstItem="3fX-fY-dst" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="lm1-Wc-TLk"/>
-                            <constraint firstItem="8wf-bb-lmx" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="rqq-13-jAm"/>
-                            <constraint firstItem="8wf-bb-lmx" firstAttribute="leading" secondItem="3fX-fY-dst" secondAttribute="trailing" constant="-320" id="znd-2D-Rcc"/>
+                            <constraint firstItem="Vcz-Yt-0sH" firstAttribute="top" secondItem="ipB-YC-kV1" secondAttribute="bottom" id="3uP-KX-CAT"/>
+                            <constraint firstItem="ipB-YC-kV1" firstAttribute="leading" secondItem="Zej-gD-2q1" secondAttribute="leading" id="kKu-tE-RIk"/>
+                            <constraint firstAttribute="trailing" secondItem="ipB-YC-kV1" secondAttribute="trailing" id="wOX-Et-xv1"/>
+                            <constraint firstItem="ipB-YC-kV1" firstAttribute="top" secondItem="CRa-VT-uJ5" secondAttribute="bottom" id="z9x-83-YpX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nSQ-h1-JpD"/>
+                    <navigationItem key="navigationItem" title="NITESPOT" id="nSQ-h1-JpD"/>
                     <connections>
-                        <outlet property="detailAbout" destination="kRJ-tK-ngg" id="U17-Ac-tui"/>
-                        <outlet property="detailCollectionView" destination="8wf-bb-lmx" id="ce3-52-5b4"/>
-                        <outlet property="detailHours" destination="fee-t5-j15" id="grO-Tb-h7m"/>
-                        <outlet property="detailLocation" destination="bIY-CH-8dM" id="sEp-GK-aB9"/>
-                        <outlet property="detailPhoto" destination="hJG-v7-faj" id="GGH-vV-YrC"/>
-                        <outlet property="detailPricePhone" destination="FEQ-Sc-mfY" id="gAL-dy-bBC"/>
-                        <outlet property="detailSpecials" destination="tmn-CE-eMI" id="n6v-dh-svl"/>
-                        <outlet property="detailTitle" destination="0Qd-ub-kIQ" id="kfq-YP-a8F"/>
-                        <outlet property="detailTitleLable" destination="Qqf-PL-4od" id="iST-g3-9lv"/>
-                        <outlet property="detailTypeImage" destination="zOe-Pv-vNL" id="PNJ-sQ-Zwk"/>
-                        <outlet property="detailinfoString" destination="Kvv-lj-pXe" id="1It-t1-Nae"/>
+                        <outlet property="contentScroll" destination="ipB-YC-kV1" id="Vp6-py-Tar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBb-Fp-JlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1561" y="79"/>
         </scene>
-        <!--Map Search View Controller-->
+        <!--NITESPOT-->
         <scene sceneID="pfA-1R-nf3">
             <objects>
                 <viewController id="8mR-zh-hHj" customClass="RMMapSearchViewController" sceneMemberID="viewController">
@@ -466,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vwx-OI-i2b"/>
+                    <navigationItem key="navigationItem" title="NITESPOT" id="Vwx-OI-i2b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teK-62-GqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,7 +329,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
+                            <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U4K-Bf-UIb">
                                 <rect key="frame" x="0.0" y="-66" width="320" height="570"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="GdK-5G-03l">
@@ -641,7 +486,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -664,7 +509,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -686,6 +531,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6G7-E5-rVQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

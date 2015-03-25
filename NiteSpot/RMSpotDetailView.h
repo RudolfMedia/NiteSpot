@@ -14,7 +14,6 @@
 @interface RMSpotDetailView : UIViewController
 
 @property Spot *selectedSpot;
-@property (weak, nonatomic) IBOutlet UIImageView *detailTypeImage;
 
 
 @end
