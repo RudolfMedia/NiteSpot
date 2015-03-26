@@ -9,6 +9,7 @@
 #import "RMSpotDetailView.h"
 #import "RMSpotDetailContent.h"
 #import "MapBox.h"
+#import "RMWebView.h"
 
 
 @interface RMSpotDetailView () <UIBarPositioningDelegate, UITextViewDelegate, RMMapViewDelegate, UIScrollViewDelegate>
@@ -267,6 +268,9 @@
     [self.detailContent.callButton addTarget:self
                                             action:@selector(onCallPressed)
                                   forControlEvents:UIControlEventTouchUpInside];
+    [self.detailContent.menuButton addTarget:self
+                                      action:@selector(onMenuePressed)
+                            forControlEvents:UIControlEventTouchUpInside];
 
 
 
@@ -410,9 +414,33 @@
 }
 
 -(void)onCallPressed{
-//    NSString *tel = @"4127607595";
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://%@", tel]];
+    NSString *telString = [NSString stringWithFormat:@"telprompt://%@", self.selectedSpot.spotTel];
+    NSString *whiteSpace = [telString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *dash = [whiteSpace stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSURL *tel = [NSURL URLWithString:dash];
+    [[UIApplication sharedApplication] openURL:tel];
 
+}
+
+-(void)onMenuePressed{
+
+   // RMWebView *webView = [[RMWebView alloc] init];
+
+    [self performSegueWithIdentifier:@"WEBVIEW" sender:self];
+
+}
+
+#pragma mark - Segue Delegate
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"WEBVIEW"]) {
+
+        RMWebView *webview = [segue destinationViewController];
+        webview.menu = self.selectedSpot.menu;
+    }
+
+    
 }
 
 

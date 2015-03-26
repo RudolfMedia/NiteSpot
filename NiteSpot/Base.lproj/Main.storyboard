@@ -292,11 +292,49 @@
                     <navigationItem key="navigationItem" title="NITESPOT" id="nSQ-h1-JpD"/>
                     <connections>
                         <outlet property="contentScroll" destination="ipB-YC-kV1" id="Vp6-py-Tar"/>
+                        <segue destination="iOm-j1-nrQ" kind="push" identifier="WEBVIEW" id="mLK-EJ-7bL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBb-Fp-JlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="79"/>
+            <point key="canvasLocation" x="1582" y="79"/>
+        </scene>
+        <!--Web View-->
+        <scene sceneID="vsf-ad-i8x">
+            <objects>
+                <viewController storyboardIdentifier="WEBVIEW" id="iOm-j1-nrQ" customClass="RMWebView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N08-cd-m25"/>
+                        <viewControllerLayoutGuide type="bottom" id="KoE-rc-IDT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gso-oQ-ecS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKH-mT-m0Z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iOm-j1-nrQ" id="Mnh-Fg-owu"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoE-rc-IDT" firstAttribute="top" secondItem="mKH-mT-m0Z" secondAttribute="bottom" id="FbY-de-CK2"/>
+                            <constraint firstAttribute="trailing" secondItem="mKH-mT-m0Z" secondAttribute="trailing" id="dqy-Rs-ool"/>
+                            <constraint firstItem="mKH-mT-m0Z" firstAttribute="top" secondItem="gso-oQ-ecS" secondAttribute="top" id="pze-xc-RRu"/>
+                            <constraint firstItem="mKH-mT-m0Z" firstAttribute="leading" secondItem="gso-oQ-ecS" secondAttribute="leading" id="qSa-QO-EiF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gtN-2h-TeF"/>
+                    <connections>
+                        <outlet property="webView" destination="mKH-mT-m0Z" id="MGG-Qu-Vaw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLQ-Lj-E4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008" y="79"/>
         </scene>
         <!--NITESPOT-->
         <scene sceneID="pfA-1R-nf3">

@@ -54,7 +54,8 @@
             thuSpecial:(NSDictionary *)thuSpecial
             friSpecial:(NSDictionary *)friSpecial
             satSpecial:(NSDictionary *)satSpecial
-            sunSpecial:(NSDictionary *)sunSpecial;
+            sunSpecial:(NSDictionary *)sunSpecial
+                  menu:(NSString *)menu;
 {
 
     self.spotTitle = name;
@@ -103,6 +104,8 @@
     self.satSpecial = satSpecial;
     self.sunSpecial = sunSpecial;
     self.general = general;
+    self.menu = menu;
+
 
 
     return self;

@@ -89,8 +89,8 @@
                                          thuSpecial:@{@"eat": [dictionary objectForKey:@"eat_Thu"], @"drink": [dictionary objectForKey:@"drink_Thu"]}
                                          friSpecial:@{@"eat": [dictionary objectForKey:@"eat_Fri"], @"drink": [dictionary objectForKey:@"drink_Fri"]}
                                          satSpecial:@{@"eat": [dictionary objectForKey:@"eat_Sat"], @"drink": [dictionary objectForKey:@"drink_Sat"]}
-                                         sunSpecial:@{@"eat": [dictionary objectForKey:@"eat_Sun"], @"drink": [dictionary objectForKey:@"drink_Sun"]}];
-
+                                         sunSpecial:@{@"eat": [dictionary objectForKey:@"eat_Sun"], @"drink": [dictionary objectForKey:@"drink_Sun"]}
+                                               menu:[dictionary objectForKey:@"menu"]];
 
 
             [self.allSpotsArray addObject:spot];
@@ -302,7 +302,7 @@
         }
 
     }
-    [self geocodeAllSpots];
+  // [self geocodeAllSpots];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DownloadDone" object:self];
 

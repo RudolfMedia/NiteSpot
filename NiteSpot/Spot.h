@@ -60,6 +60,7 @@
 @property NSDictionary *satSpecial;
 @property NSDictionary *sunSpecial;
 @property NSString *general;
+@property NSString *menu;
 
 - (Spot *) initWithName:(NSString *)name
                    type:(NSString *)type
@@ -105,7 +106,8 @@
              thuSpecial:(NSDictionary *)thuSpecial
              friSpecial:(NSDictionary *)friSpecial
              satSpecial:(NSDictionary *)satSpecial
-             sunSpecial:(NSDictionary *)sunSpecial;
+             sunSpecial:(NSDictionary *)sunSpecial
+                   menu:(NSString *)menu;
 
 - (Spot *) addThumbURL:(NSURL *)url;
 
