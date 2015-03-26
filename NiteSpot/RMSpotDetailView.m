@@ -34,6 +34,7 @@
     [self callFormats];
     [self displayHours];
     [self setCurrentDay];
+    [self.detailContent.webButton setEnabled:NO];
 
     self.detailContent.eatSpecial.layer.borderWidth = 2;
     self.detailContent.eatSpecial.layer.borderColor = [UIColor colorWithRed:0.267 green:0.267 blue:0.267 alpha:1].CGColor;
@@ -122,6 +123,10 @@
     [self roundViewCorners:self.detailContent.locationMapContainer];
     [self roundViewCorners:self.detailContent.hoursView];
     [self roundViewCorners:self.detailContent.hoursContainer];
+
+    [self menuButtonLogic:self.detailContent.menuButton];
+    [self callButtonLogic:self.detailContent.callButton];
+    [self webButtonLogic:self.detailContent.webButton];
 
 }
 
@@ -294,6 +299,16 @@
     [self resetButton:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
 
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
+
+
+
 }
 
 -(void)onTuesdayPressed{
@@ -312,6 +327,16 @@
     [self resetButton:self.detailContent.friSpecialButton];
     [self resetButton:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
+
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
+
+
 
 
 }
@@ -333,6 +358,14 @@
     [self resetButton:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
 
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
+
 
 }
 
@@ -353,6 +386,16 @@
     [self resetButton:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
 
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
+
+
+
 }
 
 -(void)onFridayPressed{
@@ -371,6 +414,14 @@
     [self resetButton:self.detailContent.thuSpecialButton];
     [self resetButton:self.detailContent.satSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
+
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
 
 }
 
@@ -391,6 +442,13 @@
     [self resetButton:self.detailContent.friSpecialButton];
     [self resetButton:self.detailContent.sunSpecialButton];
 
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
 
 }
 
@@ -410,6 +468,15 @@
     [self resetButton:self.detailContent.thuSpecialButton];
     [self resetButton:self.detailContent.friSpecialButton];
     [self resetButton:self.detailContent.satSpecialButton];
+
+    [self noSpecialsWeekLogic:self.selectedSpot.monSpecial
+                          tue:self.selectedSpot.tueSpecial
+                          wed:self.selectedSpot.wedSpecial
+                          thu:self.selectedSpot.thuSpecial
+                          fri:self.selectedSpot.friSpecial
+                          sat:self.selectedSpot.satSpecial
+                          sun:self.selectedSpot.sunSpecial];
+
 
 }
 
@@ -448,6 +515,7 @@
 -(void)animatedSelected:(UIButton *)button{
 
     if (button.selected == NO) {
+
 
     [UIView transitionWithView:button
                       duration:0.10f
@@ -568,6 +636,7 @@
         self.detailContent.drinkSpecial.text = [daySpecial objectForKey:@"drink"];
 
     }
+
 }
 
 -(void)displayHours{
@@ -625,10 +694,69 @@
         [self onSundayPressed];
     }
 
+}
+
+-(void)noSpecialsWeekLogic:(NSDictionary *)mon tue:(NSDictionary *)tue wed:(NSDictionary *)wed thu:(NSDictionary *)thu fri:(NSDictionary *)fri sat:(NSDictionary *)sat sun:(NSDictionary *)sun{
+
+    if ([[mon objectForKey:@"eat"] length] <2  && [[mon objectForKey:@"drink"] length ] < 2 &&
+        [[tue objectForKey:@"eat"] length] <2  && [[tue objectForKey:@"drink"] length ] < 2 &&
+        [[wed objectForKey:@"eat"] length] <2  && [[wed objectForKey:@"drink"] length ] < 2 &&
+        [[thu objectForKey:@"eat"] length] <2  && [[thu objectForKey:@"drink"] length ] < 2 &&
+        [[fri objectForKey:@"eat"] length] <2  && [[fri objectForKey:@"drink"] length ] < 2 &&
+        [[sat objectForKey:@"eat"] length] <2  && [[sat objectForKey:@"drink"] length ] < 2 &&
+        [[sun objectForKey:@"eat"] length] <2  && [[sun objectForKey:@"drink"] length ] < 2) {
+
+        [self.detailContent.eatSpecial setHidden:YES];
+        [self.detailContent.drinkSpecial setHidden:YES];
+        [self.detailContent.eatSpecialImage setHidden:YES];
+        [self.detailContent.drinkSpecialImage setHidden:YES];
+        [self.detailContent.noFoodIndicator setHidden:YES];
+        [self.detailContent.noDrinkIndicator setHidden:YES];
+
+//        [self.detailContent.monSpecialButton setEnabled:NO];
+//        [self.detailContent.tueSpecialButton setEnabled:NO];
+//        [self.detailContent.wedSpecialButton setEnabled:NO];
+//        [self.detailContent.thuSpecialButton setEnabled:NO];
+//        [self.detailContent.friSpecialButton setEnabled:NO];
+//        [self.detailContent.satSpecialButton setEnabled:NO];
+//        [self.detailContent.sunSpecialButton setEnabled:NO];
+
+    }
+    else{
+
+        [self.detailContent.noSpecialsWeek setHidden:YES];
+    }
 
 
 }
 
+-(void)callButtonLogic:(UIButton *)button{
+
+    if (self.selectedSpot.spotTel.length < 10) {
+
+        [button setEnabled:NO];
+        [button setBackgroundImage:[UIImage imageNamed:@"callDisabled"] forState:UIControlStateDisabled];
+    }
+
+}
+
+#warning must impliment when json changes
+-(void)webButtonLogic:(UIButton *)button{
+
+    [button setEnabled:NO];
+    [button setBackgroundColor:[UIColor colorWithRed:0.533 green:0.522 blue:0.522 alpha:1]];
+    
+}
+
+-(void)menuButtonLogic:(UIButton *)button{
+
+    if (self.selectedSpot.menu.length < 7) {
+        [button setEnabled:NO];
+        [button setBackgroundImage:[UIImage imageNamed:@"menuDisabled"] forState:UIControlStateDisabled];
+
+    }
+    
+}
 
 
 

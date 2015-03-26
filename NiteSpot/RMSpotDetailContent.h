@@ -54,6 +54,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *hoursFri;
 @property (weak, nonatomic) IBOutlet UILabel *hoursSat;
 @property (weak, nonatomic) IBOutlet UILabel *hoursSun;
+@property (weak, nonatomic) IBOutlet UILabel *noSpecialsWeek;
 
 +(id)spotDetailContent;
 

@@ -45,6 +45,7 @@
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
             <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -154,7 +155,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkC-2c-OOX">
                             <rect key="frame" x="83" y="192" width="40" height="40"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="hee-jk-ASX"/>
                                 <constraint firstAttribute="height" constant="40" id="qlr-TM-YSn"/>
@@ -195,6 +196,9 @@
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQv-HJ-AMM">
                                             <rect key="frame" x="205" y="229" width="39" height="60"/>
@@ -204,6 +208,9 @@
                                             <state key="normal" title="Sat">
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxD-xr-Qas">
@@ -215,6 +222,9 @@
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9No-yz-awW">
                                             <rect key="frame" x="123" y="229" width="39" height="60"/>
@@ -224,6 +234,9 @@
                                             <state key="normal" title="Thu">
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-4f-MTs">
@@ -235,6 +248,9 @@
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncj-G8-ZS9">
                                             <rect key="frame" x="41" y="229" width="39" height="60"/>
@@ -245,6 +261,9 @@
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMR-tw-fld">
                                             <rect key="frame" x="0.0" y="229" width="39" height="60"/>
@@ -254,6 +273,9 @@
                                             <state key="normal" title="Mon">
                                                 <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="disabled">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="onMonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="dh5-2t-eSJ"/>
@@ -303,6 +325,12 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="No Specials This Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-8a-gwN">
+                                            <rect key="frame" x="45" y="94" width="199" height="21"/>
+                                            <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -328,6 +356,7 @@
                                         <constraint firstItem="lQv-HJ-AMM" firstAttribute="width" secondItem="vbt-4f-MTs" secondAttribute="width" id="a7f-lG-lkV"/>
                                         <constraint firstItem="vbt-4f-MTs" firstAttribute="leading" secondItem="Ncj-G8-ZS9" secondAttribute="trailing" constant="2" id="b2h-dg-4BR"/>
                                         <constraint firstItem="WMR-tw-fld" firstAttribute="leading" secondItem="nq1-vX-J8i" secondAttribute="leading" constant="2" id="bAS-kr-Mgs"/>
+                                        <constraint firstAttribute="centerX" secondItem="fa8-8a-gwN" secondAttribute="centerX" id="cLh-Jh-LcU"/>
                                         <constraint firstItem="lQv-HJ-AMM" firstAttribute="width" secondItem="A9r-t6-Dwl" secondAttribute="width" id="cW3-GC-mMv"/>
                                         <constraint firstItem="BSj-mT-SGd" firstAttribute="top" secondItem="nq1-vX-J8i" secondAttribute="top" constant="36" id="dDT-DZ-3RN"/>
                                         <constraint firstItem="5ag-lK-jGv" firstAttribute="leading" secondItem="BSj-mT-SGd" secondAttribute="trailing" constant="8" id="g9w-B2-TLp"/>
@@ -369,7 +398,7 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01T-R4-j8h">
+                                <textView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="01T-R4-j8h">
                                     <rect key="frame" x="8" y="41" width="288" height="187"/>
                                     <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="textColor" red="0.99607843139999996" green="0.99215686270000003" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -669,6 +698,7 @@
                 <outlet property="monSpecialButton" destination="WMR-tw-fld" id="S8S-Jn-UMx"/>
                 <outlet property="noDrinkIndicator" destination="ZuT-om-nQP" id="was-Pp-g6P"/>
                 <outlet property="noFoodIndicator" destination="dTv-q7-zfB" id="GMc-9e-L5c"/>
+                <outlet property="noSpecialsWeek" destination="fa8-8a-gwN" id="meg-Ju-Nkn"/>
                 <outlet property="satSpecialButton" destination="lQv-HJ-AMM" id="iS0-Ac-zX6"/>
                 <outlet property="specialsContainerView" destination="j1T-1g-uWr" id="9Np-gZ-VbG"/>
                 <outlet property="specialsInnerContainer" destination="nq1-vX-J8i" id="Reb-gY-9kz"/>
