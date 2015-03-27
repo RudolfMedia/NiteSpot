@@ -54,9 +54,21 @@
 #define COCOAPODS_VERSION_MINOR_Mapbox_iOS_SDK 6
 #define COCOAPODS_VERSION_PATCH_Mapbox_iOS_SDK 0
 
+// PQFCustomLoaders
+#define COCOAPODS_POD_AVAILABLE_PQFCustomLoaders
+#define COCOAPODS_VERSION_MAJOR_PQFCustomLoaders 0
+#define COCOAPODS_VERSION_MINOR_PQFCustomLoaders 0
+#define COCOAPODS_VERSION_PATCH_PQFCustomLoaders 1
+
 // SMCalloutView
 #define COCOAPODS_POD_AVAILABLE_SMCalloutView
 #define COCOAPODS_VERSION_MAJOR_SMCalloutView 2
 #define COCOAPODS_VERSION_MINOR_SMCalloutView 0
 #define COCOAPODS_VERSION_PATCH_SMCalloutView 0
+
+// UIColor+FlatColors
+#define COCOAPODS_POD_AVAILABLE_UIColor_FlatColors
+#define COCOAPODS_VERSION_MAJOR_UIColor_FlatColors 0
+#define COCOAPODS_VERSION_MINOR_UIColor_FlatColors 0
+#define COCOAPODS_VERSION_PATCH_UIColor_FlatColors 2
 

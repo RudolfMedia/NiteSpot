@@ -15,12 +15,14 @@
 #import "UIViewController+ScrollingNavbar.h"
 #import "RMSpotDetailView.h"
 #import "DataLoader.h"
+#import "PQFBouncingBalls.h"
 
 @interface RMEatViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITabBarControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *eatCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLayoutConstraint;
 @property DataLoader *dataLoader;
+@property PQFBouncingBalls *loader;
 @property UICollectionViewFlowLayout *flowLayout;
 
 @end
@@ -47,6 +49,7 @@
 
     self.dataLoader = [[DataLoader alloc] init];
     [self.dataLoader downloadSpots];
+    [self createSpinnerView];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showEatCollectionView:)
@@ -81,6 +84,19 @@
 - (void)showEatCollectionView:(NSNotification *)notification {
 
     [self.eatCollectionView reloadData];
+    [self.loader remove];
+
+}
+
+- (void)createSpinnerView{
+
+    self.loader = [[PQFBouncingBalls alloc] initLoaderOnView:self.view];
+    self.loader.jumpAmount = 50;
+    self.loader.zoomAmount = 20;
+    self.loader.separation = 20;
+    self.loader.loaderColor = [UIColor colorWithRed:0.494 green:0.851 blue:0.204 alpha:1];
+    self.loader.alpha = 1;
+    [self.loader show];
 
 }
 

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *drinkCollectionView;
 
 
+
 @end
 
 @implementation RMDrinkViewController
@@ -68,6 +69,8 @@
     [self showNavBarAnimated:NO];
 
 }
+
+
 
 #pragma mark - CollectionView Datsource / Delegate
 

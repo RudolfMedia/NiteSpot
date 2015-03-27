@@ -214,6 +214,8 @@
     RMPointAnnotation *singleAnnotation = [[RMPointAnnotation alloc] initWithMapView:mapView coordinate:zoomCenter andTitle:self.selectedSpot.spotTitle];
 
     [mapView addAnnotation:singleAnnotation];
+    [mapView selectAnnotation:singleAnnotation animated:NO];
+
 
 }
 

@@ -109,7 +109,7 @@
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="D0t-db-CBv">
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="d06-40-8Pl" id="QL9-rZ-eym"/>
@@ -117,7 +117,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NjM-k9-MMt" firstAttribute="top" secondItem="htb-6W-oH8" secondAttribute="top" id="NNS-Z5-m9u"/>
                             <constraint firstItem="NjM-k9-MMt" firstAttribute="leading" secondItem="htb-6W-oH8" secondAttribute="leading" id="SbW-ss-XAJ"/>
@@ -194,7 +194,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="66" id="8GN-9X-pvZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gxf-gM-eEt" secondAttribute="trailing" constant="8" id="ttf-Xc-yYI"/>
@@ -611,6 +611,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OQe-5r-dbl"/>
+        <segue reference="5e6-7V-xEG"/>
     </inferredMetricsTieBreakers>
 </document>
