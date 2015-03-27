@@ -174,6 +174,10 @@
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="attendicon" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-Lf-tn1">
                                                             <rect key="frame" x="225" y="-26" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="Zc7-nO-rV5"/>
+                                                                <constraint firstAttribute="height" constant="40" id="zPP-WN-PF5"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxc-H6-ABK">
                                                             <rect key="frame" x="14" y="8" width="285" height="29"/>
@@ -190,6 +194,10 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$$$$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-gM-eEt">
                                                             <rect key="frame" x="272" y="-26" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="AIK-rq-BnC"/>
+                                                                <constraint firstAttribute="height" constant="40" id="qRX-UP-03V"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

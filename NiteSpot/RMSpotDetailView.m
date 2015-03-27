@@ -715,14 +715,6 @@
         [self.detailContent.noFoodIndicator setHidden:YES];
         [self.detailContent.noDrinkIndicator setHidden:YES];
 
-//        [self.detailContent.monSpecialButton setEnabled:NO];
-//        [self.detailContent.tueSpecialButton setEnabled:NO];
-//        [self.detailContent.wedSpecialButton setEnabled:NO];
-//        [self.detailContent.thuSpecialButton setEnabled:NO];
-//        [self.detailContent.friSpecialButton setEnabled:NO];
-//        [self.detailContent.satSpecialButton setEnabled:NO];
-//        [self.detailContent.sunSpecialButton setEnabled:NO];
-
     }
     else{
 
