@@ -744,7 +744,11 @@
 
 -(void)menuButtonLogic:(UIButton *)button{
 
-    if (self.selectedSpot.menu.length < 7) {
+    if ([self.selectedSpot.menu isKindOfClass:[NSNull class]]) {
+        [button setEnabled:NO];
+        [button setBackgroundImage:[UIImage imageNamed:@"menuDisabled"] forState:UIControlStateDisabled];
+    }
+    else if (self.selectedSpot.menu.length < 7) {
         [button setEnabled:NO];
         [button setBackgroundImage:[UIImage imageNamed:@"menuDisabled"] forState:UIControlStateDisabled];
 

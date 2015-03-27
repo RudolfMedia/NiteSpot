@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key> MapQuest.Map.Key</key>
+	<string>Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy </string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -24,6 +26,13 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Allow NiteSpot to Find Spots Near You</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>texgyreadventor-regular.otf</string>
+		<string>texgyreadventor-bold.otf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -33,13 +42,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key> MapQuest.Map.Key</key>
-	<string>Fmjtd%7Cluu829u8n5%2Cb2%3Do5-9w1wdy </string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>texgyreadventor-regular.otf</string>
-		<string>texgyreadventor-bold.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
