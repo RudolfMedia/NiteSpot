@@ -63,6 +63,12 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self showNavBarAnimated:NO];
+
+}
+
 #pragma mark - CollectionView Datsource / Delegate
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{

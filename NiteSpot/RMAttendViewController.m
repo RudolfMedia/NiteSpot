@@ -66,6 +66,11 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self showNavBarAnimated:NO];
+
+}
 
 
 #pragma mark - CollectionView DataSource / Delegate

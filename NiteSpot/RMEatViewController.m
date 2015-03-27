@@ -72,6 +72,12 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self showNavBarAnimated:NO];
+
+}
+
 - (void)showEatCollectionView:(NSNotification *)notification {
 
     [self.eatCollectionView reloadData];
