@@ -257,14 +257,11 @@
 
 - (void)shuffleSpots{
 
-    NSUInteger countSpots = [self.allSpotsArray count];
+    for (NSUInteger i = [self.allSpotsArray count] -1; i >= 1; i--) {
 
-    for (NSUInteger i = 0; i < countSpots; ++i) {
+        u_int32_t j = arc4random_uniform(i + 1);
 
-        NSUInteger nElements = countSpots - i;
-        NSUInteger n = (arc4random() % nElements) + i;
-        [self.allSpotsArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-
+        [self.allSpotsArray exchangeObjectAtIndex:j withObjectAtIndex:i];
     }
 
     [self sortSpots];
@@ -302,7 +299,8 @@
         }
 
     }
-  // [self geocodeAllSpots];
+
+    [self geocodeAllSpots];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DownloadDone" object:self];
 

@@ -7,6 +7,7 @@
     <customFonts key="customFonts">
         <mutableArray key="texgyreadventor-regular.otf">
             <string>TeXGyreAdventor-Regular</string>
+            <string>TeXGyreAdventor-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -22,15 +23,21 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rmSplash" translatesAutoresizingMaskIntoConstraints="NO" id="LEH-n8-AYg">
-                    <rect key="frame" x="49" y="387" width="200" height="37"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="200" id="bmH-Ld-lqJ"/>
-                        <constraint firstAttribute="height" constant="37" id="kuI-xq-CuJ"/>
-                    </constraints>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="wQA-Gz-bzA">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NITESPOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-ql-IyV">
+                    <rect key="frame" x="29" y="127" width="423" height="96.5"/>
+                    <fontDescription key="fontDescription" name="TeXGyreAdventor-Regular" family="TeX Gyre Adventor" pointSize="50"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rmSplash" translatesAutoresizingMaskIntoConstraints="NO" id="LEH-n8-AYg">
+                    <rect key="frame" x="140" y="383" width="200" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="My6-bG-9cs"/>
+                        <constraint firstAttribute="width" constant="200" id="ruh-Q0-ZJc"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -38,16 +45,18 @@
                 <constraint firstItem="wQA-Gz-bzA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0ps-rl-kA6"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
                 <constraint firstAttribute="trailing" secondItem="wQA-Gz-bzA" secondAttribute="trailing" id="B5X-ZR-BWK"/>
-                <constraint firstAttribute="bottom" secondItem="LEH-n8-AYg" secondAttribute="bottom" constant="26" id="HQ7-eN-wcE"/>
+                <constraint firstAttribute="centerX" secondItem="7qW-ql-IyV" secondAttribute="centerX" id="Fuo-e5-zO6"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstItem="wQA-Gz-bzA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Org-S7-7Ik"/>
                 <constraint firstAttribute="bottom" secondItem="wQA-Gz-bzA" secondAttribute="bottom" id="TB6-6O-rPI"/>
-                <constraint firstAttribute="centerX" secondItem="LEH-n8-AYg" secondAttribute="centerX" id="abD-zn-v8s"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstAttribute="bottom" secondItem="LEH-n8-AYg" secondAttribute="bottom" constant="60" id="gtx-66-LTv"/>
+                <constraint firstAttribute="centerX" secondItem="LEH-n8-AYg" secondAttribute="centerX" id="y8C-6V-18R"/>
+                <constraint firstItem="7qW-ql-IyV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="znu-X3-ArG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="452.5" y="503"/>
+            <point key="canvasLocation" x="452" y="503"/>
         </view>
     </objects>
     <resources>

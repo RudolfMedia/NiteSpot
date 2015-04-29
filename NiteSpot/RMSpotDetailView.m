@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScroll;
 @property RMSpotDetailContent *detailContent;
 @property UIScrollView *specialsContent;
+@property RMMapView *mapView;
+@property RMPointAnnotation *singleAannotation;
 
 
 @end
@@ -92,6 +94,14 @@
 
         [self.selectedSpot addlat:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lat"] firstObject]
               andLon:[[jsonDictionay valueForKeyPath:@"results.locations.latLng.lng"] firstObject]];
+        if ([self.selectedSpot.lat isKindOfClass:[NSNull class]]) {
+
+
+            [self.mapView setHidden:YES];
+            [self.singleAannotation setTitle:@"No address avaliable"];
+            [self.mapView addAnnotation:self.singleAannotation];
+        }
+
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SingleSpotDone" object:self];
 
@@ -198,23 +208,23 @@
     [[RMConfiguration sharedInstance] setAccessToken:@"pk.eyJ1IjoicnVkb2xmbWVkaWEiLCJhIjoidDZSa2hYcyJ9.ucXq4hJcdZTuInE-gtM0ug"];
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"rudolfmedia.kpbaioeo"];
 
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.detailContent.locationMapContainer.bounds andTilesource:tileSource];
+    self.mapView = [[RMMapView alloc] initWithFrame:self.detailContent.locationMapContainer.bounds andTilesource:tileSource];
 
-    [self.detailContent.locationMapContainer addSubview:mapView];
-    mapView.delegate = self;
-    mapView.tintColor = [UIColor lightGrayColor];
-    mapView.clusteringEnabled = YES;
-    mapView.zoom = 14;
-    [mapView setCenterCoordinate:CLLocationCoordinate2DMake(40.4397, -79.9764)];
-    mapView.tintColor = [UIColor blackColor];
+    [self.detailContent.locationMapContainer addSubview:self.mapView];
+    self.mapView.delegate = self;
+    self.mapView.tintColor = [UIColor lightGrayColor];
+    self.mapView.clusteringEnabled = YES;
+    self.mapView.zoom = 14;
+    [self.mapView setCenterCoordinate:CLLocationCoordinate2DMake(40.4397, -79.9764)];
+    self.mapView.tintColor = [UIColor blackColor];
     CLLocationCoordinate2D zoomCenter = CLLocationCoordinate2DMake([self.selectedSpot.lat floatValue], [self.selectedSpot.lon floatValue]);
 
-    [mapView setCenterCoordinate:zoomCenter];
+    [self.mapView setCenterCoordinate:zoomCenter];
 
-    RMPointAnnotation *singleAnnotation = [[RMPointAnnotation alloc] initWithMapView:mapView coordinate:zoomCenter andTitle:self.selectedSpot.spotTitle];
+    self.singleAannotation = [[RMPointAnnotation alloc] initWithMapView:self.mapView coordinate:zoomCenter andTitle:self.selectedSpot.spotTitle];
 
-    [mapView addAnnotation:singleAnnotation];
-    [mapView selectAnnotation:singleAnnotation animated:NO];
+    [self.mapView addAnnotation:self.singleAannotation];
+    [self.mapView selectAnnotation:self.singleAannotation animated:NO];
 
 
 }
@@ -734,7 +744,6 @@
 
 }
 
-#warning must impliment when json changes
 -(void)webButtonLogic:(UIButton *)button{
 
     [button setEnabled:NO];

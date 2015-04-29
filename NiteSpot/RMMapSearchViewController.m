@@ -92,6 +92,12 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
 
     NSLog(@"%@",error);
+    CLLocationCoordinate2D downtown;
+    downtown = CLLocationCoordinate2DMake(40.4405824, -80.0045282);
+
+    [self.mapView setCenterCoordinate:downtown];
+    self.mapView.zoom = 13;
+
 }
 
 - (void)setMapRegion{

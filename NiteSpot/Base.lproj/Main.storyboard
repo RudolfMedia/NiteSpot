@@ -227,7 +227,6 @@
                                             <outlet property="attendCellImageView" destination="Qgu-rG-eAI" id="jaj-eq-S1V"/>
                                             <outlet property="attendCellTitle" destination="Gxc-H6-ABK" id="l2W-59-p4A"/>
                                             <outlet property="priceLabel" destination="Gxf-gM-eEt" id="XHl-6b-iRj"/>
-                                            <segue destination="qWz-9E-cxq" kind="modal" identifier="VenueMap" id="ISW-6H-baq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -254,24 +253,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTs-J6-olS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1024" y="1080.6199999999999"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="U9D-Fv-r69">
-            <objects>
-                <viewController id="qWz-9E-cxq" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O44-zO-g98"/>
-                        <viewControllerLayoutGuide type="bottom" id="G1q-Pc-PZT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LvM-2H-Db1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xmS-hu-ASG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1561.5999999999999" y="1080.6199999999999"/>
         </scene>
         <!--NITESPOT-->
         <scene sceneID="qil-Gt-INx">
