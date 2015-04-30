@@ -185,7 +185,6 @@
     cell.pricelabel.layer.masksToBounds = YES;
     cell.pricelabel.layer.cornerRadius = 20;
     cell.pricelabel.text = spot.price;
-    cell.eatCellImage.image = nil;
 
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:spot.thumbURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {

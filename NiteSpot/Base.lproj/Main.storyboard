@@ -49,8 +49,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-PN-ChN">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skyline" translatesAutoresizingMaskIntoConstraints="NO" id="dvY-PN-ChN">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBb-EH-YRE">
                                                     <rect key="frame" x="0.0" y="214" width="320" height="66"/>
@@ -87,7 +88,6 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.062745098040000002" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="LBb-EH-YRE" secondAttribute="trailing" id="B0v-nD-Md8"/>
                                             <constraint firstAttribute="trailing" secondItem="LBb-EH-YRE" secondAttribute="trailing" id="F0F-in-Wd0"/>
@@ -166,8 +166,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qgu-rG-eAI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="skyline" translatesAutoresizingMaskIntoConstraints="NO" id="Qgu-rG-eAI">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzF-0x-Gat">
                                                     <rect key="frame" x="0.0" y="214" width="320" height="66"/>
@@ -212,15 +213,16 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.062745098040000002" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstItem="kzF-0x-Gat" firstAttribute="leading" secondItem="X82-zL-qO8" secondAttribute="leading" id="2Uj-od-dO1"/>
+                                            <constraint firstItem="Qgu-rG-eAI" firstAttribute="top" secondItem="X82-zL-qO8" secondAttribute="top" id="5O1-WC-5aq"/>
                                             <constraint firstAttribute="bottom" secondItem="kzF-0x-Gat" secondAttribute="bottom" id="OQo-L5-4yn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qgu-rG-eAI" secondAttribute="trailing" id="Qo0-rf-PNs"/>
                                             <constraint firstAttribute="trailing" secondItem="Qgu-rG-eAI" secondAttribute="trailing" id="Src-BC-ijz"/>
-                                            <constraint firstItem="Qgu-rG-eAI" firstAttribute="top" secondItem="X82-zL-qO8" secondAttribute="top" id="YE4-gk-Z4c"/>
                                             <constraint firstItem="Qgu-rG-eAI" firstAttribute="leading" secondItem="X82-zL-qO8" secondAttribute="leading" id="f9b-2w-iTS"/>
                                             <constraint firstAttribute="trailing" secondItem="kzF-0x-Gat" secondAttribute="trailing" id="heX-Iq-dbt"/>
-                                            <constraint firstAttribute="bottom" secondItem="Qgu-rG-eAI" secondAttribute="bottom" constant="14" id="sfG-Zg-H6g"/>
+                                            <constraint firstItem="Qgu-rG-eAI" firstAttribute="leading" secondItem="X82-zL-qO8" secondAttribute="leading" id="rs0-J8-hGR"/>
+                                            <constraint firstItem="Qgu-rG-eAI" firstAttribute="top" secondItem="X82-zL-qO8" secondAttribute="top" id="ws3-Ui-c2S"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="addressLabel" destination="8Lq-Q6-Rwt" id="Ch7-8H-Yew"/>
@@ -373,8 +375,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skyline" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-WO-tsH">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5L-ke-V31">
                                                     <rect key="frame" x="0.0" y="214" width="320" height="66"/>
@@ -411,7 +414,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.062745098040000002" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Tx3-WO-tsH" secondAttribute="trailing" id="BqV-eO-CDQ"/>
                                             <constraint firstItem="b5L-ke-V31" firstAttribute="leading" secondItem="xnh-gz-3fy" secondAttribute="leading" id="OQz-F0-ryI"/>
@@ -593,6 +596,7 @@
         <image name="attendicon" width="30" height="30"/>
         <image name="drinkicon" width="30" height="30"/>
         <image name="eaticon" width="30" height="30"/>
+        <image name="skyline" width="160" height="133"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
